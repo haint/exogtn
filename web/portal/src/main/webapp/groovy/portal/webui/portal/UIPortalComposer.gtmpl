@@ -38,7 +38,7 @@
 		<span class="ResizeButton"></span>
 	</div>
 </div>
-<script language="javascript">
+<script type="text/javascript">
 	eXo.portal.portalMode = <%=uicomponent.getPortalMode();%>;
 	eXo.portal.hasEditted = <%=uicomponent.isEditted;%>;
 </script>
