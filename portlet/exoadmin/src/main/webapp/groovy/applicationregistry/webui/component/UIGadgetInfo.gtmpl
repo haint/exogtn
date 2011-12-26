@@ -24,7 +24,7 @@
 	</div>
  	<div class="Application">
  		<div class="PortletIcons">
-				<img src="$gadgetThumbnail" onError="src='$srcBGError'" alt=""/>
+				<img src="$gadgetThumbnail" onError="src='$srcBGError'" alt="Gadget-Icon"/>
 		</div>
 		<div class="ApplicationContent">
 				<table class="TitleBarApplication">

@@ -69,7 +69,7 @@ UIUpload.prototype.createUploadEntry = function(uploadId, isAutoUpload) {
   	uploadHTML += "    <input type='file' name='file' id='file' value='' onchange='parent.eXo.webui.UIUpload.upload(this, "+uploadId+")' onkeypress='return false;' />";
   }else{
   	uploadHTML += "    <input type='file' name='file' id='file' value='' onkeypress='return false;' />";
-  	uploadHTML += "    <img class='UploadButton' style='width: 20px; height: 20px; cursor: pointer; vertical-align: bottom; background: url(\"/eXoResources/skin/DefaultSkin/webui/component/UIUpload/background/UpArrow16x16.gif\") no-repeat left;' onclick='parent.eXo.webui.UIUpload.upload(this, "+uploadId+")' alt='' src='/eXoResources/skin/sharedImages/Blank.gif'/>";  	
+  	uploadHTML += "    <img class='UploadButton' style='width: 20px; height: 20px; cursor: pointer; vertical-align: bottom; background: url(\"/eXoResources/skin/DefaultSkin/webui/component/UIUpload/background/UpArrow16x16.gif\") no-repeat left;' onclick='parent.eXo.webui.UIUpload.upload(this, "+uploadId+")' alt='Blank' src='/eXoResources/skin/sharedImages/Blank.gif'/>";  	
   }
   uploadHTML += "  </form>";
   uploadHTML += "</body>";

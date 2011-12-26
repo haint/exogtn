@@ -54,7 +54,7 @@ RssAggregator.prototype.renderFeed = function(feedObj) {
     this.feed = feedObj.data;
     gadgets.window.setTitle("RSS: " + this.feed.Title);
     var feedEl = _gel("feedContainer");
-	var bullet = "<img src='" + this.getFavicon(feedurl) + "' alt='' border=0 align='absmiddle' style='height:16;width:16;' onerror='this.style.visibility=\"hidden\";'>&nbsp;&nbsp;";
+	var bullet = "<img src='" + this.getFavicon(feedurl) + "' alt='Favicon' border=0 align='absmiddle' style='height:16;width:16;' onerror='this.style.visibility=\"hidden\";'>&nbsp;&nbsp;";
 
     if (this.feed != null) {
         // Access the data for a given entry

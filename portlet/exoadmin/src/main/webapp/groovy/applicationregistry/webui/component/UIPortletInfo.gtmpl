@@ -27,7 +27,7 @@
 
 		<div class="Application">
 			<div title="Portlet 1" class="PortletIcons">
-					<img src="$srcBG" onError="src='$srcBGError'" alt=""/>
+					<img src="$srcBG" onError="src='$srcBGError'" alt="Portlet-Icon"/>
 			</div>
 			<!--
 			<div class="ApplicationContent">

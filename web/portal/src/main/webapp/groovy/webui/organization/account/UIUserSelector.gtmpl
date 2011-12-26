@@ -123,7 +123,7 @@
 									%>
 									<td>
 										<div class="ActionContainer">
-											<img onclick="$addAction" alt="" src="/eXoResources/skin/sharedImages/Blank.gif" class="SelectPageIcon" />
+											<img onclick="$addAction" alt="Add" src="/eXoResources/skin/sharedImages/Blank.gif" class="SelectPageIcon" />
 										</div>
 									</td>
 									<% } %>

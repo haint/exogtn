@@ -228,7 +228,7 @@ public class UIFormMultiValueInputSet extends UIFormInputContainer<List>
          if ((size >= 2) || ((size == 1) && (uiInput.getValue() != null)))
          {
             writer.append("<img onclick=\"");
-            writer.append(uiForm.event("Remove", uiInput.getId())).append("\" title=\"" + removeItem + "\" alt=\"\"");
+            writer.append(uiForm.event("Remove", uiInput.getId())).append("\" title=\"" + removeItem + "\" alt=\"Remove\"");
             writer
                .append(" class=\"MultiFieldAction Remove16x16Icon\" src=\"/eXoResources/skin/sharedImages/Blank.gif\" />");
          }
@@ -236,7 +236,7 @@ public class UIFormMultiValueInputSet extends UIFormInputContainer<List>
          {
 
             writer.append("<img onclick=\"");
-            writer.append(uiForm.event("Add", getId())).append("\" title=\"" + addItem + "\" alt=\"\"");
+            writer.append(uiForm.event("Add", getId())).append("\" title=\"" + addItem + "\" alt=\"Add\"");
             writer
                .append(" class=\"MultiFieldAction AddNewNodeIcon\" src=\"/eXoResources/skin/sharedImages/Blank.gif\" />");
          }

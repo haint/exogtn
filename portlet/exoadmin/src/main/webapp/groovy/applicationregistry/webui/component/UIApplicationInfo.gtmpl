@@ -24,7 +24,7 @@ String applicationDescription = encoder.encode(application.getDescription());
 	</div>
 	<div class="Application">
 			<div class="PortletIcons">
-					<img src="$srcBG" onError="src='$srcBGError'" alt=""/>
+					<img src="$srcBG" onError="src='$srcBGError'" alt="Portlet-Icon"/>
 			</div>
 			<!--
 			<div class="ApplicationContent">
