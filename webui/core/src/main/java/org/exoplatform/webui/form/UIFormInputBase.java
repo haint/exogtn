@@ -352,12 +352,31 @@ abstract public class UIFormInputBase<T> extends UIContainer implements UIFormIn
       if (attributes != null)
       {
          w.append(" ");
-         for (String name : attributes.keySet())
+         for (Map.Entry<String, String> entry : attributes.entrySet())
          {
-            String value = HTMLEntityEncoder.getInstance().encodeHTMLAttribute(attributes.get(name));
-            w.append(name + "=\"" + value + "\"");
+            String value = HTMLEntityEncoder.getInstance().encodeHTMLAttribute(entry.getValue());
+            w.append(" ");
+            w.append(entry.getKey() + "=\"" + value + "\"");
          }
          w.append(" ");
       }
+   }
+
+   protected void renderInputBaseComponent(Writer w, String tag, Map<String, String> attributes) throws IOException
+   {
+      renderInputBaseComponent(w, tag, getId(), attributes);
+   }
+
+   protected void renderInputBaseComponent(Writer w, String tag, String id, Map<String, String> attributes) throws IOException
+   {
+      w.write("<" + tag);
+      w.write(" id=\"" + id + "\"");
+      for (Map.Entry<String, String> entry : attributes.entrySet())
+      {
+         w.append(" ");
+         w.append(entry.getKey() + "=\"" + entry.getValue() + "\"");
+      }
+      renderHTMLAttributes(w);
+      w.write("></" + tag + ">");
    }
 }
