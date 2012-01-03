@@ -134,7 +134,6 @@ public class UICheckBoxInput extends UIFormInputBase<Boolean>
       attributes.put("type", "checkbox");
       attributes.put("name", name);
       attributes.put("class", "checkbox");
-      renderInputBaseComponent(w, "input", attributes);
       if (onchange_ != null)
       {
          UIForm uiForm = getAncestorOfType(UIForm.class);
@@ -145,6 +144,7 @@ public class UICheckBoxInput extends UIFormInputBase<Boolean>
       if (isDisabled())
          attributes.put("disabled", "");
 
+      renderInputBaseComponent(w, "input", attributes);
       if (this.isMandatory())
          w.write(" *");
    }

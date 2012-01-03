@@ -137,7 +137,7 @@ public class UIFormCheckBoxInput<T> extends UIFormInputBase<T>
    {
       Writer w = context.getWriter();
       Map<String, String> attributes = new HashMap<String, String>();
-      attributes.put("type", "checbox");
+      attributes.put("type", "checkbox");
       attributes.put("name", name);
       attributes.put("class", "checkbox");
       if (value_ != null)
