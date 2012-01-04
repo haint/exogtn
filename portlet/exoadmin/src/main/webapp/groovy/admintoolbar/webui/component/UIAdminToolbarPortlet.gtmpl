@@ -31,7 +31,7 @@
 %>
 <ul class="UIAdminToolbarPortlet UIHorizontalTabs" id="$uicomponent.id" >
 	<li class="UITab NormalToolbarTab">
-		<a class="EditorIcon TBIcon" href="#">$editorLabel</a>
+		<a class="EditorIcon TBIcon" href="#$editorLabel">$editorLabel</a>
 		<ul class="MenuItemContainer" style="display:none;">
 			<% if(userCouldEditNavigation){ %>
 				<li class="MenuItem">	

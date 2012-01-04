@@ -30,11 +30,11 @@
 						<div class="LeftLoginContainer">
 							<div class="RightLoginContainer">
 								<div class="MiddleLoginContainer Signin">
-									<a class="Login" onclick="$signInAction"><%=_ctx.appRes("UILoginForm.label.Signin")%></a>
-									<a class="Register" href="$registerURI">
+									<a href="#<%=_ctx.appRes("UILoginForm.label.Signin")%>" class="Login" onclick="$signInAction"><%=_ctx.appRes("UILoginForm.label.Signin")%></a>
+									<a href="$registerURI" class="Register">
 										<%=_ctx.appRes("UIBannerPortlet.action.register")%>
 									</a>						
-									<a class="Language" onclick="$changeLanguageAction">
+									<a href="#<%=_ctx.appRes("UIBannerPortlet.action.changeLanguage")%>" class="Language" onclick="$changeLanguageAction">
 										<%=_ctx.appRes("UIBannerPortlet.action.changeLanguage")%>
 									</a>		
 									<div class="ClearBoth"><span></span></div>

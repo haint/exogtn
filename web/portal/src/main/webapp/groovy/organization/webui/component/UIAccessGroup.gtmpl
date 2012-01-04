@@ -12,7 +12,7 @@
 	
 	<div class="UIAction"> 
 		<span onclick="javascript: eXo.webui.UIPopupWindow.show('<%=uicomponent.getChild(UIFormPopupWindow.class).getId();%>');" class="ActionButton SimpleStyle">
-			<a href="javascript:void(0);" class="Icon SmallGroup16x16Icon">Select Access Group</a>
+			<a href="#Select Access Group" class="Icon SmallGroup16x16Icon">Select Access Group</a>
 		</span>				
 	</div>
 	

@@ -54,13 +54,13 @@
 	{
 		for(act in actions)
 		{
-			println "	<a href=\"javascript:void(0);\" onclick="+uicomponent.event("Click", act.getEventId())+" class=\"ActionButton LightBlueStyle\"> ${act.getActionKey()} </a>";
+			println "	<a href=\"#${act.getActionKey()}\" onclick="+uicomponent.event("Click", act.getEventId())+" class=\"ActionButton LightBlueStyle\"> ${act.getActionKey()} </a>";
 		}
 	}
 %>
 <div class="UIPopupWindow UIDragObject ExoMessageDecorator" id="$popupId" style="width: 550px; display: none;">
 	<div class="OverflowContainer ClearFix">
-		<a class="CloseButton" title="<%=_ctx.appRes("UIConfirmation.Close")%>" onclick="<%=uicomponent.event("Close")%>"></a>
+		<a href="#<%=_ctx.appRes("UIConfirmation.Close")%>" class="CloseButton" title="<%=_ctx.appRes("UIConfirmation.Close")%>" onclick="<%=uicomponent.event("Close")%>"></a>
 		<span class="PopupTitle"><%= _ctx.appRes("UIConfirmation.title.exoMessages") %></span>
 	</div>
 

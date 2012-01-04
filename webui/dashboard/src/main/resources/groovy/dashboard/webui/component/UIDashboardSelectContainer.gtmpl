@@ -31,7 +31,7 @@
 							<div class="GadgetCategory" id="${category.getName()}">
 								<div class="GadgetTab SelectedTab" onclick="eXo.webui.UIDashboard.onTabClick(this, 'NormalTab', 'SelectedTab')">
 									
-										<a href="#" class="ArrowIcon" title="$categoryName">$categoryName</a>
+										<a href="#$categoryName" class="ArrowIcon" title="$categoryName">$categoryName</a>
 									
 								</div>
 								<div class="ItemsContainer">

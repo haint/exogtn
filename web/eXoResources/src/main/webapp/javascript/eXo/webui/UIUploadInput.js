@@ -62,7 +62,7 @@ UIUploadInput.prototype.createEntryUpload = function(id, isDynamicMode) {
   var inputHTML = "<input id='file" +id+ "' class='file' name='file' type='file' onkeypress='return false;'";
   inputHTML += " onchange='eXo.webui.UIUploadInput.upload(\"" +id+ "\");'/>";    
   if(isDynamicMode) {
-    inputHTML += "<a class='ActionLabel' href='javascript:void(0)' onclick=\"" +url+ "\">" +label+ "</a>";
+    inputHTML += "<a class='ActionLabel' href='#" +label+ "' onclick=\"" +url+ "\">" +label+ "</a>";
   }
   div.style.display = 'block';
   div.innerHTML = inputHTML; 

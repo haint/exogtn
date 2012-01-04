@@ -81,15 +81,15 @@
 		} 
 		%>
 			<span onclick="<%=clearPageEvent%>" class="<%=css%>" title="<%=_ctx.appRes(uicomponent.getId()+".label.clearPage")%>">
-				<a href="javascript:void(0);" class="DustBin16x16Icon Icon"><%=_ctx.appRes(uicomponent.getId() + ".label.clearPage")%></a>
+				<a href="#<%=_ctx.appRes(uicomponent.getId() + ".label.clearPage")%>" class="DustBin16x16Icon Icon"><%=_ctx.appRes(uicomponent.getId() + ".label.clearPage")%></a>
 			</span>
 		<% if(page == null) { %>
 			<span onclick="<%=createPageEvent%>" class="ActionButton SimpleStyle" title="<%=_ctx.appRes(uicomponent.getId()+".label.createPage")%>">
-				<a href="javascript:void(0);" class="GreenPlusPage16x16Icon Icon"><%=_ctx.appRes(uicomponent.getId() + ".label.createPage")%></a>
+				<a href="#<%=_ctx.appRes(uicomponent.getId() + ".label.createPage")%>" class="GreenPlusPage16x16Icon Icon"><%=_ctx.appRes(uicomponent.getId() + ".label.createPage")%></a>
 			</span> 	
 		<% } %>
 			<span class="ActionButton SimpleStyle" onclick="<%=uicomponent.event("OpenSelectPagePopUp")%>" title="<%=_ctx.appRes(uicomponent.getId()+".label.searchandSelectPage")%>">
-				<a href="javascript:void(0);" class="Icon SelectPageIcon"><%=_ctx.appRes(uicomponent.getId()+".label.searchandSelectPage")%></a>
+				<a href="#<%=_ctx.appRes(uicomponent.getId()+".label.searchandSelectPage")%>" class="Icon SelectPageIcon"><%=_ctx.appRes(uicomponent.getId()+".label.searchandSelectPage")%></a>
 			</span>		
 	</div>
 </div>

@@ -76,7 +76,7 @@
 											cssClass = "SelectedBackground"
 										}
 								%>																								
-								<a class="$cssClass" onclick="$submitEvent">
+								<a href="#<%=_ctx.appRes("UIFormInputIconSelector.tooltip.SelectIcon")%>" class="$cssClass" onclick="$submitEvent">
 									<div	class="Icon <%=icon%>" title="<%=_ctx.appRes("UIFormInputIconSelector.tooltip.SelectIcon")%>"><span></span></div>
 								</a>
 								<%}%> 

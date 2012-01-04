@@ -54,10 +54,10 @@
 					%>
 				 	
 					<span onclick="<%=deletePermissionEvent%>" class="<%=css%>">
-						<a href="javascript:void(0);" class="DeletePermissionIcon"><%=_ctx.appRes(uicomponent.getId() + ".action.DeletePermission")%></a>
+						<a href="#<%=_ctx.appRes(uicomponent.getId() + ".action.DeletePermission")%>" class="DeletePermissionIcon"><%=_ctx.appRes(uicomponent.getId() + ".action.DeletePermission")%></a>
 					</span>
 					<span onclick="javascript: eXo.webui.UIPopupWindow.show('<%=uicomponent.getChild(UIPopupWindow.class).getId();%>', true);" class="ActionButton SimpleStyle">
-						<a href="javascript:void(0);" class="SelectPermissionIcon"><%=_ctx.appRes(uicomponent.getId() + ".action.SelectPermission")%></a>
+						<a href="#<%=_ctx.appRes(uicomponent.getId() + ".action.SelectPermission")%>" class="SelectPermissionIcon"><%=_ctx.appRes(uicomponent.getId() + ".action.SelectPermission")%></a>
 					</span>
 												
 				</div>

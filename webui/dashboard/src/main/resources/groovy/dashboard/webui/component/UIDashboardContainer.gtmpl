@@ -13,7 +13,7 @@
 <div id="$uicomponent.id" class="UIDashboardContainer">
 	<div class="GadgetContainer UIResizableBlock" id="GadgetContainer">
 		<%if (uiDashboard.canEdit()) { %>
-				<a class="AddIcon" style="visibility: <%= uiDashboard.isShowSelectPopup()? "hidden" : "visible"; %>;" href="#" onclick="eXo.webui.UIDashboard.showHideSelectContainer(event);return false;"><%=_ctx.appRes("UIDashboardContainer.label.openWorkspace");%></a>
+				<a class="AddIcon" style="visibility: <%= uiDashboard.isShowSelectPopup()? "hidden" : "visible"; %>;" href="javascript:void(0);" onclick="eXo.webui.UIDashboard.showHideSelectContainer(event);return false;"><%=_ctx.appRes("UIDashboardContainer.label.openWorkspace");%></a>
 		<%}%>
 		<div class="NoGadget" style="display: <%=uicomponent.hasUIGadget() ? "none" : "block"%>"><%= _ctx.appRes("UIDashboard.msg.addGadget"); %></div>
 		<% uicomponent.renderChildren() ;%>

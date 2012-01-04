@@ -145,14 +145,14 @@
 					<%for(i in 0..actions.length -1) { 
 							if(actionValues != null && actionValues.length > 0) { 
 								if(actionValues[i] != null) { %>
-									<a href="javascript:void(0);" class="ActionButton LightBlueStyle" onclick="javascript:eXo.webui.UIForm.submitEvent('<%=formName%>','<%=actions[i]%>','&objectId=<%=actionValues[i]%>');"><%=_ctx.appRes(formName + ".action." + actions[i])%></a>
+									<a href="#<%=_ctx.appRes(formName + ".action." + actions[i])%>" class="ActionButton LightBlueStyle" onclick="javascript:eXo.webui.UIForm.submitEvent('<%=formName%>','<%=actions[i]%>','&objectId=<%=actionValues[i]%>');"><%=_ctx.appRes(formName + ".action." + actions[i])%></a>
 							<%} else { %>
-									<a href="javascript:void(0);" class="ActionButton LightBlueStyle" onclick="javascript:eXo.webui.UIForm.submitForm('<%=formName%>','<%=actions[i]%>', true);"><%=_ctx.appRes(formName + ".action." + actions[i])%></a>		 
+									<a href="#<%=_ctx.appRes(formName + ".action." + actions[i])%>" class="ActionButton LightBlueStyle" onclick="javascript:eXo.webui.UIForm.submitForm('<%=formName%>','<%=actions[i]%>', true);"><%=_ctx.appRes(formName + ".action." + actions[i])%></a>		 
 					 	 <%
 								}
 							} else { 
 							%>
-								<a href="javascript:void(0);" class="ActionButton LightBlueStyle" onclick="javascript:eXo.webui.UIForm.submitForm('<%=formName%>','<%=actions[i]%>', true);"><%=_ctx.appRes(formName + ".action." + actions[i])%></a>		 
+								<a href="#<%=_ctx.appRes(formName + ".action." + actions[i])%>" class="ActionButton LightBlueStyle" onclick="javascript:eXo.webui.UIForm.submitForm('<%=formName%>','<%=actions[i]%>', true);"><%=_ctx.appRes(formName + ".action." + actions[i])%></a>		 
 						<%}%>
 					<%} %>
 				</div>

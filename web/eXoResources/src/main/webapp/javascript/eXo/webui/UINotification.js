@@ -164,8 +164,8 @@ UINotification.prototype.createFrameForMessages = function() {
 	htmlString += 			"<div class=\"MRPopupNotification\">";
 	htmlString += 				"<div class=\"MCPopupNotification\">";
 	htmlString += 					"<div class=\"TitleNotification\">";
-	htmlString += 						"<a class=\"ItemTitle\" href=\"#\">Notification</a>";
-	htmlString += 						"<a class=\"Close\" href=\"#\" onclick=\"eXo.webui.UINotification.closeNotification();\"><span></span></a>";
+	htmlString += 						"<a class=\"ItemTitle\" href=\"#Notification\">Notification</a>";
+	htmlString += 						"<a class=\"Close\" href=\"#Close\" onclick=\"eXo.webui.UINotification.closeNotification();\"><span></span></a>";
 	htmlString += 					"</div>";
 	htmlString += 					"<div id=\"UINotificationContent\">";
 	htmlString += 					"</div>";			

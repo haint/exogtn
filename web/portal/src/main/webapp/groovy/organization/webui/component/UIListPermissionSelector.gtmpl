@@ -24,7 +24,7 @@
 	%>
 	<div class="UIAction"> 
 		<span onclick="javascript: eXo.webui.UIPopupWindow.show('<%=uicomponent.getChild(UIFormPopupWindow.class).getId();%>');" class="ActionButton SimpleStyle">
-			<a href="javascript:void(0);" class="Icon SmallGroup16x16Icon"><%=_ctx.appRes("UIListPermissionSelector.action.addPermission")%></a>
+			<a href="#<%=_ctx.appRes("UIListPermissionSelector.action.addPermission")%>" class="Icon SmallGroup16x16Icon"><%=_ctx.appRes("UIListPermissionSelector.action.addPermission")%></a>
 		</span>
 	</div>
 	<%}%>

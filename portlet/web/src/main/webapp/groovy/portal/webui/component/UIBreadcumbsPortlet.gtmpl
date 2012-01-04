@@ -29,7 +29,7 @@
   							String actionLink = nodeURL.setNode(node);
   							if(counter == size) note = "Selected";
   				%>
-  							<a href="<%=(node.getPageRef() == null) ? "#" : actionLink%>"	class="$note"><%=node.getEncodedResolvedLabel();%></a> 																
+  							<a href="<%=(node.getPageRef() == null) ? ("#" + node.getEncodedResolvedLabel()) : actionLink%>"	class="$note"><%=node.getEncodedResolvedLabel();%></a> 																
   				<%			
   							if(counter < size) {
   				%>

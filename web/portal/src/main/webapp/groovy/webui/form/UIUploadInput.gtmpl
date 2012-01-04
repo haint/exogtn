@@ -51,6 +51,6 @@
 </div>
 <%}%>
 <%if(uicomponent.isDynamicMode()) {%>
-<a class='ActionLabel' href="javascript:void(0);" onclick="<%=uicomponent.event('CreateUploadId')%>"><%= _ctx.appRes("UIFormUploadInput.label.AddInput"); %></a>
+<a class='ActionLabel' href="#<%= _ctx.appRes("UIFormUploadInput.label.AddInput"); %>" onclick="<%=uicomponent.event('CreateUploadId')%>"><%= _ctx.appRes("UIFormUploadInput.label.AddInput"); %></a>
 <%}%>
 </div>

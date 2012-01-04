@@ -48,7 +48,7 @@
 											if(i != step) {
 												actionLink = uicomponent.url("ViewStep" + String.valueOf(i));0
 												print "<a href=\"$actionLink\" title=\"$strStep\">";
-											} else print "<a href=\"#\" class=\"SelectedStep\" title=\"$strStep\">";
+											} else print "<a href=\"#$strStep\" class=\"SelectedStep\" title=\"$strStep\">";
 											
 											print String.valueOf(j);
 											println "</a>";
@@ -71,8 +71,8 @@
 											actionLink = uicomponent.url("ViewStep" + String.valueOf(step+1));
 										}
 								%>	
-										<a href="javascript:void(0);" onclick="$actionLink" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".label."+action)%></a>
-										<a href="javascript:void(0);" onclick="<%=uicomponent.event("Abort", "");%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".label.abort")%></a>
+										<a href="#<%=_ctx.appRes(uicomponent.getId() + ".label."+action)%>" onclick="$actionLink" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".label."+action)%></a>
+										<a href="#<%=_ctx.appRes(uicomponent.getId() + ".label.abort")%>" onclick="<%=uicomponent.event("Abort", "");%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".label.abort")%></a>
 	
 								<% 
 								int showBack = step;
@@ -81,7 +81,7 @@
 									actionLink = uicomponent.url("ViewStep" + String.valueOf(step-1));
 									String display = "LightBlueStyle";
 								%>
-										<a  onclick="$actionLink" class="ActionButton $display"><%=_ctx.appRes(uicomponent.getId() + ".label.back")%></a>
+										<a href="#<%=_ctx.appRes(uicomponent.getId() + ".label.back")%>" onclick="$actionLink" class="ActionButton $display"><%=_ctx.appRes(uicomponent.getId() + ".label.back")%></a>
 								<% } %>
 								<%} // End if (step != 3)%> 
 							</div>

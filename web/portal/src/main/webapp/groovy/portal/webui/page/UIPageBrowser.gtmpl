@@ -8,7 +8,7 @@
 	<%if(uicomponent.isShowAddNewPage()) {%>
 		 
 			<div class="UIAction"> 
-				<a href="javascript:void(0);" onclick="<%=uicomponent.event("AddNew")%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".action.addNewPage")%></a>
+				<a href="#<%=_ctx.appRes(uicomponent.getId() + ".action.addNewPage")%>" onclick="<%=uicomponent.event("AddNew")%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".action.addNewPage")%></a>
 			</div>			
 	<%}%>
 </div>

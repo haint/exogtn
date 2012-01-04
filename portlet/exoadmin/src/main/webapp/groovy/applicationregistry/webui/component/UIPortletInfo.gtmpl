@@ -71,7 +71,7 @@
 					    <% if (categoryNames.equals("")) { %>
                 <%=_ctx.appRes("UIPortletInfo.label.categories.guide")%><br/>
                 <% if (!selectorRender) { %>
-                <a href="#" onclick="<%= uicomponent.event("ShowCategories") %>" style="color:red;text-decoration:underline;">                                          
+                <a href="#<%=_ctx.appRes("UIPortletInfo.label.categories.clickHere")%>" onclick="<%= uicomponent.event("ShowCategories") %>" style="color:red;text-decoration:underline;">                                          
                   <%=_ctx.appRes("UIPortletInfo.label.categories.clickHere")%>                                         
                 </a>
                 <% } %>

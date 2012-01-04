@@ -93,7 +93,7 @@
 				%>
 			</div>
 			<div class="UIAction">
-				<a href="javascript:void(0);" onclick="<%=uicomponent.event("Close")%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes("UIPopupMessages.button.ok")%></a>
+				<a href="#<%=_ctx.appRes("UIPopupMessages.button.ok")%>" onclick="<%=uicomponent.event("Close")%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes("UIPopupMessages.button.ok")%></a>
 			</div>
 		</div>						
 	</div>
