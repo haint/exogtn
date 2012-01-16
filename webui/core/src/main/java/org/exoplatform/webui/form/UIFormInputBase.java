@@ -20,7 +20,9 @@
 package org.exoplatform.webui.form;
 
 import org.exoplatform.commons.serialization.api.annotations.Serialized;
+import org.exoplatform.commons.utils.ExpressionUtil;
 import org.exoplatform.commons.utils.HTMLEntityEncoder;
+import org.exoplatform.web.application.RequestContext;
 import org.exoplatform.webui.application.WebuiRequestContext;
 import org.exoplatform.webui.core.UIComponent;
 import org.exoplatform.webui.core.UIContainer;
@@ -35,6 +37,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.ResourceBundle;
 
 /**
  * Created by The eXo Platform SARL
@@ -110,7 +114,7 @@ abstract public class UIFormInputBase<T> extends UIContainer implements UIFormIn
    /**
     * A map of HTML attribute
     */
-   private Map<String, String> attributes;
+   private Map<String, AttributeValue> attributes;
    
    public UIFormInputBase(String name, String bindingField, Class<T> typeValue)
    {
@@ -329,11 +333,22 @@ abstract public class UIFormInputBase<T> extends UIContainer implements UIFormIn
       this.label = label;
    }
    
-   public String getHTMLAttribute(String name)
+   public String getResolvedHTMLAttribute(String name)
    {
       if (attributes != null)
       {
-         return attributes.get(name);
+         AttributeValue attValue = attributes.get(name);
+         if (attValue != null)
+         {
+            if (attValue.isLocalized)
+            {
+               RequestContext context = WebuiRequestContext.getCurrentInstance();
+               ResourceBundle res = context.getApplicationResourceBundle();
+               return ExpressionUtil.getValue(res, attValue.value);
+            }
+            else
+               return attValue.value;
+         }
       }
       return null;
    }
@@ -342,9 +357,19 @@ abstract public class UIFormInputBase<T> extends UIContainer implements UIFormIn
    {
       if (attributes == null)
       {
-         attributes = new HashMap<String, String>();
+         attributes = new HashMap<String, AttributeValue>();
       }
-      attributes.put(name, value);
+      
+      AttributeValue attValue = new AttributeValue();
+      if (attValue.isLocalized = ExpressionUtil.isResourceBindingExpression(value) == true)
+      {
+         attValue.value = ExpressionUtil.removeBindingExpression(value);
+      }
+      else
+      {
+         attValue.value = value;
+      }
+      attributes.put(name, attValue);
    }
    
    protected void renderHTMLAttributes(Writer w) throws IOException
@@ -352,9 +377,17 @@ abstract public class UIFormInputBase<T> extends UIContainer implements UIFormIn
       if (attributes != null)
       {
          w.append(" ");
-         for (Map.Entry<String, String> entry : attributes.entrySet())
+         for (Entry<String, AttributeValue> entry : attributes.entrySet())
          {
-            String value = HTMLEntityEncoder.getInstance().encodeHTMLAttribute(entry.getValue());
+            String value = entry.getValue().value;
+            if (entry.getValue().isLocalized)
+            {
+               RequestContext context = WebuiRequestContext.getCurrentInstance();
+               ResourceBundle res = context.getApplicationResourceBundle();
+               value = ExpressionUtil.getValue(res, value);
+            }
+
+            value = HTMLEntityEncoder.getInstance().encodeHTMLAttribute(value);
             w.append(" ");
             w.append(entry.getKey() + "=\"" + value + "\"");
          }
@@ -378,5 +411,12 @@ abstract public class UIFormInputBase<T> extends UIContainer implements UIFormIn
       }
       renderHTMLAttributes(w);
       w.write("></" + tag + ">");
+   }
+
+   private class AttributeValue
+   {
+      private String value;
+
+      private boolean isLocalized;
    }
 }
