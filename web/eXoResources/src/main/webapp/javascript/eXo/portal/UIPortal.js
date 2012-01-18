@@ -55,7 +55,15 @@ function UIPortal() {
   this.portalUIComponentDragDrop = false;
 };
 
-UIPortal.prototype.blockOnMouseOver = function(event, portlet, isOver) {
+UIPortal.prototype.blockOnMouseOver = function(event) {
+	eXo.portal.UIPortal.blockOnMouse(event, this, true	);
+};
+
+UIPortal.prototype.blockOnMouseOut = function(event) {
+	eXo.portal.UIPortal.blockOnMouse(event, this, false);
+};
+
+UIPortal.prototype.blockOnMouse = function(event, portlet, isOver) {
   var DOMUtil = eXo.core.DOMUtil;
   if(!eXo.portal.portalMode || eXo.portal.isInDragging) return;
 	if(eXo.portal.portalMode <= 2 && DOMUtil.hasClass(portlet, "UIContainer")) return;
