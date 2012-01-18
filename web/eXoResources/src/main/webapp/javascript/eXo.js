@@ -171,3 +171,17 @@ eXo.debug = function(message) {
 		eXo.webui.UINotification.addMessage(message);
 	}
 } ;
+
+eXo.addEvent = function(element, eventName, handler) {
+	if(typeof element != 'object') element = document.getElementById(element);
+	if(typeof handler == 'string') handler = eval(handler);
+	if(element.addEventListener) {
+		element.addEventListener(eventName, function(e) {
+			handler.apply(this, arguments);
+		}, false);
+	} else if(element.attachEvent) {
+		element.attachEvent(eventName, function(e) {
+			handler.apply(this, arguments);
+		}, false);
+	}
+};

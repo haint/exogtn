@@ -90,6 +90,16 @@ public class JavascriptManager
          }
       }
    }
+   
+   public void addEventListener(String elementId, String eventName, String eventHandler) 
+   {
+      if(eventName != null && eventHandler != null) 
+      {
+         StringBuilder b = new StringBuilder();
+         b.append("eXo.addEvent('").append(elementId).append("', '").append(eventName).append("', '").append(eventHandler).append("'); \n");
+         data.add(b.toString());
+      }
+   }
 
    public void addOnLoadJavascript(CharSequence s)
    {
