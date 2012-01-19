@@ -23,21 +23,17 @@ function UIItemSelector() {
 };
 /**
  * Mouse over event, Set highlight to OverItem
- * @param {Object} selectedElement focused element
- * @param {boolean} mouseOver
  */
-UIItemSelector.prototype.onOver = function(selectedElement, mouseOver) {
-  if(selectedElement.className == "Item"){
-    eXo.webui.UIItemSelector.beforeActionHappen(selectedElement);
+UIItemSelector.prototype.onOver = function(event) {
+  var mouseOver = event.data.over;
+  if(this.className == "Item"){
+    eXo.webui.UIItemSelector.beforeActionHappen(this);
   }
   if(mouseOver) {
-    this.backupClass = selectedElement.className;
-    selectedElement.className = "OverItem Item";
-//    minh.js.exo
-//    this.onChangeItemDetail(selectedElement, true);
+    this.backupClass = this.className;
+    this.className = "OverItem Item";
   } else {
-    selectedElement.className = this.backupClass;
-//    this.onChangeItemDetail(selectedElement, false);
+    this.className = this.backupClass;
   }
 };
 /**
@@ -56,7 +52,7 @@ UIItemSelector.prototype.onClick = function(clickedElement) {
       this.onChangeItemDetail(clickedElement, true);
     } else {
       allItems[i].className = "SelectedItem Item";
-      this.backupClass = "SelectedItem Item";
+      clickedElement.backupClass = "SelectedItem Item";
       this.onChangeItemDetail(clickedElement, false);
     }
   }

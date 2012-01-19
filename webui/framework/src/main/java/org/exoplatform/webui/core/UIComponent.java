@@ -63,19 +63,16 @@ abstract public class UIComponent
 
    public String getId()
    {
+      if (id == null)
+      {
+         setId(COMPONENT_PREFIX + Integer.toString(hashCode()));
+      }
       return this.id;
    }
 
    public UIComponent setId(String id)
    {
-      if (id == null)
-      {
-         this.id = COMPONENT_PREFIX + Integer.toString(hashCode());
-      }
-      else
-      {
-         this.id = id;
-      }
+      this.id = id;
       return this;
    }
 

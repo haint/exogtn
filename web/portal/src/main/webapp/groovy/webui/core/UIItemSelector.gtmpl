@@ -1,10 +1,12 @@
-<%import  org.exoplatform.webui.core.UIContainer;%>	
 <%
-	String onMouseOver = "eXo.webui.UIItemSelector.onOver(this, true)";
-	String onMouseOut = "eXo.webui.UIItemSelector.onOver(this, false)";
-		
-	categories = uicomponent.getItemCategories();
-	UIContainer uicontainer = uicomponent.getAncestorOfType(UIContainer.class);	
+   import org.exoplatform.web.application.JavascriptManager;
+   import org.exoplatform.webui.core.UIContainer;
+   def rcontext = _ctx.getRequestContext();
+   JavascriptManager jsmanager = rcontext.getJavascriptManager();
+   String onMouseOver = "eXo.webui.UIItemSelector.onOver";
+   jsmanager.addEventListener(uicomponent.getId(), "mouseover", "eXo.portal.UIPortal.blockOnMouseOver");
+   categories = uicomponent.getItemCategories();
+   UIContainer uicontainer = uicomponent.getAncestorOfType(UIContainer.class);	
 %>
 <div class="UIItemSelector">	
 	<div class="RightColumnStyle" style="width: 99.5%;">
@@ -16,13 +18,16 @@
 			</div>
 			<div class="ItemList">
 				<%						
-					for(category in categories) {							
+					for(category in categories) {
 						String itemSelected = "Item";
+						String itemId = uicomponent.getId() + "_" + category.hashCode();
 						String onClick = "eXo.webui.UIItemSelector.onClickCategory(this, '$uicontainer.name', '$uicomponent.name', '$category.name')";
-																				
-						if (category.isSelected()) itemSelected = "SelectedItem Item";							
+
+						jsmanager.addEventListener(itemId, "mouseover", onMouseOver, "{over:true, element:this}");
+						jsmanager.addEventListener(itemId, "mouseout", onMouseOver, "{over:false, element:this}");
+						if (category.isSelected()) itemSelected = "SelectedItem Item";
 				 %>
-						<div class="$itemSelected" onmouseover="$onMouseOver" onmouseout="$onMouseOut" onclick="$onClick">
+						<div id=$itemId class="$itemSelected" onclick="$onClick">
 							<div class="LeftItem">
 								<div class="RightItem">	
 								<%
