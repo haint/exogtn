@@ -409,31 +409,7 @@ function UIDashboard() {
 			popupContent.style.height = "auto";
 		}	
 	};
-	/**
-	 * Change disabled object to enable state
-	 * @param {Object} elemt object to enable
-	 */
-	UIDashboard.prototype.enableContainer = function(elemt) {
-		var DOMUtil = eXo.core.DOMUtil;
-		if(DOMUtil.hasClass(elemt, "DisableContainer")) {
-			DOMUtil.replaceClass(elemt, " DisableContainer", "");
-		}
-		var arrow = DOMUtil.findFirstChildByClass(elemt, "div", "Arrow");
-		if(DOMUtil.hasClass(arrow, "DisableArrowIcon")) DOMUtil.replaceClass(arrow," DisableArrowIcon", "");
-	};
-	 /**
-   * Change object to disable state
-   * @param {Object} elemt object to enable
-   */
-	UIDashboard.prototype.disableContainer = function(elemt) {
-		var DOMUtil = eXo.core.DOMUtil;
-		if(!DOMUtil.hasClass(elemt, "DisableContainer")) {
-			DOMUtil.addClass(elemt, "DisableContainer");
-		}
-		var arrow = DOMUtil.findFirstChildByClass(elemt, "div", "Arrow");
-		if(!DOMUtil.hasClass(arrow, "DisableArrowIcon")) DOMUtil.addClass(arrow," DisableArrowIcon");
-	};
-	
+
 	UIDashboard.prototype.scrollOnDrag = function(dragObj) {
 		var DOMUtil = eXo.core.DOMUtil;
 		var dashboardUtil = eXo.webui.UIDashboardUtil;
