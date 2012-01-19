@@ -17,9 +17,6 @@
 	jsmanager.importJavascript('eXo.webui.UIPopupSelectCategory');
 	jsmanager.importJavascript('eXo.portal.UIPortalControl');
 
-	String onControlOver	= "eXo.webui.UIPortlet.onControlOver(this, true);";
-	String onControlOut		= "eXo.webui.UIPortlet.onControlOver(this, false);";
-
 	WindowState windowState = uicomponent.getCurrentWindowState();
 	String portletId = uicomponent.getId();
 	EntityEncoder encoder = HTMLEntityEncoder.getInstance();
@@ -107,10 +104,18 @@
 											minimizedMode = "Normal";
 										}
 								%>
-										<div class="ControlIcon ${maximizedMode}Icon" title="$renderMaxi"	onclick="$maximizedAction" onmouseover="$onControlOver" onmouseout="$onControlOut"><span></span>
+										<% 
+											jsmanager.addEventListener("Maximized-" +portletId, "mouseover", "eXo.webui.UIPortlet.onControlOver"); 
+											jsmanager.addEventListener("Maximized-" +portletId, "mouseout", "eXo.webui.UIPortlet.onControlOut");	
+										%>
+										<div id="Maximized-${portletId}" class="ControlIcon ${maximizedMode}Icon" title="$renderMaxi"	onclick="$maximizedAction"><span></span>
 												<div style="display:none">{"normalTitle":"$maxiTooltip","modeTitle":"$restoreDown"}</div>
-										</div> 
-										<div class="ControlIcon ${minimizedMode}Icon" title="$renderMini"	onclick="$minimizedAction" onmouseover="$onControlOver" onmouseout="$onControlOut"><span></span>
+										</div>
+										<% 
+											jsmanager.addEventListener("Minimized-" +portletId, "mouseover", "eXo.webui.UIPortlet.onControlOver"); 
+											jsmanager.addEventListener("Minimized-" +portletId, "mouseout", "eXo.webui.UIPortlet.onControlOut");	
+										%> 
+										<div id="Minimized-${portletId}" class="ControlIcon ${minimizedMode}Icon" title="$renderMini"	onclick="$minimizedAction"><span></span>
 												<div style="display:none">{"normalTitle":"$miniTooltip","modeTitle":"$restore"}</div>
 										</div>
 								<%}		
@@ -119,7 +124,11 @@
 									if(uicomponent.getShowPortletMode() && supportModes.size() > 0) {
 										String showCategory = "eXo.webui.UIPopupSelectCategory.show(this, event);"
 								%>
-										<div class="ControlIcon ArrowDownIcon" title="<%=_ctx.appRes("UIPortlet.tooltip.PortletMode");%>" onclick="$showCategory" onmouseover="$onControlOver" onmouseout="$onControlOut" style="position: relative;">
+										<% 
+											jsmanager.addEventListener("ArrowDown-" +portletId, "mouseover", "eXo.webui.UIPortlet.onControlOver"); 
+											jsmanager.addEventListener("ArrowDown-" +portletId, "mouseout", "eXo.webui.UIPortlet.onControlOut");	
+										%> 
+										<div id="ArrowDown-${portletId}" class="ControlIcon ArrowDownIcon" title="<%=_ctx.appRes("UIPortlet.tooltip.PortletMode");%>" onclick="$showCategory" style="position: relative;">
 											<% /*Begin Popup Menu*/ %>
 												<div class="UIPopupCategory" style="display: none;">
 													<div class="PopupCategoryDecorator">

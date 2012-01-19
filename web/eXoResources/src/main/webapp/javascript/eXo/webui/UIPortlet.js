@@ -20,13 +20,22 @@
 function UIPortlet() {
 	this.maxIndex = 0;
 } ;
+
+UIPortlet.prototype.onControlOver = function(event) {
+	eXo.webui.UIPortlet.onControl(this, true);
+};
+
+UIPortlet.prototype.onControlOut = function(event) {
+	eXo.webui.UIPortlet.onControl(this, false);
+};
+
 /**
  * Event when mouse focuses to element, this function is called when user minimizes or
  * maximized portlet window
  * @param {Object} element focusing element
  * @param {boolean} isOver know as mouse over or out
  */
-UIPortlet.prototype.onControlOver = function(element, isOver) {
+UIPortlet.prototype.onControl = function(element, isOver) {
   var originalElementName = element.className ;
   if(isOver) {
     var overElementName = "ControlIcon Over" + originalElementName.substr(originalElementName.indexOf(" ") + 1, 30) ;
