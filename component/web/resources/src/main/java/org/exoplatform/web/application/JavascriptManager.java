@@ -26,6 +26,8 @@ import org.exoplatform.web.application.javascript.JavascriptConfigService;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.Map.Entry;
 
 /**
  * Created by The eXo Platform SAS
@@ -90,13 +92,47 @@ public class JavascriptManager
          }
       }
    }
-   
-   public void addEventListener(String elementId, String eventName, String eventHandler) 
+
+   public void addEventListener(String elementId, String eventName, String eventHandler)
    {
-      if(eventName != null && eventHandler != null) 
+      this.addEventListener(elementId, eventName, eventHandler, (String) null);
+   }
+
+   public void addEventListener(String elementId, String eventName, String eventHandler, Map<String, String> dataCol)
+   {
+      StringBuilder b = new StringBuilder();
+      if (dataCol != null && dataCol.size() != 0)
+      {
+         boolean firstElement = true;
+         b.append("{");
+         for (Entry<String, String> entry : dataCol.entrySet())
+         {
+            String key = entry.getKey();
+            String value = entry.getValue();
+            if (!firstElement)
+            {
+               b.append(", ");
+            }
+            b.append(key + ":" + value);
+            firstElement = false;
+         }
+         b.append("}");
+      }
+      this.addEventListener(elementId, eventName, eventHandler, b.toString());
+   }
+
+   public void addEventListener(String elementId, String eventName, String eventHandler, String jsonData)
+   {
+      if (eventName != null && eventHandler != null)
       {
          StringBuilder b = new StringBuilder();
-         b.append("eXo.addEvent('").append(elementId).append("', '").append(eventName).append("', '").append(eventHandler).append("'); \n");
+         b.append("eXo.addEvent(");
+         b.append("'" + elementId + "'").append(", '" + eventName + "'").append(", " + eventHandler);
+         if (jsonData != null && jsonData.trim().length() != 0)
+         {
+            b.append(", " + jsonData);
+         }
+         b.append("); \n");
          data.add(b.toString());
       }
    }

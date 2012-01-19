@@ -172,16 +172,8 @@ eXo.debug = function(message) {
 	}
 } ;
 
-eXo.addEvent = function(element, eventName, handler) {
-	if(typeof element != 'object') element = document.getElementById(element);
-	if(typeof handler == 'string') handler = eval(handler);
-	if(element.addEventListener) {
-		element.addEventListener(eventName, function(e) {
-			handler.apply(this, arguments);
-		}, false);
-	} else if(element.attachEvent) {
-		element.attachEvent(eventName, function(e) {
-			handler.apply(this, arguments);
-		}, false);
-	}
+eXo.addEvent = function(element, eventName, handler, data) {
+   var elementId = typeof element != 'object' ? element : element.id;
+	var jqElement = $("#" + elementId);
+	jqElement.bind(eventName, data, handler);
 };
