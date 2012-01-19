@@ -166,49 +166,10 @@
 	font-weight: bold;
 }
 
-.UIDashboardSelectContainer .DashboardItemContainer .TopItemContainer {
-	background: url('background/Dashboard.gif') repeat-x center -37px;
-	height: 11px;
-	padding: 1px;
-	border-bottom: 1px solid #b7b7b7;
-	display: none;
-}
-
-.UIDashboardSelectContainer .DashboardItemContainer .UpArrowIcon {
-	background: url('background/Dashboard.gif') repeat-x center -98px;
-	height: 11px; width: 15px;
-	margin: auto;
-	cursor: pointer;
-}
-
-.UIDashboardSelectContainer .DashboardItemContainer .DisableArrowIcon {
-	filter: alpha(opacity=30);
-	-moz-opacity: 0.3;
-}
-
 .UIDashboardSelectContainer .DashboardItemContainer .MiddleItemContainer {
 	overflow: hidden;
 }
 	
-.UIDashboardSelectContainer .DashboardItemContainer .BottomItemContainer {
-	background: url('background/Dashboard.gif') repeat-x center -37px;
-	height: 11px;
-	padding: 1px;
-	border-top: 1px solid #b7b7b7;
-	display: none;
-}
-
-.UIDashboardSelectContainer .DashboardItemContainer .DownArrowIcon {
-	background: url('background/Dashboard.gif') repeat-x center -114px;
-	height: 11px; width: 15px;
-	margin: auto;
-	cursor: pointer;
-}
-
-.UIDashboardSelectContainer .DashboardItemContainer .DisableContainer {
-	background:	url('background/Dashboard.gif') repeat-x center -23px;
-}
-
 .UIDashboardSelectContainer .DashboardItemContainer .GadgetCategory {
 	padding: 10px;
 	text-transform: capitalize;

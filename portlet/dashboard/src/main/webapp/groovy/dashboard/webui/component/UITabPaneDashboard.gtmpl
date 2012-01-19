@@ -45,5 +45,5 @@
 			</div>
 				<%} %>	
 	<% } %>
-	<a class="AddDashboard" href="javascript:void(0);" onclick="eXo.webui.UITabbedDashboard.createTabDashboard(this)"></a>	
+	<a class="AddDashboard" href="javascript:void(0);" onclick="eXo.webui.UITabbedDashboard.createTabDashboard(this)" title="Add Dashboard"></a>	
 </div>
