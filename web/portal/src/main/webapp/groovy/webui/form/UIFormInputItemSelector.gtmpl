@@ -1,11 +1,14 @@
-<%  import  org.exoplatform.webui.form.UIForm; %>	
 <%
-	String onMouseOver = "eXo.webui.UIItemSelector.onOver(this, true)";
-	String onMouseOut = "eXo.webui.UIItemSelector.onOver(this, false)";
+	import  org.exoplatform.webui.form.UIForm;
+	import org.exoplatform.web.application.JavascriptManager;
+
 	String onClick = "eXo.webui.UIItemSelector.onClick(this)";
 	
 	options = uicomponent.getItemCategories();
 	UIForm form = uicomponent.getAncestorOfType(UIForm.class);	
+	
+	def rcontext = _ctx.getRequestContext();
+	JavascriptManager jsmanager = rcontext.getJavascriptManager();		
 %>
 <div class="UIItemSelector">	
 	<div class="RightColumnStyle" style="width: 99.5%;">
@@ -24,8 +27,11 @@
 						String setHiddenValue = "eXo.webui.UIForm.setHiddenValue('$form.name', '$uicomponent.name','$opt.name')"
 						String submitEvent = "eXo.webui.UIForm.submitEvent('$form.id','SelectItemOption', '')";
 						if (opt.isSelected()) itemSelected = "SelectedItem Item" ;
+						String itemId = uicomponent.getId() + "-" + opt.hashCode();
+						jsmanager.addEventListener(itemId, "mouseover", "eXo.webui.UIItemSelector.onOver", "{over:true, element:this}")
+						jsmanager.addEventListener(itemId, "mouseout", "eXo.webui.UIItemSelector.onOver", "{over:false, element:this}")
 				 %>
-						<div class="$itemSelected" onmouseover="$onMouseOver" onmouseout="$onMouseOut" onclick="$onClick;$setHiddenValue;$submitEvent">
+						<div id="${itemId}" class="$itemSelected" onclick="$onClick;$setHiddenValue;$submitEvent">
 							<div class="LeftItem">
 								<div class="RightItem">	
 									<div class="ItemTitle"><%=_ctx.appRes(opt.getName() + ".label")%></div>

@@ -502,8 +502,11 @@ function VerticalScrollManager() {
 	repeat = null;
 }
 
-VerticalScrollManager.prototype.initScroll = function (clickedEle, isUp, step) {
+VerticalScrollManager.prototype.initScroll = function (event) {
 	var DOMUtil = eXo.core.DOMUtil;
+	var clickedEle = this;
+	var isUp = event.data.isUp;
+	var step = event.data.step;
 	var verticalScroll = eXo.portal.VerticalScrollManager;
 	var container = DOMUtil.findAncestorByClass(clickedEle, "ItemContainer");
 	var middleCont = DOMUtil.findFirstDescendantByClass(container, "div", "MiddleItemContainer");

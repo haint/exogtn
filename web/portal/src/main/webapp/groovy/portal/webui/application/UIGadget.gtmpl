@@ -34,19 +34,24 @@
 	String unmaxiTitle = _ctx.appRes("UIGadget.tooltip.Unmaximize");
 
 	def standaloneURL = uicomponent.getStandaloneURL();
+	String onMouseDown = "function(){event.cancelBubble=true;}";
+	jsmanager.addEventListener("CloseGadget-" + id, "mousedown", onMouseDown);
+	jsmanager.addEventListener("MaximizeAction-" + id, "mousedown", onMouseDown);
+	jsmanager.addEventListener("MinimizeAction-" + id, "mousedown", onMouseDown);
+	jsmanager.addEventListener("EditGadget-" + id, "mousedown", onMouseDown);
 %>
 <div class="UIGadget" id="$id" style="left: $posX; top: $posY; z-Index: $zIndex; width: 100%" >
 	<a style="display:none" href="$standaloneURL"></a>
 	<div class="GadgetControl ClearFix" style="visibility: visible;">
-		<span class="CloseGadget IconControl" onclick="eXo.gadget.UIGadget.deleteGadget(this)" onmousedown="event.cancelBubble=true;" title="<%=_ctx.appRes("UIGadget.tooltip.deleteGadget")%>"></span>
-		<span class="<%=view.equals(uicomponent.HOME_VIEW) ? "MaximizeGadget" : "RestoreGadget";%> IconControl"
-                        onclick="eXo.gadget.UIGadget.maximizeGadget(this)" onmousedown="event.cancelBubble=true;"
+		<span id="CloseGadget-$id" class="CloseGadget IconControl" onclick="eXo.gadget.UIGadget.deleteGadget(this)" title="<%=_ctx.appRes("UIGadget.tooltip.deleteGadget")%>"></span>
+		<span id="MaximizeAction-$id" class="<%=view.equals(uicomponent.HOME_VIEW) ? "MaximizeGadget" : "RestoreGadget";%> IconControl"
+                        onclick="eXo.gadget.UIGadget.maximizeGadget(this)"
                         title="<%=view.equals(uicomponent.HOME_VIEW) ? maxiTitle : unmaxiTitle%>"></span>
-		<span class="<%=isMini ? "RestoreGadget": "MinimizeGadget";%> MinimizeAction IconControl" 
-						onclick="eXo.gadget.UIGadget.minimizeGadget(this)" onmousedown="event.cancelBubble=true;" style="display:none;" 
+		<span id="MinimizeAction-$id" class="<%=isMini ? "RestoreGadget": "MinimizeGadget";%> MinimizeAction IconControl" 
+						onclick="eXo.gadget.UIGadget.minimizeGadget(this)" style="display:none;" 
 						title="<%=isMini ? unminiTitle : miniTitle%>" miniTitle="$miniTitle" unminiTitle="$unminiTitle"></span>
 		<% if(uicomponent.isSettingUserPref()) { %>
-           <span class="EditGadget IconControl" onclick="eXo.gadget.UIGadget.editGadget('$id')" onmousedown="event.cancelBubble=true;" title="<%=_ctx.appRes("UIGadget.tooltip.editGadget")%>"></span>
+           <span id="EditGadget-$id" class="EditGadget IconControl" onclick="eXo.gadget.UIGadget.editGadget('$id')" title="<%=_ctx.appRes("UIGadget.tooltip.editGadget")%>"></span>
 		<% } %>
         <span class="GadgetDragHandleArea" style="display: none;"></span>
 		<span class="GadgetTitle" style="display: none;"><%= uicomponent.getApplicationName() %></span>

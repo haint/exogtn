@@ -11,16 +11,20 @@
 	def indexOfRightMostDisplayedSibbling = uicomponent.getRightMostDisplayedNodeIndex(sibling, rcontext);
 	def indexOfRightMostDisplayedChild = uicomponent.getRightMostDisplayedNodeIndex(children, rcontext);
 	
+	JavascriptManager jsmanager = rcontext.getJavascriptManager();
+	
 	if(uiPopupMenu != null){
 		String id = uicomponent.getParent().getId();
-		rcontext.getJavascriptManager().importJavascript('eXo.webui.UIRightClickPopupMenu');
-		rcontext.getJavascriptManager().addJavascript("eXo.webui.UIRightClickPopupMenu.disableContextMenu('"+id+"');");
+		jsmanager.importJavascript('eXo.webui.UIRightClickPopupMenu');
+		jsmanager.addJavascript("eXo.webui.UIRightClickPopupMenu.disableContextMenu('"+id+"');");
 		uicomponent.renderUIComponent(uiPopupMenu); 
 	}
+	
+	jsmanager.addEventListener(uicomponent.getId(), "mousedown", "function(){event.cancelBubble=true;}");
 %>
 <ul class="UITrees TreeContainer">
 			<li class="HomeNode">
-				<a class="LevelUpArrowIcon" href="<%=uicomponent.getActionLink();%>" onmousedown="event.cancelBubble=true;" title="<%=_ctx.appRes("UITree.tooltip.UpLevel")%>" style="display: block;"></a>
+				<a id="${uicomponent.id}" class="LevelUpArrowIcon" href="<%=uicomponent.getActionLink();%>" title="<%=_ctx.appRes("UITree.tooltip.UpLevel")%>" style="display: block;"></a>
 			</li>
 			<%
 			int count=0;

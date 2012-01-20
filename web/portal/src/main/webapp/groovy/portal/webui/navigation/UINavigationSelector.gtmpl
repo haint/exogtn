@@ -7,6 +7,10 @@
 	jsmanager.addJavascript("eXo.webui.UIDropDownControl.init('$uicomponent.id');");
 	jsmanager.addOnResizeJavascript("eXo.core.DOMUtil.cleanUpHiddenElements");
 	def options = uicomponent.getOptions();
+	
+	String onMouseDown = "eXo.portal.VerticalScrollManager.initScroll";
+	jsmanager.addEventListener("TopItemContainer-" + uicomponent.getId(), "mousedown", onMouseDown, "{isUp:true, step:10}");
+	jsmanager.addEventListener("BottomItemContainer-" + uicomponent.getId(), "mousedown", onMouseDown, "{isUp:false, step:10}");
 %>
 	<div class="UIDropDownControl" id="$uicomponent.id">
 		<div class="UIDropDownTitle" onclick="eXo.webui.UIDropDownControl.show(this, event);">
@@ -44,7 +48,7 @@
 				<div class="RightMiddelItem">
 				
 					<div class="ItemListContent ItemContainer">
-						<div class="TopItemContainer" onmousedown="eXo.portal.VerticalScrollManager.initScroll(this, true, 10)">
+						<div id="TopItemContainer-$uicomponent.id" class="TopItemContainer">
 							<div class="Arrow UpArrowIcon"><span></span></div>
 						</div>
 						<div class="MiddleItemContainer">
@@ -64,7 +68,7 @@
 							</div>
 							<% selectedIndex++;}%>
 						</div>
-						<div class="BottomItemContainer" onmousedown="eXo.portal.VerticalScrollManager.initScroll(this, false, 10)">
+						<div id="BottomItemContainer-$uicomponent.id" class="BottomItemContainer">
 							<div class="Arrow DownArrowIcon"><span></span></div>
 						</div>
 					</div>
