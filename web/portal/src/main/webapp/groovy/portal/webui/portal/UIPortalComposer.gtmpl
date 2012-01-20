@@ -31,7 +31,7 @@
 				<a href="#<%=_ctx.appRes(popupId + ".action.ViewProperties")%>" class="PageProfileIcon"><%=_ctx.appRes(popupId + ".action.ViewProperties")%></a>
 			</span>
 			<% String changeEditMode = uicomponent.event("SwitchMode", null, null); %>
-			<span onclick="$changeEditMode" class="ActionButton SimpleStyle1" onmouseover="this.style.color = '#058ee6'" onmouseout="this.style.color='black'">
+			<span onclick="$changeEditMode" class="ActionButton SimpleStyle1">
 				<a href="#<%=_ctx.appRes(popupId + ".action.SwitchMode")%>" class="ViewAsBlockIcon"><%=_ctx.appRes(popupId + ".action.SwitchMode")%></a>
 			</span>						
 		</div>
