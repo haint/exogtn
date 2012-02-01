@@ -36,7 +36,6 @@ import org.exoplatform.webui.event.EventListener;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -56,14 +55,14 @@ public class UIApplicationList extends UIContainer
    {
    }
 
-   public Application getApplication(String id) throws Exception
+   public Application getApplication(String applicationId) throws Exception
    {
       for (ApplicationCategory category : getCategories())
       {
          List<Application> items = category.getApplications();
          for (Application item : items)
          {
-            if (item.getId().equals(id))
+            if (item.toString().equals(applicationId))
                return item;
          }
       }

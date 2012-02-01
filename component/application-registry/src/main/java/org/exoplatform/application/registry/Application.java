@@ -33,6 +33,7 @@ import java.util.Date;
  */
 public class Application implements Serializable
 {
+   private static final String APPLICATION_PREFIX = "app_";
 
    private String categoryName;
 
@@ -183,5 +184,11 @@ public class Application implements Serializable
    public void setIconURL(String iconURL)
    {
       this.iconURL = iconURL;
+   }
+
+   @Override
+   public String toString()
+   {
+      return APPLICATION_PREFIX + getCategoryName().hashCode() + "_" + getApplicationName().hashCode();
    }
 }
