@@ -73,7 +73,7 @@
 																<img onclick="if(confirm('<%=confirm%>')) eXo.webui.UIForm.submitEvent('<%=formName%>', '<%=actionInfo[0]%>', '&objectId=<%=arrInfor[i]%>');" alt="<%=actionInfo[0]%>" class="DeleteIconInfo" src="/eXoResources/skin/DefaultSkin/background/Blank.gif"/>										 
 														<%} else { %>
 																<div class="ActionField" style="float:left;">
-																	[ <a href="javascript:eXo.webui.UIForm.submitEvent('<%=formName%>', '<%=actionInfo[0]%>', '&objectId=<%=arrInfor[i]%>');">
+																	[ <a href="#<%=arrInfor[i]%>" onclick="eXo.webui.UIForm.submitEvent('<%=formName%>', '<%=actionInfo[0]%>', '&objectId=<%=arrInfor[i]%>');">
 																			<%=arrInfor[i]%>
 																	</a> ]
 																</div>
@@ -85,7 +85,7 @@
 														%>
 														<div class="ActionFieldContainer">
 															<div class="ActionField">
-																[ <a href="javascript:eXo.webui.UIForm.submitEvent('<%=formName%>', '<%=actionInfo[0]%>', '&objectId=<%=arrInfor[i]%>');">
+																[ <a href="#<%=arrInfor[i]%>" onclick="eXo.webui.UIForm.submitEvent('<%=formName%>', '<%=actionInfo[0]%>', '&objectId=<%=arrInfor[i]%>');">
 																	<%=arrInfor[i]%>
 																</a> ]
 															</div>	
@@ -145,14 +145,14 @@
 					<%for(i in 0..actions.length -1) { 
 							if(actionValues != null && actionValues.length > 0) { 
 								if(actionValues[i] != null) { %>
-									<a href="#<%=_ctx.appRes(formName + ".action." + actions[i])%>" class="ActionButton LightBlueStyle" onclick="javascript:eXo.webui.UIForm.submitEvent('<%=formName%>','<%=actions[i]%>','&objectId=<%=actionValues[i]%>');"><%=_ctx.appRes(formName + ".action." + actions[i])%></a>
+									<a href="#<%=_ctx.appRes(formName + ".action." + actions[i])%>" class="ActionButton LightBlueStyle" onclick="eXo.webui.UIForm.submitEvent('<%=formName%>','<%=actions[i]%>','&objectId=<%=actionValues[i]%>');"><%=_ctx.appRes(formName + ".action." + actions[i])%></a>
 							<%} else { %>
-									<a href="#<%=_ctx.appRes(formName + ".action." + actions[i])%>" class="ActionButton LightBlueStyle" onclick="javascript:eXo.webui.UIForm.submitForm('<%=formName%>','<%=actions[i]%>', true);"><%=_ctx.appRes(formName + ".action." + actions[i])%></a>		 
+									<a href="#<%=_ctx.appRes(formName + ".action." + actions[i])%>" class="ActionButton LightBlueStyle" onclick="eXo.webui.UIForm.submitForm('<%=formName%>','<%=actions[i]%>', true);"><%=_ctx.appRes(formName + ".action." + actions[i])%></a>		 
 					 	 <%
 								}
 							} else { 
 							%>
-								<a href="#<%=_ctx.appRes(formName + ".action." + actions[i])%>" class="ActionButton LightBlueStyle" onclick="javascript:eXo.webui.UIForm.submitForm('<%=formName%>','<%=actions[i]%>', true);"><%=_ctx.appRes(formName + ".action." + actions[i])%></a>		 
+								<a href="#<%=_ctx.appRes(formName + ".action." + actions[i])%>" class="ActionButton LightBlueStyle" onclick="eXo.webui.UIForm.submitForm('<%=formName%>','<%=actions[i]%>', true);"><%=_ctx.appRes(formName + ".action." + actions[i])%></a>		 
 						<%}%>
 					<%} %>
 				</div>

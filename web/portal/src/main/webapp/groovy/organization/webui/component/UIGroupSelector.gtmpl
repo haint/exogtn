@@ -34,7 +34,7 @@
 	</div>
 	
 	<div class="UIAction"> 
-		<a href="javascript:void(0);" onclick="<%=uicomponent.event("SelectGroup");%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes("UIGroupSelector.action.done")%></a>
+		<a href="#<%=_ctx.appRes("UIGroupSelector.action.done")%>" onclick="<%=uicomponent.event("SelectGroup");%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes("UIGroupSelector.action.done")%></a>
 	</div>
 
 </div> 		

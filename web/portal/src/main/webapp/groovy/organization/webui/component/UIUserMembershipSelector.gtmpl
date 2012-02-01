@@ -55,7 +55,7 @@
 	<% if(uicomponent.isAdminRole()) { %>
 	
 	<div class="UIAction"> 
-		<a href="#<%=_ctx.appRes(uicomponent.getId() + ".action.SelectPermission")%>" onclick="javascript: eXo.webui.UIPopupWindow.show('<%=uicomponent.getChild(UIPopupWindow.class).getId();%>');" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".action.SelectPermission")%></a>
+		<a href="#<%=_ctx.appRes(uicomponent.getId() + ".action.SelectPermission")%>" onclick="eXo.webui.UIPopupWindow.show('<%=uicomponent.getChild(UIPopupWindow.class).getId();%>');" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".action.SelectPermission")%></a>
 	</div>
 		
 	<% }%>	
