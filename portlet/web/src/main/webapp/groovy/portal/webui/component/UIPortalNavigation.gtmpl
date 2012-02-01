@@ -103,7 +103,7 @@
 					 					<a class="TabIcon ${iconType}" href="$nodeURL">$label</a>
 					 				""";
 								} else {%>
-									<a class="TabIcon ${iconType}" href="javascript:void(0)">$label</a>
+									<a class="TabIcon ${iconType}" href="$label">$label</a>
 							<%}%>								
 							</span>	
 						<%

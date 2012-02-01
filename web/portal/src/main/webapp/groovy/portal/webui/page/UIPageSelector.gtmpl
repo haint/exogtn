@@ -70,7 +70,7 @@
 	</div>
 	<div class="UIAction">
 		 <%
-		String clearPageEvent = "javascript:void(0);"; 
+		String clearPageEvent = ""; 
 		String css = "FloatBlockHidden ActionButton SimpleStyle"; 
 		def uiForm = uicomponent.getAncestorOfType(UIForm.class);
 		createPageEvent = uiForm.event("CreatePage"); 

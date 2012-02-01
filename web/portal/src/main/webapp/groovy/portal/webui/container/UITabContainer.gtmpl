@@ -65,7 +65,6 @@
 											<div class="RightTab">
 									 				<%
 														if(modeState > 0){
-															String actionLink = uicomponent.event("EditContainer", "$uiChild.id") - "javascript:";
 															String showCategory = "eXo.webui.UIPopupSelectCategory.show(this, event);"
 															String moveLeftAction = uicomponent.event("MoveLeft", tabId);
 															String moveRightAction = uicomponent.event("MoveRight", tabId);
