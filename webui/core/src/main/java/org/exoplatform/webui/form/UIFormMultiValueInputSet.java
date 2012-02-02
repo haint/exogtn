@@ -222,7 +222,28 @@ public class UIFormMultiValueInputSet extends UIFormInputContainer<List>
 
          uiInput.setReadOnly(readonly_);
          uiInput.setDisabled(!enable_);
-
+         
+         String label = "";
+         boolean hasLabel = false;
+         if (uiInput.getLabel() != null)
+         {
+            label = uiForm.getLabel(res, uiInput.getLabel());
+         }
+         else
+         {
+            label = uiForm.getLabel(res, uiInput.getId());
+         }
+         if (uiInput.getLabel() != null || (label != uiInput.getId()))
+         {
+            hasLabel = true;
+         }
+         if (hasLabel)
+         {
+            writer.write("<label for=\"" + uiInput.getId() + "\">");
+            writer.write(label);
+            writer.write("</label>");
+         }
+         
          uiInput.processRender(context);
 
          if ((size >= 2) || ((size == 1) && (uiInput.getValue() != null)))
