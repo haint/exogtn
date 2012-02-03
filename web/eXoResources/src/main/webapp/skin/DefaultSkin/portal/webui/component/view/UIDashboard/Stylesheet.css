@@ -154,11 +154,16 @@
 	background: #ececec;
 }
 
+.UIDashboardSelectContainer .UIAddGadgetForm .AddNewNodeIcon {
+	display: inline-block;
+}
+
 .UIDashboardSelectContainer .DashboardItemContainer .InputContainer input {
 	margin: 0 3px 0 0px;
 	border: 1px solid #b8babf;
 	font-size: 11px; 
 	width: 165px;
+	vertical-align: 4px;
 }
 
 .UIDashboardSelectContainer .DashboardItemContainer .GadgetItemsContainer {

@@ -126,7 +126,7 @@
 									%>
 									<td>
 										<div class="ActionContainer">
-											<img onclick="$addAction" alt="Add" src="/eXoResources/skin/sharedImages/Blank.gif" class="SelectPageIcon" />
+											<a href="javascript:void(0);" onclick="$addAction" title="Add" src="/eXoResources/skin/sharedImages/Blank.gif" class="SelectPageIcon"></a>
 										</div>
 									</td>
 									<% } %>
