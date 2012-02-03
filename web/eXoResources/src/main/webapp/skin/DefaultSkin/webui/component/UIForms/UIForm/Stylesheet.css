@@ -182,6 +182,14 @@
 	padding: 0px 4px;
 }
 
+.UIFormInputSet .UIFormGrid .ActionIcon {
+	display: inline-block;
+}
+
+.UIFormInputSet .UIFormGrid input {
+	vertical-align: bottom;
+}
+
 /*####################- UIPermissionForm -#################*/
 
 .UIPermissionForm .UIGroupSelector .RightGroupSelector .Content {

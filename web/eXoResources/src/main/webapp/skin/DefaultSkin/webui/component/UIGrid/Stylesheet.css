@@ -68,7 +68,7 @@
 	color: #024369;
 }
 
-.UIGrid .ActionContainer img {
+.UIGrid .ActionContainer .ActionIcon {
 	margin: 0px 4px;
 	width: 20px;
 	height: 20px;
@@ -76,6 +76,7 @@
 	background-repeat: no-repeat;
 	float: none; 
 	cursor: pointer;
+	display: inline-block;
 }
 
 .UIGrid .Text {
