@@ -27,12 +27,12 @@
 							<div class="VerticalLayout">
 								<table class="UIFormGrid">
 									<tr class="UserNameField">
-										<td class="FieldLabel"><%=_ctx.appRes("UILoginForm.label.UserName")%></td>
-										<td><input class="UserName" name="username"/></td>
+										<td class="FieldLabel"><label for="username"><%=_ctx.appRes("UILoginForm.label.UserName")%></label></td>
+										<td><input class="UserName" type="text" name="username" id="username"/></td>
 									</tr>
 									<tr class="PasswordField" id="UIPortalLoginFormControl" onkeypress="eXo.portal.UIPortalControl.onEnterPress(event)">
-										<td class="FieldLabel"><%=_ctx.appRes("UILoginForm.label.password")%></td>
-										<td><input class="Password" type="password" name="password"/></td>
+										<td class="FieldLabel"><label for="password"><%=_ctx.appRes("UILoginForm.label.password")%></label></td>
+										<td><input class="Password" type="password" name="password" id="password"/></td>
 									</tr> 								
 									<tr class="RememberField" onkeypress="eXo.portal.UIPortalControl.onEnterPress(event)">
 										<td class="FieldLabel"><input type="checkbox" class="checkbox" value="true" name="rememberme"/></td>
