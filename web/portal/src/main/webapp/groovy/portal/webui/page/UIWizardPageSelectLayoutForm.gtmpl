@@ -46,8 +46,11 @@
 								String onClick = "eXo.webui.UIItemSelector.onClick(this, '"+template.getIcon()+"')";
 								if(template.isSelected()) itemSelected = "SelectedItem Item"; 
 								String itemId = uicomponent.getId() + "-" + template.hashCode();
-								jsmanager.addEventListener(itemId, "mouseover", "eXo.webui.UIItemSelector.onOver", "{over:true, element:this}")
-								jsmanager.addEventListener(itemId, "mouseout", "eXo.webui.UIItemSelector.onOver", "{over:false, element:this}")
+								jsmanager.addCustomizedOnLoadScript("document.getElementById('" +itemId+ "').tabIndex = 0");
+								jsmanager.addEventListener(itemId, "mouseover", "eXo.webui.UIItemSelector.onOver", "{over:true, element:this}");
+								jsmanager.addEventListener(itemId, "mouseout", "eXo.webui.UIItemSelector.onOver", "{over:false, element:this}");
+								jsmanager.addEventListener(itemId, "focus", "eXo.webui.UIItemSelector.onOver", "{over:true, element:this}");
+								jsmanager.addEventListener(itemId, "blur", "eXo.webui.UIItemSelector.onOver", "{over:false, element:this}");
 						%>
 								<div class="$itemSelected" onclick="$onClick;$setHiddenValue;">
 									<div class="LeftItem">
