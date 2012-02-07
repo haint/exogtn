@@ -43,7 +43,7 @@ import java.util.Calendar;
  *          hoa.nguyen@exoplatform.com
  * Sep 26, 2006  
  */
-@ComponentConfig(lifecycle = UIFormLifecycle.class, template = "system:/groovy/webui/form/UIForm.gtmpl", events = {
+@ComponentConfig(lifecycle = UIFormLifecycle.class, events = {
    @EventConfig(listeners = UIPermissionForm.SelectMembershipActionListener.class),
    @EventConfig(listeners = UIPermissionForm.DeleteActionListener.class),
    @EventConfig(listeners = UIPermissionForm.ChangePublicModeActionListener.class)})
