@@ -29,11 +29,8 @@
 						if (opt.isSelected()) itemSelected = "SelectedItem Item" ;
 						String itemId = uicomponent.getId() + "-" + opt.hashCode();
 						
-						jsmanager.addCustomizedOnLoadScript("document.getElementById('" +itemId+ "').tabIndex = 0");
-						jsmanager.addEventListener(itemId, "mouseover", "eXo.webui.UIItemSelector.onOver", "{over:true, element:this}");
-						jsmanager.addEventListener(itemId, "mouseout", "eXo.webui.UIItemSelector.onOver", "{over:false, element:this}");
-						jsmanager.addEventListener(itemId, "focus", "eXo.webui.UIItemSelector.onOver", "{over:true, element:this}");
-						jsmanager.addEventListener(itemId, "blur", "eXo.webui.UIItemSelector.onOver", "{over:false, element:this}");
+						jsmanager.addEventListener(itemId, "mouseover focus", "eXo.webui.UIItemSelector.onOver", "{over:true, element:this}");
+						jsmanager.addEventListener(itemId, "mouseout blur", "eXo.webui.UIItemSelector.onOver", "{over:false, element:this}");
 				 %>
 						<div id="${itemId}" class="$itemSelected" onclick="$onClick;$setHiddenValue;$submitEvent">
 							<div class="LeftItem">

@@ -23,11 +23,8 @@
 	
 	String title = encoder.encode(uicomponent.getDisplayTitle());
 	if(uiPortalApp.isEditing()) {
-	   jsmanager.addCustomizedOnLoadScript("document.getElementById('UIPortlet-" +portletId+ "').tabIndex = 0");
-	   jsmanager.addEventListener("UIPortlet-" +portletId, "mouseover", "eXo.portal.UIPortal.blockOnMouseOver");
-	   jsmanager.addEventListener("UIPortlet-" +portletId, "mouseout", "eXo.portal.UIPortal.blockOnMouseOut");
-	   jsmanager.addEventListener("UIPortlet-" +portletId, "focus", "eXo.portal.UIPortal.blockOnMouseOver");
-	   jsmanager.addEventListener("UIPortlet-" +portletId, "blur", "eXo.portal.UIPortal.blockOnMouseOut");
+	   jsmanager.addEventListener("UIPortlet-" +portletId, "mouseover focus", "eXo.portal.UIPortal.blockOnMouseOver");
+	   jsmanager.addEventListener("UIPortlet-" +portletId, "mouseout blur", "eXo.portal.UIPortal.blockOnMouseOut");
 %>
 	<div class="UIPortlet <%=hasPermission?"":"ProtectedPortlet"%>" id="UIPortlet-$portletId" style="top: 0px; left:0px;">
 		<div class="UIComponentBlock">
@@ -108,21 +105,15 @@
 										}
 								%>
 										<% 
-											jsmanager.addCustomizedOnLoadScript("document.getElementById('Maximized-" +portletId+ "').tabIndex = 0");
-											jsmanager.addEventListener("Maximized-" +portletId, "mouseover", "eXo.webui.UIPortlet.onControlOver"); 
-											jsmanager.addEventListener("Maximized-" +portletId, "mouseout", "eXo.webui.UIPortlet.onControlOut");	
-											jsmanager.addEventListener("Maximized-" +portletId, "focus", "eXo.webui.UIPortlet.onControlOver"); 
-											jsmanager.addEventListener("Maximized-" +portletId, "blur", "eXo.webui.UIPortlet.onControlOut");	
+											jsmanager.addEventListener("Maximized-" +portletId, "mouseover focus", "eXo.webui.UIPortlet.onControlOver"); 
+											jsmanager.addEventListener("Maximized-" +portletId, "mouseout blur", "eXo.webui.UIPortlet.onControlOut");	
 										%>
 										<div id="Maximized-${portletId}" class="ControlIcon ${maximizedMode}Icon" title="$renderMaxi"	onclick="$maximizedAction"><span></span>
 												<div style="display:none">{"normalTitle":"$maxiTooltip","modeTitle":"$restoreDown"}</div>
 										</div>
 										<% 
-											jsmanager.addCustomizedOnLoadScript("document.getElementById('Minimized-" +portletId+ "').tabIndex = 0");
-											jsmanager.addEventListener("Minimized-" +portletId, "mouseover", "eXo.webui.UIPortlet.onControlOver"); 
-											jsmanager.addEventListener("Minimized-" +portletId, "mouseout", "eXo.webui.UIPortlet.onControlOut");	
-											jsmanager.addEventListener("Minimized-" +portletId, "focus", "eXo.webui.UIPortlet.onControlOver"); 
-											jsmanager.addEventListener("Minimized-" +portletId, "blur", "eXo.webui.UIPortlet.onControlOut");	
+											jsmanager.addEventListener("Minimized-" +portletId, "mouseover focus", "eXo.webui.UIPortlet.onControlOver"); 
+											jsmanager.addEventListener("Minimized-" +portletId, "mouseout blur", "eXo.webui.UIPortlet.onControlOut");	
 										%> 
 										<div id="Minimized-${portletId}" class="ControlIcon ${minimizedMode}Icon" title="$renderMini"	onclick="$minimizedAction"><span></span>
 												<div style="display:none">{"normalTitle":"$miniTooltip","modeTitle":"$restore"}</div>
@@ -134,11 +125,8 @@
 										String showCategory = "eXo.webui.UIPopupSelectCategory.show(this, event);"
 								%>
 										<% 
-											jsmanager.addCustomizedOnLoadScript("document.getElementById('ArrowDown-" +portletId+ "').tabIndex = 0");
-											jsmanager.addEventListener("ArrowDown-" +portletId, "mouseover", "eXo.webui.UIPortlet.onControlOver"); 
-											jsmanager.addEventListener("ArrowDown-" +portletId, "mouseout", "eXo.webui.UIPortlet.onControlOut");	
-											jsmanager.addEventListener("ArrowDown-" +portletId, "focus", "eXo.webui.UIPortlet.onControlOver"); 
-											jsmanager.addEventListener("ArrowDown-" +portletId, "blur", "eXo.webui.UIPortlet.onControlOut");	
+											jsmanager.addEventListener("ArrowDown-" +portletId, "mouseover focus", "eXo.webui.UIPortlet.onControlOver"); 
+											jsmanager.addEventListener("ArrowDown-" +portletId, "mouseout blur", "eXo.webui.UIPortlet.onControlOut");	
 										%> 
 										<div id="ArrowDown-${portletId}" class="ControlIcon ArrowDownIcon" title="<%=_ctx.appRes("UIPortlet.tooltip.PortletMode");%>" onclick="$showCategory" style="position: relative;">
 											<% /*Begin Popup Menu*/ %>

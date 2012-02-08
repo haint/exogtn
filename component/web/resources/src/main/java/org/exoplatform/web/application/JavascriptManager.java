@@ -125,6 +125,10 @@ public class JavascriptManager
    {
       if (eventName != null && eventHandler != null)
       {
+         if(eventName.indexOf("focus") != -1) 
+         {
+            addCustomizedOnLoadScript("document.getElementById('" +elementId+ "').tabIndex = 0");
+         }
          StringBuilder b = new StringBuilder();
          b.append("eXo.addEvent(");
          b.append("'" + elementId + "'").append(", '" + eventName + "'").append(", " + eventHandler);
