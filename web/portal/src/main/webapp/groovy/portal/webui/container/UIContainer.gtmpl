@@ -26,8 +26,10 @@
 	}
 	
 	JavascriptManager jsmanager = rcontext.getJavascriptManager();
-	jsmanager.addEventListener(uicomponent.getId(), "mouseover focus", "eXo.portal.UIPortal.blockOnMouseOver");
-   	jsmanager.addEventListener(uicomponent.getId(), "mouseout blur", "eXo.portal.UIPortal.blockOnMouseOut");
+	if (uiPortalApp.isEditing()) {
+	   jsmanager.addEventListener(uicomponent.getId(), "mouseover focus", "eXo.portal.UIPortal.blockOnMouseOver");
+	   jsmanager.addEventListener(uicomponent.getId(), "mouseout blur", "eXo.portal.UIPortal.blockOnMouseOut");
+	}
 %>
 
 <div class="UIContainer <%=uiPortalApp.isEditing()?"EdittingContainer":""%> <%=hasPermission?"": "ProtectedContainer"%>" 
@@ -58,7 +60,7 @@
 						<%/*Begin InfoBar*/%>
 						
 							<div class="BlueRoundedStyle ClearFix">
-								<% jsmanager.addEventListener("DragControlArea-" +uicomponent.getId(), "mousedown", "eXo.portal.PortalDragDrop.init") %>
+								<% jsmanager.addEventListener("DragControlArea-" + uicomponent.getId(), "mousedown", "eXo.portal.PortalDragDrop.init") %>
 								<div id="DragControlArea-${uicomponent.id}" class="DragControlArea" title="<%=_ctx.appRes("UIContainer.title.DragControlArea")%>"><span></span></div>
 								<% 
 									String strTitle = uicomponent.getTitle() != null ?
