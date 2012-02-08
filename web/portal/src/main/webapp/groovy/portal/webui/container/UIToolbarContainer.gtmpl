@@ -1,21 +1,13 @@
 <%	
-	import org.exoplatform.web.application.JavascriptManager;
 	import org.exoplatform.portal.webui.workspace.UIPortalApplication;
-	import org.exoplatform.web.application.JavascriptManager;
-	
+
 	def rcontext = _ctx.getRequestContext();
 
 	UIPortalApplication uiPortalApp = rcontext.getUIApplication();
 	boolean hasPermission = uicomponent.hasPermission();
 	if(!uiPortalApp.isEditing() && !hasPermission) return;
-	
-	JavascriptManager jsmanager = rcontext.getJavascriptManager();
-	jsmanager.importJavascript('eXo.portal.PortalDragDrop');
-	jsmanager.addEventListener(uicomponent.getId(), "mouseover focus", "eXo.portal.UIPortal.blockOnMouseOver");
-   	jsmanager.addEventListener(uicomponent.getId(), "mouseout blur", "eXo.portal.UIPortal.blockOnMouseOut");	
 %>
-<div class="UIContainer UIToolbarContainer <%=uiPortalApp.isEditing()?"EdittingContainer":""%> <%=hasPermission?"": "ProtectedContainer"%>" 
-				id="${uicomponent.id}" >
+<div class="UIContainer UIToolbarContainer"  id="${uicomponent.id}" >
 	<div class="NormalContainerBlock">
 		<div class="LeftContainerBlock">
 			<div class="RightContainerBlock UIComponentBlock">
@@ -25,20 +17,18 @@
 				String style = "";
 				String width	= uicomponent.getWidth();
 				String height	= uicomponent.getHeight();
-				if(width != null) style += "width:"+width+";";
-				if(height != null) style += "height:"+height+";";
-				if(portalMode == uiPortalApp.CONTAINER_BLOCK_EDIT_MODE || portalMode == uiPortalApp.APP_BLOCK_EDIT_MODE){
+				if (width != null) style += "width:" + width + ";";
+				if (height != null) style += "height:" + height + ";";
 			%>
-				<div class="LAYOUT-CONTAINER LAYOUT-BLOCK">
-			<%} else {%>
 				<div class="VIEW-CONTAINER ToolbarContainer VIEW-BLOCK">
-			<%} %>
 					<div>
-						<%if(hasPermission) {%>
+						<%if (hasPermission) {%>
 						<div class="UITableColumnContainer" style="margin: 0px auto; $style">
 							<div class="TRContainer" style="zoom: 100%;">
-								<% for(uiChild in uicomponent.getChildren()) {%>
-									<div class="${uiChild.id}TDContainer FloatLeft"><% uicomponent.renderUIComponent(uiChild) %></div>
+								<% for (uiChild in uicomponent.getChildren()) {%>
+									<div class="${uiChild.id}TDContainer FloatLeft">
+									   <% uicomponent.renderUIComponent(uiChild) %>
+									</div>
 								<% } %>
 								<div class="ClearLeft" style="width: 0px; height: 0px;"><span></span></div>
 						 </div>
@@ -46,38 +36,9 @@
 						<%}%>
 					</div>		
 				</div>
-				<%/*Debug On IE	-----For DND */%>
-				
-			<%if(portalMode != UIPortalApplication.NORMAL_MODE){%>
-				<div class="EDITION-BLOCK EDITION-CONTAINER" style="display: none;position: relative;">
-					<div style="position: absolute; top: -86px;">
-						<div class="NewLayer" style="display: none; visibility: hidden;"><span></span></div>
-						<div class="CONTROL-CONTAINER CONTROL-BLOCK UIInfoBar">
-							<%/*Begin InfoBar*/%>
-							<div class="BlueRoundedStyle">
-								<% jsmanager.addEventListener("DragControlArea-" +uicomponent.getId(), "mousedown", "eXo.portal.PortalDragDrop.init") %>
-								<div id="DragControlArea-${uicomponent.id}" class="DragControlArea" title="<%=_ctx.appRes("UIContainer.tooltip.drag")%>" ><span></span></div>
-								<% 
-									String strTitle = uicomponent.getTitle() != null ?
-												ExpressionUtil.getExpressionValue(res, uicomponent.getTitle()) :
-												_ctx.appRes("UIContainer.title.Container");
-								%>
-								<div class="ContainerIcon DefaultContainer16x16Icon"><%=hasPermission ? strTitle : _ctx.appRes("UIPortlet.label.protectedContent")%></div>
-								<%if(hasPermission) {%>
-									<a href="<%=uicomponent.event("EditContainer","$uicomponent.id")%>" class="EditContainerIcon" title="<%=_ctx.appRes("UIContainer.tooltip.editContainer")%>"><span></span></a>
-									<a href="<%=uicomponent.event("DeleteComponent","$uicomponent.id")%>" class="DeleteContainerIcon" title="<%=_ctx.appRes("UIContainer.tooltip.closeContainer")%>"><span></span></a>
-								<%}%>
-							</div>
-							<%/*End InfoBar*/ %>
-						</div>
-					</div>
-				</div>
-			<%} %>
-				
 			</div>
 		</div>
 	</div>	
-	
 </div>
 
 
