@@ -38,6 +38,7 @@ UIPortlet.prototype.onControlOut = function(event) {
 UIPortlet.prototype.onControl = function(element, isOver) {
   var originalElementName = element.className ;
   if(isOver) {
+    if (originalElementName.indexOf("Over") >= 0) return;
     var overElementName = "ControlIcon Over" + originalElementName.substr(originalElementName.indexOf(" ") + 1, 30) ;
     element.className   = overElementName;
    	if(element.className == "ControlIcon OverRestoreIcon"){ 
