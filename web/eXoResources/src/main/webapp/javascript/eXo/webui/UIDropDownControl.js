@@ -22,7 +22,100 @@ function UIDropDownControl() {} ;
 UIDropDownControl.prototype.init = function(id) {
 	//var popup = document.getElementById(id) ;
 	//return popup;
+
+  /*
+  var element = document.getElementById(id);
+  element.setAttribute("tabindex", 0);
+  element.onfocus = function(e) {
+    eXo.webui.UIDropDownControl.show(this, e);
+  }
+  */
+
+  var root = $("#" + id);
+  var title = $(".UIDropDownTitle", root);
+  title.attr("tabindex", 0);
+
+  var anchorContainer = $(".UIDropDownAnchor", root);
+  var anchor =  $("a", anchorContainer);
+  //$(anchor).css("background-color", "#7AAFE5");
+  //$(anchor).css("color", "white");
+  
+  anchor.mouseenter(function(e) {
+    title.unbind("blur");    
+  });
+
+  anchor.mouseleave(function(e) {
+    title.blur(function(e) {
+      anchorContainer.css("display", "none");
+      anchorContainer.css("visibility", "hidden");
+    });    
+  });
+
+  title.keyup(function(e) {
+    if(e.which == 40) { // 40 is key code of arrow down
+      if(anchorContainer.css("display") == "none") {
+        eXo.webui.UIDropDownControl.show(this, e);
+      } else {
+        eXo.webui.UIDropDownControl.highLightItem(anchorContainer);
+      }    
+    } else if(e.which == 27) {
+      anchorContainer.css("display", "none");
+      anchorContainer.css("visibility", "hidden");
+    }
+  });
+
+  title.keydown(function(e) {
+    if(e.which == 9) {
+      anchorContainer.css("display", "none");
+      anchorContainer.css("visibility", "hidden");
+    }
+  });
+
+  title.blur(function(e) {
+    anchorContainer.css("display", "none");
+    anchorContainer.css("visibility", "hidden");
+  });
+  
+  var lastAnchor = anchor[anchor.length-1];
 };
+
+UIDropDownControl.prototype.highLightItem = function(container) {
+  var target = $(".Item", container);
+  console.log(target.next()[0]);
+  var anchors = $("a", container);
+  if(target.length == 0) {
+    $(anchors[0]).addClass("Active");
+  } else {
+    var nextAnchor = $("a", $(anchors[0]));
+    console.log(nextAnchor);
+  }
+}
+
+/*
+UIDropDownControl.prototype.highLightItem = function(container) {
+  var anchors = $("a", container);
+  var flag = true;
+  for(var i = 0; i < anchors.length; i++) {
+    if($(anchors[i]).hasClass("Active")) {
+      flag = false;
+      console.log(i);
+      $(anchors[i]).removeClass("Active");
+      $(anchors[i]).css("background-color", "");
+      if(i == (anchors.length - 1)) {
+        $(anchors[0]).addClass("Active");
+        $(anchors[0]).css("background-color", "#7aafe5");
+      } else {
+        $(anchors[i++]).addClass("Active");
+        $(anchors[i++]).css("background-color", "#7aafe5");
+      }
+    }
+  }
+  if(flag) {
+    $(anchors[0]).addClass("Active");
+    $(anchors[0]).css("background-color", "#7aafe5");
+  }
+};
+*/
 
 UIDropDownControl.prototype.selectItem = function(method, id, selectedIndex) {
 	if(method)	method(id, selectedIndex) ;
