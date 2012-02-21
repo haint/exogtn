@@ -109,7 +109,7 @@
 	background: url('/eXoResources/skin/DefaultSkin/skinIcons/16x16/icons/GrayNextArrow-rt.gif') no-repeat right center; /* orientation=rt */
 }
 
-.UIDropDownControl .OptionItem:hover {
+.UIDropDownControl .Over, .UIDropDownControl .OptionItem:hover {
 	background: #7aafe5 url('/eXoResources/skin/DefaultSkin/skinIcons/16x16/icons/GrayNextArrow.gif') no-repeat left center; /* orientation=lt */
 	background: #7aafe5 url('/eXoResources/skin/DefaultSkin/skinIcons/16x16/icons/GrayNextArrow-rt.gif') no-repeat right center; /* orientation=rt */
 	color: white;

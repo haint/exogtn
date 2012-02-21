@@ -20,9 +20,82 @@
 function UIDropDownControl() {} ;
 
 UIDropDownControl.prototype.init = function(id) {
-	//var popup = document.getElementById(id) ;
-	//return popup;
+  var root = $("#" + id);
+  var title = $(".UIDropDownTitle", root);
+  title.attr("tabindex", 0);
+
+  var anchorContainer = $(".UIDropDownAnchor", root);
+  var anchor =  $("a", anchorContainer);
+
+  anchor.bind("highlight", function(e) {
+    var anchors = $(".OptionItem", root);
+    anchors.removeClass("Over");
+    $(this).addClass("Over");
+  });
+
+  anchor.mouseenter(function(e) {
+    title.unbind("blur");    
+    anchor.removeClass("Over");
+  });
+
+  anchor.mouseleave(function(e) {
+    title.blur(function(e) {
+      anchor.removeClass("Over");
+      anchorContainer.css("display", "none");
+      anchorContainer.css("visibility", "hidden");
+    });    
+  });
+
+  title.keyup(function(e) {
+    if(e.which == 40) { // 40 is key code of arrow down
+      if(anchorContainer.css("display") == "none") {
+        eXo.webui.UIDropDownControl.show(this, e);
+      } else {
+        eXo.webui.UIDropDownControl.highLightItem(anchorContainer);
+      }    
+    } else if(e.which == 27) { // 27 is key code of escape
+      anchorContainer.css("display", "none");
+      anchorContainer.css("visibility", "hidden");
+    } else if(e.which == 13) { // 13 is key code of enter
+      var a = $(".Over", root);
+      if(a.length > 0) 
+        a.trigger("click");
+    }
+  });
+
+  title.keydown(function(e) {
+    if(e.which == 9) {
+      anchorContainer.css("display", "none");
+      anchorContainer.css("visibility", "hidden");
+    }
+  });
+
+  title.blur(function(e) {
+    anchor.removeClass("Over");
+    anchorContainer.css("display", "none");
+    anchorContainer.css("visibility", "hidden");
+  });
+  
+  var lastAnchor = anchor[anchor.length-1];
 };
+
+UIDropDownControl.prototype.highLightItem = function(container) {
+  var anchors = $("a", container);
+  for(var i = 0; i < anchors.length; i++) {
+    var current = $(anchors[i]);
+    if(current.hasClass("Over")) {
+      if(i == anchors.length - 1) 
+        break;
+      else {
+        var next = $(anchors[i+1]);
+        next.trigger("highlight");
+        return;
+      }
+    }
+  }
+  $(anchors[0]).trigger("highlight");
+}
+
 
 UIDropDownControl.prototype.selectItem = function(method, id, selectedIndex) {
 	if(method)	method(id, selectedIndex) ;
