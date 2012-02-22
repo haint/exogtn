@@ -20,82 +20,122 @@
 function UIDropDownControl() {} ;
 
 UIDropDownControl.prototype.init = function(id) {
-  var root = $("#" + id);
-  var title = $(".UIDropDownTitle", root);
-  title.attr("tabindex", 0);
+  var DOMUtil = eXo.core.DOMUtil;
+  var root = document.getElementById(id);
+  var title = DOMUtil.findFirstDescendantByClass(root, "div", "UIDropDownTitle");
+  title.setAttribute("tabindex", 0);
 
-  var anchorContainer = $(".UIDropDownAnchor", root);
-  var anchor =  $("a", anchorContainer);
+  var anchors =  DOMUtil.findDescendantsByClass(root, "a",  "OptionItem");
+  for(var i = 0; i < anchors.length; i++) {
+	  eXo.addEvent(anchors[i], "mouseover", function(event) {
+		  eXo.webui.UIDropDownControl.anchorMouseEnter(event);
+	  }, { eleRoot : root, eleTarget : title });
+	  
+	  eXo.addEvent(anchors[i], "mouseout", function(event) {
+		  eXo.webui.UIDropDownControl.anchorMouseLeave(event);
+	  }, { eleRoot : root, eleTarget : title});
+  }
 
-  anchor.bind("highlight", function(e) {
-    var anchors = $(".OptionItem", root);
-    anchors.removeClass("Over");
-    $(this).addClass("Over");
-  });
+  eXo.addEvent(title, "keyup", function(event) {
+	  eXo.webui.UIDropDownControl.targetOnKeyUp(event);
+  }, { eleRoot : root, eleTarget : title });
 
-  anchor.mouseenter(function(e) {
-    title.unbind("blur");    
-    anchor.removeClass("Over");
-  });
-
-  anchor.mouseleave(function(e) {
-    title.blur(function(e) {
-      anchor.removeClass("Over");
-      anchorContainer.css("display", "none");
-      anchorContainer.css("visibility", "hidden");
-    });    
-  });
-
-  title.keyup(function(e) {
-    if(e.which == 40) { // 40 is key code of arrow down
-      if(anchorContainer.css("display") == "none") {
-        eXo.webui.UIDropDownControl.show(this, e);
-      } else {
-        eXo.webui.UIDropDownControl.highLightItem(anchorContainer);
-      }    
-    } else if(e.which == 27) { // 27 is key code of escape
-      anchorContainer.css("display", "none");
-      anchorContainer.css("visibility", "hidden");
-    } else if(e.which == 13) { // 13 is key code of enter
-      var a = $(".Over", root);
-      if(a.length > 0) 
-        a.trigger("click");
-    }
-  });
-
-  title.keydown(function(e) {
-    if(e.which == 9) {
-      anchorContainer.css("display", "none");
-      anchorContainer.css("visibility", "hidden");
-    }
-  });
-
-  title.blur(function(e) {
-    anchor.removeClass("Over");
-    anchorContainer.css("display", "none");
-    anchorContainer.css("visibility", "hidden");
-  });
-  
-  var lastAnchor = anchor[anchor.length-1];
+  eXo.addEvent(title, "blur", function(event) {
+	  eXo.webui.UIDropDownControl.targetOnBlur(event);
+  }, { eleRoot : root });
 };
 
-UIDropDownControl.prototype.highLightItem = function(container) {
-  var anchors = $("a", container);
+UIDropDownControl.prototype.targetOnBlur = function(event) {
+	var DOMUtil = eXo.core.DOMUtil;
+	var root = event.data.eleRoot;
+	var anchor = DOMUtil.findFirstDescendantByClass(root, "a", "Over");
+	if(anchor) anchor.className = "OptionItem";
+
+	var anchorContainer  = DOMUtil.findFirstDescendantByClass(root, "div", "UIDropDownAnchor");
+	anchorContainer.style.display = 'none';
+	anchorContainer.visibility = 'hidden';
+};
+
+UIDropDownControl.prototype.targetOnKeyUp = function(event) {
+	var DOMUtil = eXo.core.DOMUtil;
+	var root = event.data.eleRoot;
+	var anchorContainer  = DOMUtil.findFirstDescendantByClass(root, "div", "UIDropDownAnchor");
+	
+	if(event.which == 40) { // 40 is key code of arrow down
+		if(anchorContainer.style.display == "none") {
+			eXo.webui.UIDropDownControl.show(event.data.eleTarget, event);
+		} else {
+			eXo.webui.UIDropDownControl.downItem(root);
+		}
+	}	else if(event.which == 38) {
+		if(anchorContainer.style.display == "none") {
+			eXo.webui.UIDropDownControl.show(event.data.eleTarget, event);
+		} else {
+			eXo.webui.UIDropDownControl.upItem(root);
+		}
+	} else if(event.which == 27) { // 27 is key code of escape
+		anchorContainer.style.display = "none";
+		anchorContainer.style.visibility = "hidden";
+	} else if(event.which == 13) { // 13 is key code of enter
+		var anchor = DOMUtil.findFirstDescendantByClass(root, "a", "Over");
+		if(anchor)  anchor.onclick();
+	}
+};
+
+UIDropDownControl.prototype.anchorMouseEnter = function(event) {
+	var target = event.data.eleTarget;
+	var root = event.data.eleRoot
+	//Necessary remove blur handler because current target will be lost focus then click
+	eXo.removeEvent(target, "blur");
+	var DOMUtil = eXo.core.DOMUtil;
+	var anchor = DOMUtil.findFirstDescendantByClass(root, "a", "Over");
+	if(anchor) anchor.className = "OptionItem";
+};
+
+UIDropDownControl.prototype.anchorMouseLeave = function(event) {
+	var target  = event.data.eleTarget;
+	eXo.addEvent(target, "blur", function(event) {
+		eXo.webui.UIDropDownControl.targetOnBlur(event);
+	}, { eleRoot : event.data.eleRoot });
+};
+
+UIDropDownControl.prototype.downItem = function(root) {
+	var DOMUtil = eXo.core.DOMUtil;
+  var anchors = DOMUtil.findDescendantsByClass(root, "a", "OptionItem");
   for(var i = 0; i < anchors.length; i++) {
-    var current = $(anchors[i]);
-    if(current.hasClass("Over")) {
+    var current = anchors[i]
+    if(DOMUtil.hasClass(current, "Over")) {
+    	current.className = "OptionItem";
       if(i == anchors.length - 1) 
         break;
       else {
-        var next = $(anchors[i+1]);
-        next.trigger("highlight");
+        var next = anchors[i+1];
+        next.className = "OptionItem Over";
         return;
       }
     }
   }
-  $(anchors[0]).trigger("highlight");
+  anchors[0].className = "OptionItem Over";
 }
 
+UIDropDownControl.prototype.upItem = function(root) {
+	var DOMUtil = eXo.core.DOMUtil;
+  var anchors = DOMUtil.findDescendantsByClass(root, "a", "OptionItem");
+  for(var i = anchors.length - 1; i >= 0; i--) {
+    var current = anchors[i]
+    if(DOMUtil.hasClass(current, "Over")) {
+    	current.className = "OptionItem";
+      if(i == 0) 
+        break;
+      else {
+        var next = anchors[i-1];
+        next.className = "OptionItem Over";
+        return;
+      }
+    }
+  }
+  anchors[anchors.length - 1].className = "OptionItem Over";
+}
 
 UIDropDownControl.prototype.selectItem = function(method, id, selectedIndex) {
 	if(method)	method(id, selectedIndex) ;

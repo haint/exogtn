@@ -174,11 +174,27 @@ eXo.debug = function(message) {
 
 eXo.addEvent = function(element, eventName, handler, data) {
    var elementId = typeof element != 'object' ? element : element.id;
-	var jqElement = $("#" + elementId);
+	var jqElement;
+	if(elementId) 
+		jqElement= $("#" + elementId);
+	else 
+		jqElement = $(element);
+	
 	if (eventName.toLowerCase().indexOf("focus") != -1 || eventName.toLowerCase().indexOf("blur") != -1) {
 	   if (jqElement.attr("tabindex") == undefined) {
 	      jqElement.attr("tabindex", 0);
 	   }
 	}
 	jqElement.bind(eventName, data, handler);
+};
+
+eXo.removeEvent = function(element, eventName) {
+	var elementId = typeof element != 'object' ? element : element.id;
+	var jqElement;
+	if(elementId) 
+		jqElement= $("#" + elementId);
+	else 
+		jqElement = $(element);
+	
+	jqElement.unbind(eventName);
 };
