@@ -188,6 +188,26 @@ eXo.addEvent = function(element, eventName, handler, data) {
 	jqElement.bind(eventName, data, handler);
 };
 
+/**
+ * Send an ajax request to portal created from a relevant URL
+ * @param event
+ * @returns {false}
+ */
+eXo.ajaxLinkHandler = function(element, event) {
+   var url = element.href;
+   if (url) {
+      var ajaxQueryParam = "ajaxRequest=true";
+      if (url.indexOf(ajaxQueryParam) == -1) {
+         url = url + "&" + ajaxQueryParam;
+      }
+      ajaxGet(url);
+      if (event.preventDefault) {
+         event.preventDefault();
+      } else {
+         event.returnValue = false;
+      }
+   }
+};
 eXo.removeEvent = function(element, eventName) {
 	var elementId = typeof element != 'object' ? element : element.id;
 	var jqElement;
