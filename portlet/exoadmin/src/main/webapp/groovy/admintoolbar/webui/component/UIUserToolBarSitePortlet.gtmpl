@@ -42,7 +42,7 @@
                 label = entityEncoder.encode(label);
 				print """
 					<li class="MenuItem $clazz">
-						<a href="$href" class="ItemIcon SiteIcon">$label</a>						
+						<a href="$href" class="ItemIcon SiteIcon" tabindex="-1">$label</a>						
 				""";
 						if(isCurrent) {
 							renderCurrentPortal(nodeURL);
@@ -98,9 +98,9 @@
 			<li class="MenuItem $tabStyleNavigation $clazz" $getNodeURL>
 		""";
 						if(node.pageRef != null) {
-								print """<a class="ItemIcon $icon" href="$href" $title>$label</a>""";
+								print """<a class="ItemIcon $icon" href="$href" $title tabindex="-1">$label</a>""";
 						} else {
-								print """<a class="ItemIcon $icon" href="#" $title>$label</a>""";
+								print """<a class="ItemIcon $icon" href="#" $title tabindex="-1">$label</a>""";
 						}
 		if(hasChild) {
 			print """
@@ -127,7 +127,7 @@
 
 <ul class="UIUserToolBarSitePortlet UIHorizontalTabs" id="$uicomponent.id" >
 	<li class="UITab NormalToolbarTab">
-		<a class="SitesIcon TBIcon" href="<%= nodeURL.setResource(new NavigationResource(SiteType.PORTAL, currentPortal, "portalnavigation")).toString() %>">
+		<a class="SitesIcon TBIcon" tabindex="-1" href="<%= nodeURL.setResource(new NavigationResource(SiteType.PORTAL, currentPortal, "portalnavigation")).toString() %>">
 			<%=_ctx.appRes("UIUserToolBarSitePortlet.header.site")%>
 		</a>		
 		<% renderPortalNavigations(nodeURL) %>

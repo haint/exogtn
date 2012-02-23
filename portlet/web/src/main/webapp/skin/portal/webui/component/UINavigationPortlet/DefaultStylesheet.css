@@ -173,6 +173,10 @@
 	color: #3e8df0;
 }
 
+.UINavigationPortlet .MenuItemContainer .MenuItem a.Selected {
+	color: #3e8df0;
+}
+
 .UINavigationPortlet .MenuItemContainer .SelectedItem {
 	line-height: 24px;
 	width: auto; 
@@ -261,10 +265,5 @@
 }
 
 .UINavigationPortlet .GroupNavigation .HighlightNavigationTab  > span {
-<<<<<<< HEAD
 	background-color:#ffcf01;
 }
-=======
-	background-color:#ffcf01;
-}
->>>>>>> 4765c2a... EXOGTN-427 [DOM] Admin Toolbar optimization

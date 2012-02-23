@@ -21,8 +21,7 @@
  * A class to manage horizontal tabs
  * TODO : could be a good thing to implement a scroll manager directly in this class
  */
-function UIHorizontalTabs() {
-  this.backupNavigationTabStyle;
+function UIHorizontalTabs() { 
   this.backupItemStyle ;
 };
 
@@ -39,10 +38,12 @@ UIHorizontalTabs.prototype.changeTabNavigationStyle = function(clickedEle, over)
 	if (!eXo.core.DOMUtil.hasClass(clickedEle, "UITab")) clickedEle = eXo.core.DOMUtil.findAncestorByClass(clickedEle, "UITab") ;
 	
 	if(over) {
-		this.backupNavigationTabStyle = clickedEle.className ;
+		if (!clickedEle.backupNavigationTabStyle) {
+			clickedEle.backupNavigationTabStyle = clickedEle.className ;			
+		}
 		clickedEle.className = "UITab HighlightNavigationTab" ;
-	} else if (this.backupNavigationTabStyle){
-		clickedEle.className = this.backupNavigationTabStyle ;
+	} else if (clickedEle.backupNavigationTabStyle){
+		clickedEle.className = clickedEle.backupNavigationTabStyle ;
 	}
 }
 /**

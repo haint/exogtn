@@ -76,6 +76,10 @@
 	color: #058ee6;
 }
 
+.UIToolbarContainer .UITab a.Selected {
+	color: #058ee6;
+}
+
 .UIToolbarContainer .UIHorizontalTabs  {
 	height: 32px; /* orientation=lt */
 	height: auto; /* orientation=rt */

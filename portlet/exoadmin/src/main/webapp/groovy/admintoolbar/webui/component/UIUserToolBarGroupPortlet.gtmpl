@@ -64,9 +64,9 @@
 		   <li class="MenuItem $clazz $tabStyleNavigation" $getNodeURL>
 		""";
 						if(node.pageRef != null) {
-								print """<a class="ItemIcon $icon" href="$actionLink" $title>$label</a>""";
+								print """<a class="ItemIcon $icon" tabindex="-1" href="$actionLink" $title>$label</a>""";
 						} else {
-								print """<a class="ItemIcon $icon" href="#$label" $title>$label</a>""";
+								print """<a class="ItemIcon $icon" tabindex="-1" href="#$label" $title>$label</a>""";
 						}
 		if(hasChild) {
 			print """
@@ -89,7 +89,7 @@
 %> 	
 <ul class="UIUserToolBarGroupPortlet UIHorizontalTabs" id="$uicomponent.id" >
 	<li class="UITab NormalToolbarTab">
-		<a class="GroupIcon TBIcon" href="<%=nodeURL.setResource(new NavigationResource(SiteType.PORTAL, currentPortal, "groupnavigation")).toString() %>"><%=_ctx.appRes("UIUserToolBarGroupPortlet.header.group")%></a>
+		<a class="GroupIcon TBIcon" tabindex="-1" href="<%=nodeURL.setResource(new NavigationResource(SiteType.PORTAL, currentPortal, "groupnavigation")).toString() %>"><%=_ctx.appRes("UIUserToolBarGroupPortlet.header.group")%></a>
 		<% if (!groupNavigations.isEmpty()) { %>
 		<ul style="display:none" class="MenuItemContainer">
 		<% for(nav in groupNavigations) {

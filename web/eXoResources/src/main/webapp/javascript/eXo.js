@@ -181,7 +181,7 @@ eXo.addEvent = function(element, eventName, handler, data) {
 		jqElement = $(element);
 	
 	if (eventName.toLowerCase().indexOf("focus") != -1 || eventName.toLowerCase().indexOf("blur") != -1) {
-	   if (jqElement.attr("tabindex") == undefined) {
+	   if (jqElement.attr("tabindex") == undefined) {		  
 	      jqElement.attr("tabindex", 0);
 	   }
 	}

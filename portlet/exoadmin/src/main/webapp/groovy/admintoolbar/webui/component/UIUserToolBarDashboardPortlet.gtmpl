@@ -63,9 +63,9 @@
 			<li class="MenuItem $clazz $tabStyleNavigation" $getNodeURL>
 		""";
 						if(node.pageRef != null) {
-								print """<a class="ItemIcon $icon" href="$href" $title>$label</a>""";
+								print """<a class="ItemIcon $icon" tabindex="-1" href="$href" $title>$label</a>""";
 						} else {
-								print """<a class="ItemIcon $icon" href="#$label" $title>$label</a>""";
+								print """<a class="ItemIcon $icon" tabindex="-1" href="#$label" $title>$label</a>""";
 						}
 		if(hasChild) {
 			print """
@@ -92,7 +92,7 @@
 %>
 	<ul class="UIUserToolBarDashboardPortlet UIHorizontalTabs" id="$uicomponent.id">
 		<li class="UITab NormalToolbarTab">
-			<a class="DashboardIcon TBIcon" href="$createDashboardLink"><%=_ctx.appRes("UIUserToolBarDashboardPortlet.header.dashboard")%></a>
+			<a class="DashboardIcon TBIcon" tabindex="-1" href="$createDashboardLink"><%=_ctx.appRes("UIUserToolBarDashboardPortlet.header.dashboard")%></a>
 		</li>
 	</ul>	
 <% 
@@ -101,7 +101,7 @@
 %>
 	<ul class="UIUserToolBarDashboardPortlet UIHorizontalTabs" id="$uicomponent.id" >	
 		<li class="UITab NormalToolbarTab">
-			<a class="DashboardIcon TBIcon" href="$link"><%=_ctx.appRes("UIUserToolBarDashboardPortlet.header.dashboard")%></a>
+			<a class="DashboardIcon TBIcon" tabindex="-1" href="$link"><%=_ctx.appRes("UIUserToolBarDashboardPortlet.header.dashboard")%></a>
 				<% renderDashboards(nodeURL, pcontext, userNodes); %>
 		</li>
 	</ul>
