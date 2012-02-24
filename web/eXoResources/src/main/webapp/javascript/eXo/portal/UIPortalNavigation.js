@@ -113,17 +113,22 @@ UIPortalNavigation.prototype.buildMenu = function(popupMenu) {
 	  }
   }
 
-  document.onkeydown = eXo.portal.UIPortalNavigation.onKeyDown;
-  document.onclick = function(e) {
-	  if (!eXo.portal.UIPortalNavigation.currentOpenedMenu) return;
-	  var target = eXo.core.Browser.getEventSource(e);
-	  if (!DOMUtil.findAncestorByClass(target, "li", eXo.portal.UIPortalNavigation.tabStyleClass)) {
-		  eXo.portal.UIPortalNavigation.hideAllContainer(e);
-	  }
-  };
+  if (!eXo.portal.UIPortalNavigation.docEventRegistered) {
+	  var Browser = eXo.core.Browser;
+	  eXo.addEvent(document, "keydown.UIPortalNavigation", eXo.portal.UIPortalNavigation.onKeyDown);
+	  eXo.addEvent(document, "click.UIPortalNavigation", function(e) {
+		  e = e || window.event;
+		  if (!eXo.portal.UIPortalNavigation.currentOpenedMenu) return;
+		  var target = eXo.core.Browser.getEventSource(e);
+		  if (!DOMUtil.findAncestorByClass(target, "li", eXo.portal.UIPortalNavigation.tabStyleClass)) {
+			  eXo.portal.UIPortalNavigation.hideKeyboardContainer(e);
+		  }
+	  });
+	  eXo.portal.UIPortalNavigation.docEventRegistered = true;
+  }
 };
 
-UIPortalNavigation.prototype.hideAllContainer = function(e) {
+UIPortalNavigation.prototype.hideKeyboardContainer = function(e) {
 	var DOMUtil = eXo.core.DOMUtil;
 	var nav = eXo.portal.UIPortalNavigation;	
 	
@@ -139,38 +144,43 @@ UIPortalNavigation.prototype.hideAllContainer = function(e) {
 
 UIPortalNavigation.prototype.onKeyDown = function(e) {
 	var DOMUtil = eXo.core.DOMUtil;
-	var nav = eXo.portal.UIPortalNavigation;	
-	if (!nav.currentOpenedMenu) return;			
+	var nav = eXo.portal.UIPortalNavigation;				
 	
 	e = e || window.event;
 	e.which = e.which || e.keyCode;
 	switch (e.which) {
 	case 27:
 		//ESC
-		nav.hideAllContainer(e);
+		nav.hideKeyboardContainer(e);
+		var src = eXo.core.Browser.getEventSource(e);
+		if (DOMUtil.hasClass(src, "HighlightNavigationTab")) {
+			src.blur();
+		}
 		return;
 	case 13:
 		//Enter
-		var tmp;
+		var a;
 		if (nav.currItem) {
-			tmp = nav.currItem;
+			a = DOMUtil.findDescendantsByTagName(nav.currItem, "a")[0];
 		} else {
-			var visibleConts = nav.superClass.currentVisibleContainers;
-			var currCont = document.getElementById(visibleConts[visibleConts.length - 1]);
-			tmp = DOMUtil.findAncestorByClass(currCont, "UITab");
+			var src = eXo.core.Browser.getEventSource(e);
+			if (DOMUtil.hasClass(src, "HighlightNavigationTab")) {
+				a = DOMUtil.findDescendantsByTagName(src, "a")[0];
+			}
 		}				
-		var a = DOMUtil.findDescendantsByTagName(tmp, "a")[0];
-		if (a.onclick) {
-			a.onclick.call(a, e);
-			nav.hideAllContainer(e);
-		}
-		if (a.href) {
-			window.location = a.href;							
+		if (a) {
+			if (a.onclick) {
+				a.onclick.call(a, e);
+				nav.hideKeyboardContainer(e);
+			}
+			if (a.href) {
+				window.location = a.href;							
+			}									
 		}
 		return;
 	case 9:
 		//Tab
-		if (!nav.currItem) return;
+		if (!nav.currentOpenedMenu || !nav.currItem) return;
 		var tmp = nav.currItem; 
 		do {
 			tmp.onmouseout.call(tmp, e);
@@ -179,7 +189,7 @@ UIPortalNavigation.prototype.onKeyDown = function(e) {
 		return;
 	case 37:
 		//Left
-		if (!nav.currItem) return;
+		if (!nav.currentOpenedMenu || !nav.currItem) return;
 		var parentItem = DOMUtil.findAncestorByClass(nav.currItem, nav.tabStyleClass);
 		if (!parentItem) return;
 		
@@ -188,7 +198,7 @@ UIPortalNavigation.prototype.onKeyDown = function(e) {
 		break;		
 	case 38:
 		//Up
-		if (!nav.currItem) return;
+		if (!nav.currentOpenedMenu || !nav.currItem) return;
 		
 		var tmp = nav.currItem;
 		do {			
@@ -206,7 +216,7 @@ UIPortalNavigation.prototype.onKeyDown = function(e) {
 		break;
 	case 39:
 		//Right
-		if (!nav.currItem) return;
+		if (!nav.currentOpenedMenu || !nav.currItem) return;
 		var childItem = DOMUtil.findFirstDescendantByClass(nav.currItem, "li", nav.tabStyleClass);
 		if (!childItem) return;
 		
@@ -217,6 +227,7 @@ UIPortalNavigation.prototype.onKeyDown = function(e) {
 		break;
 	case 40:
 		//Down
+		if (!nav.currentOpenedMenu) return;
 		var nextItem;
 		if (nav.currItem) {
 			nav.currItem.onmouseout.call(nav.currItem, e);
@@ -270,7 +281,7 @@ UIPortalNavigation.prototype.generateContainer = function(data) {
 UIPortalNavigation.prototype.setTabStyleOnMouseOver = function(e) {
   var tab = this ;
   if (eXo.portal.UIPortalNavigation.previousMenuItem != tab) {	  
-	  eXo.portal.UIPortalNavigation.hideAllContainer();
+	  eXo.portal.UIPortalNavigation.hideKeyboardContainer();
   }
   //highlights the tab
   eXo.webui.UIHorizontalTabs.changeTabNavigationStyle(tab, true);
@@ -323,12 +334,8 @@ UIPortalNavigation.prototype.setTabStyleOnMouseOver = function(e) {
 UIPortalNavigation.prototype.setTabStyleOnMouseOut = function(e, src) {
   var tab = src || this;
   var nav = eXo.portal.UIPortalNavigation;  
-  if (!nav.currentOpenedMenu) return;
   
-  if(eXo.core.DOMUtil.findFirstChildByClass(tab, "ul", nav.containerStyleClass).id !== nav.currentOpenedMenu) {
-	  // de-highlights the tab if it doesn't have a submenu (cond 1) or its submenu isn't visible (cond 2)
-	  eXo.webui.UIHorizontalTabs.changeTabNavigationStyle(tab, false);
-  }
+  eXo.webui.UIHorizontalTabs.changeTabNavigationStyle(tab, false);
   eXo.portal.UIPortalNavigation.hideMenuTimeout(300) ;
 }
 
