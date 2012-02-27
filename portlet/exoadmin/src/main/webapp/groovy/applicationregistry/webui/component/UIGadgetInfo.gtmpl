@@ -17,9 +17,9 @@
 	<div class="UIBreadcumb ClearFix">
 		<div class="FL"><%=_ctx.appRes("UIGadgetInfo.label.gadgetDetails")%></div>
 		<% if(gadget.isLocal()) {%>
-		<div class="EditIcon ControlIcon" title="<%=_ctx.appRes("UIGadgetInfo.title.editGadget")%>" onclick="<%= uicomponent.event("Edit") %>"><span></span></div>
+		<a class="EditIcon ControlIcon" title="<%=_ctx.appRes("UIGadgetInfo.title.editGadget")%>" onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("Edit") %>"><span></span></a>
 		<% } %>
-		<div class="Refresh16x16Icon ControlIcon" title="<%=_ctx.appRes("UIGadgetInfo.title.refresh")%>" onclick="<%= uicomponent.event("Refresh") %>"><span></span></div>
+		<a class="Refresh16x16Icon ControlIcon" title="<%=_ctx.appRes("UIGadgetInfo.title.refresh")%>" onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("Refresh") %>"><span></span></a>
 	</div>
  	<div class="Application">
  		<div class="PortletIcons">
@@ -65,7 +65,7 @@
 								<% if (categoryNames.equals("")) { %>
 										<%=_ctx.appRes("UIGadgetInfo.label.categories.guide")%><br/>
 										<% if (!selectorRender) { %>
-										<a href="#<%=_ctx.appRes("UIGadgetInfo.label.categories.clickHere")%>" onclick="<%= uicomponent.event("ShowCategories") %>" style="color:red;text-decoration:underline;">											
+										<a onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("ShowCategories") %>" style="color:red;text-decoration:underline;">											
 												<%=_ctx.appRes("UIGadgetInfo.label.categories.clickHere")%>											
 										</a>
 										<% } %>

@@ -5,8 +5,8 @@
 %>
 <div class="UIGadgetManagement" id="$uicomponent.id">
 	<div class="UIControlbar ClearFix">
-		<div class="IconControl AddNewIcon" onclick="<%= uicomponent.event("AddRemoteGadget") %>"><%=_ctx.appRes("UIGadgetManagement.label.addRemote")%></div>
-		<div class="IconControl CreateNewIcon" onclick="<%= uicomponent.event("AddLocalGadget") %>"><%=_ctx.appRes("UIGadgetManagement.label.createNew")%></div>		
+		<a class="IconControl AddNewIcon" onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("AddRemoteGadget") %>"><%=_ctx.appRes("UIGadgetManagement.label.addRemote")%></a>
+		<a class="IconControl CreateNewIcon" onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("AddLocalGadget") %>"><%=_ctx.appRes("UIGadgetManagement.label.createNew")%></a>		
 	</div>
 	
 	<div class="AppRegistryContainer ClearFix">
@@ -24,8 +24,8 @@
 		 			%>
 						<div class="$cssItem ItemContent ClearFix">
 						<% def gadgetLabel = gadget.getTitle() %>
-							<a href="#<%= gadget.getTitle() %>" onclick="<%= uicomponent.event("SelectGadget", gadget.getName()) %>" class="TabLabel $gadgetType" title="<%= gadget.getTitle() %>"><%= (gadgetLabel.length() <= 31) ? gadgetLabel : gadgetLabel.substring(0, 28)+"..." %></a>
-							<a href="#<%=_ctx.appRes("UIGadgetManagement.title.deleteGadget")%>" title="<%=_ctx.appRes("UIGadgetManagement.title.deleteGadget")%>" class="ControlIcon DeletePortalIcon" onclick="<%= uicomponent.event("RemoveGadget", gadget.getName()) %>"><span></span></a>
+							<a onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("SelectGadget", gadget.getName()) %>" class="TabLabel $gadgetType" title="<%= gadget.getTitle() %>"><%= (gadgetLabel.length() <= 31) ? gadgetLabel : gadgetLabel.substring(0, 28)+"..." %></a>
+							<a onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("RemoveGadget", gadget.getName()) %>" title="<%=_ctx.appRes("UIGadgetManagement.title.deleteGadget")%>" class="ControlIcon DeletePortalIcon"><span></span></a>
 						</div>
 					<% } %>
 					</div>

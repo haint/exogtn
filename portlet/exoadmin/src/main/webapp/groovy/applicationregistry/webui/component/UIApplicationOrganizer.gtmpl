@@ -8,9 +8,9 @@ def selectedApp = uicomponent.getSelectedApplication();
 %>
 <div class="UIOrganizerManagement" id="$uicomponent.id">
 	<div class="UIControlbar ClearFix">
-		<div class="IconControl AddCategoryIcon" onclick="<%= uicomponent.event("AddCategory") %>"><%=_ctx.appRes("UIOrganizer.label.addCategory")%></div>
+		<a class="IconControl AddCategoryIcon" onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("AddCategory") %>"><%=_ctx.appRes("UIOrganizer.label.addCategory")%></a>
 		<% if(uicomponent.isShowImport()) { %>
-			<div class="IconControl ImportIcon" onclick="<%= uicomponent.event("ImportAllApplications") %>"><%=_ctx.appRes("UIOrganizer.label.autoImport")%></div> 
+			<a class="IconControl ImportIcon" onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("ImportAllApplications") %>"><%=_ctx.appRes("UIOrganizer.label.autoImport")%></a> 
 		<% } %>	
 	</div>	
 	<div class="AppRegistryContainer ClearFix">
@@ -43,13 +43,13 @@ def selectedApp = uicomponent.getSelectedApplication();
 									<div class="TabLeft">
 										<div class="TabRight">
 											<div class="TabRepeat ClearFix">
-												<a href="#<%= displayName %>" class="TabLabel" onclick="<%= uicomponent.event("ShowCategory", cName) %>" title="<%= displayName %>">
+												<a class="TabLabel" onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("ShowCategory", cName) %>" title="<%= displayName %>">
 													<%= displayName %>
 												</a>
 												<% if(isSelected) { %>
 												<a href="#<%=_ctx.appRes("UIOrganizer.title.deleteCategory")%>" class="ControlIcon DeleteIcon" title="<%=_ctx.appRes("UIOrganizer.title.deleteCategory")%>" onclick="<%= uicomponent.event("RemoveCategory", "$cName") %>"><span></span></a>
-												<a href="#<%=_ctx.appRes("UIOrganizer.title.addApplication")%>" class="ControlIcon CreateNewIcon" title="<%=_ctx.appRes("UIOrganizer.title.addApplication")%>" onclick="<%= uicomponent.event("AddApplication") %>"><span></span></a>
-												<a href="#<%=_ctx.appRes("UIOrganizer.title.editCategory")%>" class="ControlIcon EditIcon" title="<%=_ctx.appRes("UIOrganizer.title.editCategory")%>" onclick="<%= uicomponent.event("EditCategory", "$cName") %>"><span></span></a>
+												<a onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("AddApplication") %>" class="ControlIcon CreateNewIcon" title="<%=_ctx.appRes("UIOrganizer.title.addApplication")%>"><span></span></a>
+												<a onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("EditCategory", "$cName") %>" class="ControlIcon EditIcon" title="<%=_ctx.appRes("UIOrganizer.title.editCategory")%>"><span></span></a>
 												<% } %>
 											 </div>
 										</div>
@@ -69,7 +69,7 @@ def selectedApp = uicomponent.getSelectedApplication();
 									String displayApplicationName = (applicationLabel.length() <= 30) ? applicationLabel : applicationLabel.substring(0, 27)+"...";
                                                                         displayApplicationName = encoder.encode(displayApplicationName);
 									%>
-										<a href="#<%= application.getDisplayName() %>" onclick="<%= uicomponent.event("SelectApplication", "$appName") %>" class="ItemLabel" title="<%= application.getDisplayName() %>"><%= displayApplicationName %><span></span></a>
+										<a onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("SelectApplication", "$appName") %>" class="ItemLabel" title="<%= application.getDisplayName() %>"><%= displayApplicationName %><span></span></a>
 										<a href="#<%=_ctx.appRes("UIOrganizer.title.deleteApplication")%>" class="ControlIcon DeletePortalIcon" title="<%=_ctx.appRes("UIOrganizer.title.deleteApplication")%>" onclick="<%= uicomponent.event("RemoveApplication", appName) %>"><span></span></a>										
 									</div>
 								<% } %>	
