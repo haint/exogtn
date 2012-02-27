@@ -32,8 +32,8 @@
        }
        
        String deleteLink = parent.event("DeleteNavigation",String.valueOf(siteKey.getName()));
-       String editProperties = parent.event("EditProperties",String.valueOf(siteKey.getName()));
-       String editLink = parent.event("EditNavigation",String.valueOf(siteKey.getName()));%>
+       String editProperties = parent.url("EditProperties",String.valueOf(siteKey.getName()));
+       String editLink = parent.url("EditNavigation",String.valueOf(siteKey.getName()));%>
   <table class="ManagementBlock <%=isEvenRow ? "EvenRow":"OddRow"%>" style="table-layout: fixed">
       <tr>
         <td class="Content">
@@ -41,8 +41,8 @@
             <div>$descriptionLabel: $groupDescription</div>
         </td>   
         <td class="ActionBlock">
-            <a href="<%=editLink%>" class="EditNavIcon">$editNavigationLabel</a> 
-            <a href="<%=editProperties%>" class="EditProIcon">$editPropertiesLabel</a> 
+            <a href="<%=editLink%>" onclick="eXo.ajaxLinkHandler(this, event)" class="EditNavIcon">$editNavigationLabel</a> 
+            <a href="<%=editProperties%>" onclick="eXo.ajaxLinkHandler(this, event)" class="EditProIcon">$editPropertiesLabel</a> 
             <a href="<%=deleteLink%>" class="DeleteIcon">$deleteNavigationLabel</a>
         </td>   
     </tr>                               

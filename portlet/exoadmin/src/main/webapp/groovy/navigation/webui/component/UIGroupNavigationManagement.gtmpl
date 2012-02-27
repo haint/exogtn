@@ -9,7 +9,7 @@
 		if(uicomponent.userHasRightToAddNavigation()){ %> 	  	
   
 	<div class="UIAction"> 
-    <a href="#<%=_ctx.appRes(uicomponent.getId() + ".Action.Add")%>" onclick="<%=uicomponent.event("AddNavigation")%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".Action.Add")%></a>
+    <a href="<%=uicomponent.url("AddNavigation")%>" onclick="eXo.ajaxLinkHandler(this, event)" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".Action.Add")%></a>
 	</div>
 	<%
 		}

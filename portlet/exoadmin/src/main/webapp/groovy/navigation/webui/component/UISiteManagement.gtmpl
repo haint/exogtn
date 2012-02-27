@@ -5,6 +5,7 @@
   
   import org.gatein.common.text.EntityEncoder;
   import org.exoplatform.commons.utils.HTMLEntityEncoder;
+  import org.exoplatform.web.application.JavascriptManager;
   
   String[] actions =  uicomponent.getActions();
   uicomponent.loadPortalConfigs();
@@ -41,8 +42,8 @@
                            %>
                         </td>
                         <td class="ActionBlock">
-                                <a href="<%=uicomponent.event("EditPortalLayout", portalConfig.getName());%>" class="EditLayoutIcon">$editLayoutLabel</a>
-                                <a href="<%=uicomponent.event("EditNavigation", portalConfig.getName());%>" class="EditNavIcon">$editNavigationLabel</a>
+                                <a href="<%=uicomponent.url("EditPortalLayout", portalConfig.getName());%>" onclick="eXo.ajaxLinkHandler(this, event)" class="EditLayoutIcon">$editLayoutLabel</a>
+                                <a href="<%=uicomponent.url("EditNavigation", portalConfig.getName());%>" onclick="eXo.ajaxLinkHandler(this, event)" class="EditNavIcon">$editNavigationLabel</a>
                                 <a href="#$editPortalPropLabel" onclick="ajaxGet(eXo.env.server.createPortalURL('UIPortal', 'EditPortalProperties', true, [{name:'portalName',value:'<%=portalConfig.getName()%>'}]))" class="EditPortIcon">$editPortalPropLabel</a>
                                 
                                 <% if(defaultPortalName != null && !defaultPortalName.equals(portalConfig.getName())) {%>

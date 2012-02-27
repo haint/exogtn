@@ -70,10 +70,18 @@ public class UIVirtualList extends UIComponentDecorator
       autoAdjustHeight = bln;
    }
 
+   @Override
    public String event(String name, String beanId) throws Exception
    {
       UIComponent parent = this.getParent();
       return parent.event(name, beanId);
+   }
+   
+   @Override
+   public String url(String name, String beanId) throws Exception 
+   {
+      UIComponent parent = this.getParent();
+      return parent.url(name, beanId);
    }
 
    public void dataBind(PageList datasource) throws Exception

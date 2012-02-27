@@ -24,12 +24,12 @@
 					 if (GroupManagement.isAdministrator() ||
 					 		((groupId != null) && GroupManagement.isSuperUserOfGroup(groupId))) {
 				%>
-						<% actionLink = uicomponent.event("DeleteGroup","delete"); %>
-						<a class="TreeActionIcon RemoveGroupIcon" href="$actionLink" title="<%=_ctx.appRes("UIGroupManagement.label.DeleteGroup")%>"><span></span></a>
-						<% actionLink = uicomponent.event("EditGroup","Edit"); %>
-						<a class="TreeActionIcon EditGroupIcon" href="$actionLink" title="<%=_ctx.appRes("UIGroupManagement.label.EditGroup")%>"><span></span></a>
-						<% actionLink = uicomponent.event("AddGroup","add"); %>
-						<a class="TreeActionIcon AddGroupIcon" href="$actionLink" title="<%=_ctx.appRes("UIGroupManagement.label.AddGroup")%>"><span></span></a>
+						<% actionLink = uicomponent.url("DeleteGroup","delete"); %>
+						<a class="TreeActionIcon RemoveGroupIcon" href="$actionLink" onclick="eXo.ajaxLinkHandler(this,event)" title="<%=_ctx.appRes("UIGroupManagement.label.DeleteGroup")%>"><span></span></a>
+						<% actionLink = uicomponent.url("EditGroup","Edit"); %>
+						<a class="TreeActionIcon EditGroupIcon" href="$actionLink" onclick="eXo.ajaxLinkHandler(this,event)" title="<%=_ctx.appRes("UIGroupManagement.label.EditGroup")%>"><span></span></a>
+						<% actionLink = uicomponent.url("AddGroup","add"); %>
+						<a class="TreeActionIcon AddGroupIcon" href="$actionLink" onclick="eXo.ajaxLinkHandler(this, event)" title="<%=_ctx.appRes("UIGroupManagement.label.AddGroup")%>"><span></span></a>
 				 <%}%>
 			</div> 
 			<div class="GroupNavigationContainer"><% uicomponent.renderChild(UIGroupExplorer.class) %></div>

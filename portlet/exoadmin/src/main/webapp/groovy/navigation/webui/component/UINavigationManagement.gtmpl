@@ -24,7 +24,7 @@
   	uicomponent.renderChild(UINavigationNodeSelector.class);
   %>
   <div class="UIAction"> 
-    <a href="#<%=_ctx.appRes(uicomponent.getId() + ".action.addNode")%>" onclick="<%=uicomponent.event("AddRootNode")%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".action.addNode")%></a>
-		<a href="#<%=_ctx.appRes(uicomponent.getId() + ".action.Save")%>" onclick="<%=uicomponent.event("Save")%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".action.Save")%></a>
+    <a href="<%=uicomponent.url("AddRootNode")%>" onclick="eXo.ajaxLinkHandler(this, event)" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".action.addNode")%></a>
+		<a href="<%=uicomponent.url("Save")%>" onclick="eXo.ajaxLinkHandler(this, event)" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".action.Save")%></a>
 	</div>
 </div>
