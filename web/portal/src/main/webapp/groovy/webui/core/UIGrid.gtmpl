@@ -95,17 +95,18 @@
                      {
                         if (action == null) continue;
                         String title = _ctx.appRes(uiParent.getName() + ".action.title." + action);
-                        String actionLink = "";
+                        String actionLink = null;
+                        String realLink = null;
                         if (uiForm != null)
                         {
                            actionLink = uiForm.event(action, uiParent.getId(), beanId);
                         }
                         else
                         {
-                           actionLink = uiParent.event(action, beanId);
+                           realLink = uiParent.url(action, beanId);
                         }
                %>
-               <a href="javascript:void(0);" onclick="$actionLink" title="$title" class="${action}Icon ActionIcon"></a>
+               <a href="<%= realLink == null ? "#" + action : realLink%>" onclick="<%= actionLink == null ? "eXo.ajaxLinkHandler(this, event)" : actionLink %>" title="$title" class="${action}Icon ActionIcon"></a>
                <% } %>
             </div>
          </td>
