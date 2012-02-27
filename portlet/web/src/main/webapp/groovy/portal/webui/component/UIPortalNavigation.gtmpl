@@ -57,7 +57,7 @@
 		} 
 		print """
 				<li class="MenuItem $tabStyleNavigation $arrowIcon" title="$title" $getNodeURL>
-						<a class="ItemIcon $icon" href="$actionLink" tabindex="-1">$label</a>
+						<a class="ItemIcon $icon" href="$actionLink">$label</a>
 		""";
 		
 		if (node.getChildren().size() > 0) {
@@ -100,10 +100,10 @@
 					 			    nodeURL.setNode(node);
 					 			    nodeURL.setAjax(uicomponent.isUseAjax());
 									print """
-					 					<a class="TabIcon ${iconType}" href="$nodeURL" tabindex="-1">$label</a>
+					 					<a class="TabIcon ${iconType}" href="$nodeURL">$label</a>
 					 				""";
 								} else {%>
-									<a class="TabIcon ${iconType}" href="$label" tabindex="-1">$label</a>
+									<a class="TabIcon ${iconType}" href="$label">$label</a>
 							<%}%>								
 							</span>	
 						<%
