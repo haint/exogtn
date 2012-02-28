@@ -16,8 +16,10 @@
 		uicomponent.setId(componentId.substring("UIContainer-".length()));
 	}
 	JavascriptManager jsmanager = rcontext.getJavascriptManager();
-	jsmanager.addEventListener(uicomponent.getId(), "mouseover focus", "eXo.portal.UIPortal.blockOnMouseOver");
-   	jsmanager.addEventListener(uicomponent.getId(), "mouseout blur", "eXo.portal.UIPortal.blockOnMouseOut");
+	if(uiPortalApp.isEditing()) {
+		jsmanager.addEventListener(uicomponent.getId(), "mouseover focus", "eXo.portal.UIPortal.blockOnMouseOver");
+   		jsmanager.addEventListener(uicomponent.getId(), "mouseout blur", "eXo.portal.UIPortal.blockOnMouseOut");	   
+	}
 %>
 <div class="UIContainer UITableColumnContainer <%=uiPortalApp.isEditing()?"EdittingContainer":""%> <%=hasPermission?"":"ProtectedContainer"%>" 
 				id="${uicomponent.id}">
