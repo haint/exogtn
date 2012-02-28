@@ -23,11 +23,8 @@
 						String itemId = uicomponent.getId() + "_" + category.hashCode();
 						String onClick = "eXo.webui.UIItemSelector.onClickCategory(this, '$uicontainer.name', '$uicomponent.name', '$category.name')";
 						
-						jsmanager.addCustomizedOnLoadScript("document.getElementById('" +itemId+ "').tabIndex = 0");
-						jsmanager.addEventListener(itemId, "mouseover", onMouseOver, "{over:true, element:this}");
-						jsmanager.addEventListener(itemId, "mouseout", onMouseOver, "{over:false, element:this}");
-						jsmanager.addEventListener(itemId, "focus", onMouseOver, "{over:true, element:this}");
-						jsmanager.addEventListener(itemId, "blur", onMouseOver, "{over:false, element:this}");
+						jsmanager.addEventListener(itemId, "mouseover focus", onMouseOver, "{over:true, element:this}");
+						jsmanager.addEventListener(itemId, "mouseout blur", onMouseOver, "{over:false, element:this}");
 						if (category.isSelected()) itemSelected = "SelectedItem Item";
 				 %>
 						<div id=$itemId class="$itemSelected" onclick="$onClick">

@@ -11,11 +11,8 @@
 	
 	JavascriptManager jsmanager = rcontext.getJavascriptManager();
 	jsmanager.importJavascript('eXo.portal.PortalDragDrop');
-	jsmanager.addCustomizedOnLoadScript("document.getElementById('" +uicomponent.getId()+ "').tabIndex = 0");
-	jsmanager.addEventListener(uicomponent.getId(), "mouseover", "eXo.portal.UIPortal.blockOnMouseOver");
-   	jsmanager.addEventListener(uicomponent.getId(), "mouseout", "eXo.portal.UIPortal.blockOnMouseOut");	
-   	jsmanager.addEventListener(uicomponent.getId(), "focus", "eXo.portal.UIPortal.blockOnMouseOver");
-   	jsmanager.addEventListener(uicomponent.getId(), "blur", "eXo.portal.UIPortal.blockOnMouseOut");	
+	jsmanager.addEventListener(uicomponent.getId(), "mouseover focus", "eXo.portal.UIPortal.blockOnMouseOver");
+   	jsmanager.addEventListener(uicomponent.getId(), "mouseout blur", "eXo.portal.UIPortal.blockOnMouseOut");	
 %>
 <div class="UIContainer UIToolbarContainer <%=uiPortalApp.isEditing()?"EdittingContainer":""%> <%=hasPermission?"": "ProtectedContainer"%>" 
 				id="${uicomponent.id}" >
