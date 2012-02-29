@@ -52,7 +52,6 @@
 }
 
 .UIUserSelector .UIAddressSearchForm input{
-	font-size: 11px;
 	height: 16px;
 	width: 120px;
 }
@@ -79,7 +78,6 @@
 	float: left; /* orientation=lt */
 	float: right; /* orientation=rt */
 	height: 21px;
-	font-size: 11px;
 	margin-left: 4px; /* orientation=lt */
 	margin-right: 4px; /* orientation=rt */
 	width: auto;

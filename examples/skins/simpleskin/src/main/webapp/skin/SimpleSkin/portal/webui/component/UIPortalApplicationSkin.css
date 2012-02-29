@@ -17,54 +17,51 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
 
-
-
-@import url(/eXoResources/skin/DefaultSkin/portal/webui/component/control/Stylesheet.css);
-@import url(/eXoResources/skin/DefaultSkin/portal/webui/component/customization/Stylesheet.css);
-@import url(/eXoResources/skin/DefaultSkin/portal/webui/component/view/Stylesheet.css);
-@import url(/eXoResources/skin/DefaultSkin/portal/webui/component/widget/Stylesheet.css);
-
+@import url(control/Stylesheet.css);
+@import url(customization/Stylesheet.css);
 @import url(view/Stylesheet.css);
+@import url(widget/Stylesheet.css);
 
-div {
+html {
+	margin: 0px; padding: 0px;
+}
+*+html {
+	overflow-x: hidden;
+}
+body {
+	background: #dedfdf;
+	margin: 0px; padding: 0px;
+	font-family: Tahoma,Verdana, Arial, Helvetica, sans-serif;
+	font-size: 62.5%;
+	overflow-x: hidden;
+}
+
+div, table, tr, td,img,form {
 	padding: 0px; margin: 0px;
-	outline: none;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; 
+}
+
+p,h1,h2,h3,h4,h5,h6 {
+	margin: 10px 0;
 }
 
 table {
   width: 100%;
-	padding: 0px; margin: 0px;
 	border-spacing:	0px;
 	border-collapse: collapse;
 }
 
 th, td {
-	padding: 0px; margin: 0px;
 	vertical-align: top;
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; 
+}
+
+input, textarea {
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; 
 }
 
 img {
-	padding: 0px; margin: 0px; border: none; vertical-align: middle;
-}
-
-form {
-	padding: 0px; margin: 0px;
-}
-
-html {
-	margin: 0px; padding: 0px;
-}
-
-*+html {
-	overflow-x: hidden;
-}
-
-body {
-	background: #eeeeee;
-	margin: 0px; padding: 0px;
-	font-family: Tahoma,Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	overflow-x: hidden;
+	border: none; vertical-align: middle;
 }
 
 a {
@@ -72,15 +69,10 @@ a {
 	color: black;
 }
 
-.UIWorkingWorkspace {
-	width: 1017px;
-	background: white;
-}
-
-.UIPageBody .BLPagebody {
-	display: none;
-}
 /*###############################################################################################*/
+#UIPortalApplication {
+	font-size: 1.1em;
+}
 
 .OverflowContainer {
 	overflow: hidden;
@@ -114,12 +106,12 @@ a {
 
 .AjaxLoadingMask .LoadingText {
   color: white;
-  font-size: 12px;
+  font-size: 1.2em;
   font-weight: bold;
 }
 
 .AjaxLoadingMask .CloseLoadIcon {
-  background: url("/eXoResources/skin/DefaultSkin/background/CloseLoadIcon.png") no-repeat scroll center center transparent;    
+  background: url('../../../background/CloseLoadIcon.png') no-repeat center;
   padding: 0px 6px;
 }
 
@@ -131,4 +123,8 @@ a {
 .FR {
 	float: right; /* orientation=lt */
 	float: left; /* orientation=rt */
+}
+
+.UIVirtualList {
+	height: 300px;
 }

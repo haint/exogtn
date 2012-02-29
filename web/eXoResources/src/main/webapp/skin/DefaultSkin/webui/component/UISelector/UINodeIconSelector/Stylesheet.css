@@ -44,7 +44,7 @@
 } 
 
 .UINodeIconSelector .SelectedIconInfo .UIFormInputSet .FieldContainer .ItemLabel {
-	font-size: 12px; font-weight: normal;
+	font-size: 1.2em; font-weight: normal;
 	margin: 0px 10px 0px 10px;
 	float: left; /* orientation=lt */
 	float: right; /* orientation=rt */

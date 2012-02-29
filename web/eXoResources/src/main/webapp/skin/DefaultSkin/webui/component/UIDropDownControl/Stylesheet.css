@@ -89,7 +89,7 @@
 }
 
 .UIDropDownControl .DropDownSelectLabel {
-	font-size: 10px;
+	font-size: 1.0em;
 	overflow: hidden;
 	line-height: 19px;
 	height: 19px;

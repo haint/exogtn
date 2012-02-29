@@ -12,7 +12,7 @@
 
 .UIHomePagePortlet .TRContainer .PortletDecoration {	
 	padding: 30px 12px 0;
-	font-size: 12px;
+	font-size: 1.2em;
 }
 
 .UIHomePagePortlet .TRContainer {
@@ -73,7 +73,7 @@
 }
 
 .UIHomePagePortlet .AdImageLeft .EmptyBlock {
-	font-size: 18px;
+	font-size: 1.8em;
 	text-align: right; /* orientation=lt */
 	text-align: left; /* orientation=rt */
 	color: #333333;
@@ -83,7 +83,7 @@
 }
 
 .UIHomePagePortlet .AdImageLeft .EmptyBlock div {
-	font-size: 30px;
+	font-size: 3.0em;
 	color: #000000;
 	font-weight: bold;
 }
@@ -112,7 +112,7 @@
 }
 
 .UIHomePagePortlet .HomePortletContent .InstructionTitle {
-	font-size: 12px;
+	font-size: 1.2em;
 	font-weight: bold;
 	color: #000000;
 	padding-top: 14px;
@@ -182,7 +182,7 @@
 }
 
 .UIHomePagePortlet .HomePortletContent .AccountTitle {
-	font-size: 12px;
+	font-size: 1.2em;
 	color: #454e56;
 	line-height: 40px;
 	font-weight: bold;

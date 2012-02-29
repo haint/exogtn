@@ -17,10 +17,14 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
 
+body {
+	font-size: 62.5%;
+}
+
 .UILogin {
  	height: 236px;
 	font-family: tahoma; 
-	font-size: 11px;
+	font-size: 1.2em;
 	margin: 110px auto 7px auto;
 	padding:0 5px 0 120px;
 	width: 275px;
@@ -32,7 +36,7 @@
 	height: 33px;
 	line-height: 33px;
 	color: #a1c0e9;
-	font-size: 13px;
+	font-size: 1.3em;
 	font-family: arial;
 	text-align: right;
 	padding: 10px 15px 0px 0px
@@ -50,7 +54,7 @@
 .UILogin .WelcomeText {
   line-height: 20px;
   color: #058ee6;
-  font-size: 17px;
+  font-size: 1.7em;
   text-align: left;
   padding-left: 20px;
 }

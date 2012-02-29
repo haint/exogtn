@@ -74,7 +74,6 @@
 }
 
 .UITabPaneDashboard input {
-	font-size: 11px;
 	background-color:#fff;
 	text-align: left;/* orientation=lt */
 	text-align: right;/* orientation=rt */
@@ -157,8 +156,7 @@
 
 .UIDashboardSelectContainer .DashboardItemContainer .InputContainer input {
 	margin: 0 3px 0 0px;
-	border: 1px solid #b8babf;
-	font-size: 11px; 
+	border: 1px solid #b8babf; 
 	width: 165px;
 	vertical-align: 4px;
 }
@@ -242,14 +240,13 @@
 	float: none;
 	margin: 0px !important;
 	line-height: 21px;
-	font-size: 11px;
 }
 
 /*----------------------UIGadgetsContainer-------------------*/
 
 .UIDashboard .UIDashboardContainer .NoGadget {
 	text-align: center;
-	font-size: 12px; font-weight: bold; 
+	font-size: 1.2em; font-weight: bold; 
 	padding: 5px; color: #111;
 }
 
@@ -275,7 +272,7 @@
 	padding-left: 24px; /* orientation=lt */
 	padding-right: 24px; /* orientation=rt */
 	width: 200px; /* orientation=rt */
-	font-size: 12px;
+	font-size: 1.2em;
 	line-height: 30px;
 	text-decoration: underline;
 	color: #226ab3;

@@ -94,7 +94,6 @@
 
 .UIForm .HorizontalLayout input {
 	width: 235px;
-	font-size: 11px;
 }
 
 .UIForm .FieldComponent .FieldComponent input {
@@ -114,18 +113,15 @@
 
 .UIForm .HorizontalLayout textarea {
 	width: 235px;	height: 75px;
-	font-size: 11px;
 	border: 1px solid #b7b7b7;
 }
 
 .UIForm .HorizontalLayout select {
 	width: 239px;
-	font-size: 11px;
 }
 
 .HorizontalLayout .UIForm input {
 	width: 235px;
-	font-size: 11px;
 }
 
 .HorizontalLayout .UIForm input.checkbox {
@@ -139,12 +135,10 @@
 
 .HorizontalLayout .UIForm textarea {
 	width: 232px;	height: 75px;
-	font-size: 11px;
 }
 
 .HorizontalLayout .UIForm select {
 	width: 239px;
-	font-size: 11px;
 }
 
 /*####################- VerticalLayout -#################*/
@@ -155,7 +149,6 @@
 .UIForm .VerticalLayout input {
 	width: 170px;
 	border:	1px solid gray;
-	font-size: 11px;
 }
 
 .UIForm .VerticalLayout input.checkbox {
@@ -165,12 +158,10 @@
 .UIForm .VerticalLayout textarea {
 	width: 170px;	height: 75px;
 	border: 1px solid gray;
-	font-size: 11px;	
 }
 
 .UIForm .VerticalLayout select {
 	width: 170px;
-	font-size: 11px; 
 }
 
 /*####################- UIFormInputSet -#################*/

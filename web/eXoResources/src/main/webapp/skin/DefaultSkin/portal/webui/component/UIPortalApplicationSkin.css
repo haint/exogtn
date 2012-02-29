@@ -32,14 +32,12 @@ body {
 	background: #dedfdf;
 	margin: 0px; padding: 0px;
 	font-family: Tahoma,Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
+	font-size: 62.5%;
 	overflow-x: hidden;
 }
 
 div, table, tr, td,img,form {
 	padding: 0px; margin: 0px;
-	font-size: 11px;
-	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; 
 }
 
 p,h1,h2,h3,h4,h5,h6 {
@@ -54,11 +52,6 @@ table {
 
 th, td {
 	vertical-align: top;
-	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; 
-}
-
-input, textarea {
-	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif; 
 }
 
 img {
@@ -71,6 +64,13 @@ a {
 }
 
 /*###############################################################################################*/
+#UIPortalApplication {
+	font-size: 1.1em;
+}
+
+input, textarea, button {
+	font-size: 1.1em;
+}
 
 .OverflowContainer {
 	overflow: hidden;
@@ -105,7 +105,7 @@ a {
 
 .AjaxLoadingMask .LoadingText {
   color: white;
-  font-size: 12px;
+  font-size: 1.2em;
   font-weight: bold;
 }
 

@@ -17,6 +17,8 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
 
+body {font-size:62.5%;}
+
 a {
 	color: #0158c9;
 	text-decoration: none;
@@ -34,19 +36,19 @@ p {
 	background: #ffffff;
 	margin: 0px;
 	color: #0158c9;
-	font-size: 12px;
+	font-size: 1.2em;
 }
 
 .descriptionHighlight .title a {
 	color: #000000;
-	font-size: 12px;
+	font-size: 1.2em;
 	margin-bottom: 2px;
 }
 
 .title {
 	padding: 3px 10px;
 	font-weight: bold;
-	font-size: 12px;
+	font-size: 1.2em;
 }
 
 .item {
@@ -59,7 +61,7 @@ p {
 	background: #ffffff;
 	color:#000000;
 	display:block;
-	font-size: 11px;
+	font-size: 1.2em;
 	width:100%;
 	padding: 0px;
 }

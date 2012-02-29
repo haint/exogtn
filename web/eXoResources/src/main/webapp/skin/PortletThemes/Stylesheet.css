@@ -75,7 +75,7 @@
 
 .DefaultTheme .Information {
 	height: 18px; line-height: 18px;
-	vertical-align: middle; font-size: 10px;
+	vertical-align: middle; font-size: 1.0em;
 	padding-left: 5px; /* orientation=lt */
 	padding-right: 5px; /* orientation=rt */
 	margin-right: 18px; /* orientation=lt */
@@ -238,7 +238,7 @@
 
 .MacTheme .Information {
 	height: 16px; line-height: 14px; vertical-align: middle;
-	font-size: 10px;
+	font-size: 1.0em;
 	margin-right: 18px;
 	padding-left: 5px; /* orientation=lt */
 	padding-right: 5px; /* orientation=rt */
@@ -388,7 +388,7 @@
 
 .MacGray .Information {
 	height: 16px; line-height: 14px; vertical-align: middle;
-	font-size: 10px;
+	font-size: 1.0em;
 	margin-right: 18px; /* orientation=lt */
 	margin-left: 18px; /* orientation=rt */
 	padding-left: 5px; /* orientation=lt */
@@ -539,7 +539,7 @@
 
 .MacBlack .Information {
 	height: 16px; line-height: 14px; vertical-align: middle;
-	font-size: 10px;
+	font-size: 1.0em;
 	margin-right: 18px; /* orientation=lt */
 	margin-left: 18px; /* orientation=rt */
 	padding-left: 5px; /* orientation=lt */
@@ -690,7 +690,7 @@
 
 .MacGreenSteel .Information {
 	height: 16px; line-height: 14px; vertical-align: middle;
-	font-size: 10px;
+	font-size: 1.0em;
 	margin-right: 18px; /* orientation=lt */
 	margin-left: 18px; /* orientation=rt */
 	padding-left: 5px; /* orientation=lt */
@@ -835,7 +835,7 @@
 	padding-left: 5px; /* orientation=lt */
 	padding-right: 5px; /* orientation=rt */
 	height: 18px; line-height: 18px;
-	font-size: 10px;
+	font-size: 1.0em;
 }
 
 .VistaTheme .MiddleDecoratorCenter {
@@ -989,7 +989,7 @@
 	padding-left: 5px; /* orientation=lt */
 	padding-right: 5px; /* orientation=rt */
 	height: 18px; line-height: 18px;
-	font-size: 10px;
+	font-size: 1.0em;
 }
 
 .VistaBlue .MiddleDecoratorCenter {
@@ -1077,7 +1077,7 @@
 
 .RoundConerBlue .Information {
 	height: 18px; line-height: 18px;
-	font-size: 10px;
+	font-size: 1.0em;
 	margin-right: 18px; /* orientation=lt */
 	margin-left: 18px; /* orientation=rt */
 	padding-left: 5px; /* orientation=lt */
@@ -1219,7 +1219,7 @@
 
 .RoundConerViolet .Information {
 	height: 18px; line-height: 18px;
-	font-size: 10px;
+	font-size: 1.0em;
 	padding-left: 5px;
 	margin-right: 18px;
 }
@@ -1362,7 +1362,7 @@
 
 .RoundConerOrange .Information {
 	height: 18px; line-height: 18px;
-	font-size: 10px;
+	font-size: 1.0em;
 	margin-right: 18px; /* orientation=lt */
 	margin-left: 18px; /* orientation=rt */
 	padding-left: 5px; /* orientation=lt */
@@ -1507,7 +1507,7 @@
 
 .RoundConerPink .Information {
 	height: 18px; line-height: 18px;
-	font-size: 10px;
+	font-size: 1.0em;
 	margin-right: 18px; /* orientation=lt */
 	margin-left: 18px; /* orientation=rt */
 	padding-left: 5px; /* orientation=lt */
@@ -1652,7 +1652,7 @@
 
 .RoundConerGreen .Information {
 	height: 18px; line-height: 18px;
-	font-size: 10px;
+	font-size: 1.0em;
 	margin-right: 18px; /* orientation=lt */
 	margin-left: 18px; /* orientation=rt */
 	padding-left: 5px; /* orientation=lt */
@@ -1797,7 +1797,7 @@
 
 .ShadowBlue .Information {
 	height: 18px; line-height: 18px;
-	font-size: 10px;
+	font-size: 1.0em;
 	margin-right: 18px; /* orientation=lt */
 	margin-left: 18px; /* orientation=rt */
 	padding-left: 5px; /* orientation=lt */
@@ -1940,7 +1940,7 @@
 
 .ShadowViolet .Information {
 	height: 18px; line-height: 18px;
-	font-size: 10px;
+	font-size: 1.0em;
 	margin-right: 18px; /* orientation=lt */
 	margin-left: 18px; /* orientation=rt */
 	padding-left: 5px; /* orientation=lt */
@@ -2083,7 +2083,7 @@
 
 .ShadowOrange .Information {
 	height: 18px; line-height: 18px;
-	font-size: 10px;
+	font-size: 1.0em;
 	margin-right: 18px; /* orientation=lt */
 	margin-left: 18px; /* orientation=rt */
 	padding-left: 5px; /* orientation=lt */
@@ -2227,7 +2227,7 @@
 
 .ShadowPink .Information {
 	height: 18px; line-height: 18px;
-	font-size: 10px;
+	font-size: 1.0em;
 	margin-right: 18px; /* orientation=lt */
 	margin-left: 18px; /* orientation=rt */
 	padding-left: 5px; /* orientation=lt */
@@ -2371,7 +2371,7 @@
 
 .ShadowGreen .Information {
 	height: 18px; line-height: 18px;
-	font-size: 10px;
+	font-size: 1.0em;
 	margin-right: 18px; /* orientation=lt */
 	margin-left: 18px; /* orientation=rt */
 	padding-left: 5px; /* orientation=lt */
@@ -2513,7 +2513,7 @@
 
 .SimpleBlue .Information {
 	height: 18px; line-height: 18px;
-	font-size: 10px;
+	font-size: 10em;
 	margin-right: 18px; /* orientation=lt */
 	margin-left: 18px; /* orientation=rt */
 	padding-left: 5px; /* orientation=lt */
@@ -2645,7 +2645,7 @@
 
 .SimpleViolet .Information {
 	height: 18px; line-height: 18px;
-	font-size: 10px;
+	font-size: 1.0em;
 	margin-right: 18px; /* orientation=lt */
 	margin-left: 18px; /* orientation=rt */
 	padding-left: 5px; /* orientation=lt */
@@ -2776,7 +2776,7 @@
 
 .SimpleOrange .Information {
 	height: 18px; line-height: 18px;
-	font-size: 10px;
+	font-size: 1.0em;
 	margin-right: 18px; /* orientation=lt */
 	margin-left: 18px; /* orientation=rt */
 	padding-left: 5px; /* orientation=lt */
@@ -2906,7 +2906,7 @@
 
 .SimplePink .Information {
 	height: 18px; line-height: 18px;
-	font-size: 10px;
+	font-size: 1.0em;
 	margin-right: 18px; /* orientation=lt */
 	margin-left: 18px; /* orientation=rt */
 	padding-left: 5px; /* orientation=lt */
@@ -3037,7 +3037,7 @@
 .SimpleGreen .Information {
 	line-height: 18px;
 	width: 100px;
-	font-size: 10px;
+	font-size: 1.0em;
 	margin-right: 18px; /* orientation=lt */
 	margin-left: 18px; /* orientation=rt */
 	padding-left: 5px; /* orientation=lt */

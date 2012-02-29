@@ -203,7 +203,7 @@
 }
 
 .UIItemSelector .RightColumnBigItemStyle .ItemListContainer .ItemListTitle {
-	font-size: 12px; text-align: center;
+	font-size: 1.2em; text-align: center;
 	height: 19px; line-height: 19px;
 	border: solid 1px #b7b7b7;
 	font-weight: bold; 

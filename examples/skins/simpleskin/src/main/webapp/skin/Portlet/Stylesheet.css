@@ -28,14 +28,14 @@ Used for the display of non-accentuated information */
 .portlet-font {
    color: #000000;
    font-family: Verdana, Arial, Helvetica, sans-serif;
-   font-size: 11px;
+   font-size: 1.1em;
 }
 
 /* Font attributes similar to the portlet.font but the color is lighter */
 .portlet-font-dim {
    color: #777777;
    font-family: Verdana, Arial, Helvetica, sans-serif;
-   font-size: 11px;
+   font-size: 1.1em;
 }
 
 
@@ -44,7 +44,7 @@ Used for the display of non-accentuated information */
 /* Status of the current operation. */
 .portlet-msg-status {
    font-family: Verdana, Arial, Helvetica, Sans-Serif, sans-serif;
-   font-size: 12px;
+   font-size: 1.2em;
    font-style: normal;
    color: #058bb6;
 }
@@ -52,7 +52,7 @@ Used for the display of non-accentuated information */
 /* Help messages, general additional information, etc. */
 .portlet-msg-info {
    font-family: Verdana, Arial, Helvetica, Sans-Serif, sans-serif;
-   font-size: 12px;
+   font-size: 1.2em;
    font-style: italic;
    color: #000;
 }
@@ -61,14 +61,14 @@ Used for the display of non-accentuated information */
 .portlet-msg-error {
    color: red;
    font-family: Verdana, Arial, Helvetica, Sans-Serif, sans-serif;
-   font-size: 12px;
+   font-size: 1.2em;
    font-weight: bold;
 }
 
 /* Warning messages. */
 .portlet-msg-alert {
    font-family: Verdana, Arial, Helvetica, Sans-Serif, sans-serif;
-   font-size: 12px;
+   font-size: 1.2em;
    font-weight: bold;
    color: #821717;
 }
@@ -76,7 +76,7 @@ Used for the display of non-accentuated information */
 /* Verification of the successful completion of a task. */
 .portlet-msg-success {
    font-family: Verdana, Arial, Helvetica, Sans-Serif, sans-serif;
-   font-size: 12px;
+   font-size: 1.2em;
    font-weight: bold;
    color: #359630;
 }
@@ -106,14 +106,14 @@ Used for the display of non-accentuated information */
 }
 
 .portlet-section-footer {
-   font-size: 11px;
+   font-size: 1.1em;
    border-top: 1px solid #F2F2F2;
 }
 
 /* Text that belongs to the table but does not fall in one of the other categories
 (e.g. explanatory or help text that is associated with the section. */
 .portlet-section-text {
-   font-size: 12px;
+   font-size: 1.2em;
    font-style: italic;
 }
 
@@ -126,7 +126,7 @@ Used for the display of non-accentuated information */
    padding: 0 0px 0px 5px;
    font-weight: bold;
    color: #333333;
-   font-size: 12px;
+   font-size: 1.2em;
    border-bottom: 1px solid #d5d5d5;
    line-height: 20px;
 }
@@ -154,7 +154,7 @@ Used for the display of non-accentuated information */
 .portlet-table-subheader {
    font-weight: bold;
    color: #777777;
-   font-size: 12px;
+   font-size: 1.2em;
    padding: 5px;
 }
 
@@ -163,7 +163,7 @@ Used for the display of non-accentuated information */
    padding: 5px;
    font-weight: bold;
    color: #333333;
-   font-size: 12px;
+   font-size: 1.2em;
    border: none;
    border-top: 1px solid #d5d5d5;
 }
@@ -182,12 +182,12 @@ Used for the display of non-accentuated information */
 /* Text of the user-input in an input field. not sure if we need this guy? */
 .portlet-form-input-field {
    color: #000000;
-   font-size: 10px;
+   font-size: 1.0em;
 }
 
 /* Form Button Style */
 .portlet-form-button {
-   font-size: 11px;
+   font-size: 1.1em;
    color: #5c5c5c;
    background-color: #cfcfcf;
    border-top: 1px solid #dadada;
@@ -215,7 +215,7 @@ not sure if we need this one?.. */
 /* Text for a form field */
 .portlet-form-field {
    font-family: Verdana, Arial, Helvetica, Sans-Serif, sans-serif;
-   font-size: 10px;
+   font-size: 1.0em;
    color: #000; /*margin-top: 10px;*/
 }
 
@@ -229,7 +229,7 @@ not sure if we need this one?.. */
 /* Text for a form field */
 .portlet-form-field {
    font-family: Verdana, Arial, Helvetica, Sans-Serif, sans-serif;
-   font-size: 10px;
+   font-size: 1.0em;
    color: #000; /*margin-top: 10px;*/
 }
 
