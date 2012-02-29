@@ -20,121 +20,108 @@
 function UIDropDownControl() {} ;
 
 UIDropDownControl.prototype.init = function(id) {
+  this.active = null;
+  eXo.require("eXo.webui.KeyCode");
   var DOMUtil = eXo.core.DOMUtil;
   var root = document.getElementById(id);
-  var title = DOMUtil.findFirstDescendantByClass(root, "div", "UIDropDownTitle");
-  title.setAttribute("tabindex", 0);
+  this.dropdownObject = DOMUtil.findFirstDescendantByClass(root, "div", "UIDropDownTitle");
+  var dropDownAnchor = DOMUtil.findNextElementByTagName(this.dropdownObject, 'div') ;
+  this.dropdownObject.anchorContainer = dropDownAnchor;
+  this.dropdownObject.setAttribute("tabindex", 0);
 
-  var anchors =  DOMUtil.findDescendantsByClass(root, "a",  "OptionItem");
-  for(var i = 0; i < anchors.length; i++) {
-	  eXo.addEvent(anchors[i], "mouseover", function(event) {
-		  eXo.webui.UIDropDownControl.anchorMouseEnter(event);
-	  }, { eleRoot : root, eleTarget : title });
-	  
-	  eXo.addEvent(anchors[i], "mouseout", function(event) {
-		  eXo.webui.UIDropDownControl.anchorMouseLeave(event);
-	  }, { eleRoot : root, eleTarget : title});
+  this.children =  DOMUtil.findDescendantsByClass(root, "a",  "OptionItem");
+  var length = this.children.length;
+  for (var i = 0; i < length; i++) {
+     var element = this.children[i];
+     element["next"] = this.children[i+1];
+     element["prev"] = this.children[i-1];
+     eXo.addEvent(element, "mouseenter", function(event) {
+        eXo.webui.UIDropDownControl.activate(event, this);
+     });
+     eXo.addEvent(element, "mouseleave", function(event) {
+        eXo.webui.UIDropDownControl.deactivate();
+     });
   }
+  this.children[0]["prev"] = this.children[length-1];
+  this.children[length-1]["next"] = this.children[0];
 
-  eXo.addEvent(title, "keyup", function(event) {
-	  eXo.webui.UIDropDownControl.targetOnKeyUp(event);
-  }, { eleRoot : root, eleTarget : title });
-
-  eXo.addEvent(title, "blur", function(event) {
-	  eXo.webui.UIDropDownControl.targetOnBlur(event);
-  }, { eleRoot : root });
+  eXo.addEvent(this.dropdownObject, "keydown", function(event) {
+     eXo.webui.UIDropDownControl.keydownHandler(event);
+  });
 };
 
-UIDropDownControl.prototype.targetOnBlur = function(event) {
-	var DOMUtil = eXo.core.DOMUtil;
-	var root = event.data.eleRoot;
-	var anchor = DOMUtil.findFirstDescendantByClass(root, "a", "Over");
-	if(anchor) anchor.className = "OptionItem";
-
-	var anchorContainer  = DOMUtil.findFirstDescendantByClass(root, "div", "UIDropDownAnchor");
-	anchorContainer.style.display = 'none';
-	anchorContainer.visibility = 'hidden';
-};
-
-UIDropDownControl.prototype.targetOnKeyUp = function(event) {
-	var DOMUtil = eXo.core.DOMUtil;
-	var root = event.data.eleRoot;
-	var anchorContainer  = DOMUtil.findFirstDescendantByClass(root, "div", "UIDropDownAnchor");
-	
-	if(event.which == 40) { // 40 is key code of arrow down
-		if(anchorContainer.style.display == "none") {
-			eXo.webui.UIDropDownControl.show(event.data.eleTarget, event);
-		} else {
-			eXo.webui.UIDropDownControl.downItem(root);
-		}
-	}	else if(event.which == 38) {
-		if(anchorContainer.style.display == "none") {
-			eXo.webui.UIDropDownControl.show(event.data.eleTarget, event);
-		} else {
-			eXo.webui.UIDropDownControl.upItem(root);
-		}
-	} else if(event.which == 27) { // 27 is key code of escape
-		anchorContainer.style.display = "none";
-		anchorContainer.style.visibility = "hidden";
-	} else if(event.which == 13) { // 13 is key code of enter
-		var anchor = DOMUtil.findFirstDescendantByClass(root, "a", "Over");
-		if(anchor)  anchor.onclick();
-	}
-};
-
-UIDropDownControl.prototype.anchorMouseEnter = function(event) {
-	var target = event.data.eleTarget;
-	var root = event.data.eleRoot
-	//Necessary remove blur handler because current target will be lost focus then click
-	eXo.removeEvent(target, "blur");
-	var DOMUtil = eXo.core.DOMUtil;
-	var anchor = DOMUtil.findFirstDescendantByClass(root, "a", "Over");
-	if(anchor) anchor.className = "OptionItem";
-};
-
-UIDropDownControl.prototype.anchorMouseLeave = function(event) {
-	var target  = event.data.eleTarget;
-	eXo.addEvent(target, "blur", function(event) {
-		eXo.webui.UIDropDownControl.targetOnBlur(event);
-	}, { eleRoot : event.data.eleRoot });
-};
-
-UIDropDownControl.prototype.downItem = function(root) {
-	var DOMUtil = eXo.core.DOMUtil;
-  var anchors = DOMUtil.findDescendantsByClass(root, "a", "OptionItem");
-  for(var i = 0; i < anchors.length; i++) {
-    var current = anchors[i]
-    if(DOMUtil.hasClass(current, "Over")) {
-    	current.className = "OptionItem";
-      if(i == anchors.length - 1) 
-        break;
-      else {
-        var next = anchors[i+1];
-        next.className = "OptionItem Over";
-        return;
+UIDropDownControl.prototype.keydownHandler = function(event) {
+   event.preventDefaultEvent = function() {
+      if (this.preventDefault) {
+         this.preventDefault();
+      } else {
+         this.returnValue = false;
       }
-    }
-  }
-  anchors[0].className = "OptionItem Over";
+   };
+   var keyCode = KeyCode;
+   switch (event.keyCode) {
+   case keyCode.UP:
+      this.move("prev", event);
+      event.preventDefaultEvent();
+      break;
+   case keyCode.DOWN:
+      this.move("next", event);
+      event.preventDefaultEvent();
+      break;
+   case keyCode.ENTER:
+   case keyCode.NUMPAD_ENTER:
+      event.preventDefaultEvent();
+   case keyCode.TAB:
+      if (this.active) {
+         this.active.onclick();
+         var href = this.active.getAttribute("href");
+         window.location = href;
+      }
+      break;
+   case keyCode.ESCAPE:
+      event.preventDefaultEvent();
+      eXo.webui.UIDropDownControl.close(event);
+      break;
+   default:
+      break;
+   };
+};
+
+UIDropDownControl.prototype.move = function(direction, event) {
+   if (this.dropdownObject.anchorContainer.style.display == "none") {
+      eXo.webui.UIDropDownControl.show(this.dropdownObject, event);
+      return;
+   }
+
+   if (!this.active) {
+      this.activate(event, this.children[0]);
+      return;
+   } else {
+      var element = this.active[direction];
+      if (element) {
+         this.deactivate();
+         this.activate(event, element);
+      }
+   }
 }
 
-UIDropDownControl.prototype.upItem = function(root) {
-	var DOMUtil = eXo.core.DOMUtil;
-  var anchors = DOMUtil.findDescendantsByClass(root, "a", "OptionItem");
-  for(var i = anchors.length - 1; i >= 0; i--) {
-    var current = anchors[i]
-    if(DOMUtil.hasClass(current, "Over")) {
-    	current.className = "OptionItem";
-      if(i == 0) 
-        break;
-      else {
-        var next = anchors[i-1];
-        next.className = "OptionItem Over";
-        return;
-      }
-    }
-  }
-  anchors[anchors.length - 1].className = "OptionItem Over";
+UIDropDownControl.prototype.close = function(event) {
+   if (this.dropdownObject.anchorContainer.style.display == "block") {
+      eXo.webui.UIDropDownControl.show(this.dropdownObject, event);
+      this.deactivate();
+   }
+}
+
+UIDropDownControl.prototype.deactivate = function() {
+   if (!this.active) return;
+   this.active.className = "OptionItem";
+   this.active = null;
+}
+
+UIDropDownControl.prototype.activate = function(event, item) {
+   this.deactivate();
+   item.className = "OptionItem Over";
+   this.active = item;
 }
 
 UIDropDownControl.prototype.selectItem = function(method, id, selectedIndex) {
@@ -155,7 +142,7 @@ UIDropDownControl.prototype.show = function(obj, evt) {
 	
 	var DOMUtil = eXo.core.DOMUtil ;
 	var Browser = eXo.core.Browser ;
-	var dropDownAnchor = DOMUtil.findNextElementByTagName(obj, 'div') ;	
+	var dropDownAnchor = DOMUtil.findNextElementByTagName(obj, 'div') ;
 	if (dropDownAnchor) {
 		if (dropDownAnchor.style.display == "none") {
 			dropDownAnchor.style.display = "block" ;
