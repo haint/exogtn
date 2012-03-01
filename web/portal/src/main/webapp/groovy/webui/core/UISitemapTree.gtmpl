@@ -17,7 +17,7 @@
 	UIPortletApplication siteMapPortlet = uicomponent.getParent();
 	def useAJAX = siteMapPortlet.isUseAjax();
 
-	def actionCollapseAll = uicomponent.event("CollapseAllNode");
+	def actionCollapseAll = uicomponent.url("CollapseAllNode");
 
 	PortalURL nodeURL = nodeurl();
 							
@@ -108,9 +108,11 @@
 
 <div id="$uicomponent.id" class="UISitemap" >
 	<div class="ClearFix">
-		<div class="CollapseAll FL" onclick="$actionCollapseAll">
+		<a onclick="eXo.ajaxLinkHandler(this,event)" href="$actionCollapseAll"> 
+			<div class="CollapseAll FL">
 			<%=_ctx.appRes(siteMapPortlet.getName() + ".label.CollapseAll")%>
-		</div>
+			</div>
+		</a>
 	</div>
 	<div class="SitemapContent">
 		<div class="UISiteTree">

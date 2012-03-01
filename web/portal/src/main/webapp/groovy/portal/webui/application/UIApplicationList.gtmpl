@@ -33,11 +33,11 @@
 								}
 						%>				 				
 		 					<div class="UIVTab VTabStyle4">
-								<div class="$cTab" onclick="<%= uicomponent.event("SelectCategory", cName) %>">
-									<a class="TabLabel" title="<%= displayName %>">
+								<a class="TabLabel" onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("SelectCategory", cName) %>" title="<%= displayName %>">
+									<div class="$cTab">
 										<%= displayName %>
-									</a>
-								</div>
+									</div>
+								</a>
 							<% if (isSelected) { %>
 								<div class="UIVTabContent" style="display: block">
 								<%

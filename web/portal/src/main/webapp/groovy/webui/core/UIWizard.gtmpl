@@ -46,7 +46,7 @@
 											}
 											strStep = _ctx.appRes(uicomponent.getId() + ".label.step") + " " + String.valueOf(j);
 											if(i != step) {
-												actionLink = uicomponent.url("ViewStep" + String.valueOf(i));0
+												actionLink = uicomponent.url("ViewStep" + String.valueOf(i));
 												print "<a href=\"$actionLink\" title=\"$strStep\">";
 											} else print "<a href=\"#$strStep\" class=\"SelectedStep\" title=\"$strStep\">";
 											
@@ -66,13 +66,13 @@
 									String action = "next";
 									if(step == children.size()){
 										action = "done";						
-										actionLink = uicomponent.event("ViewStep" + String.valueOf(step+1), "");
+										actionLink = uicomponent.url("ViewStep" + String.valueOf(step+1), "");
 									} else {
 											actionLink = uicomponent.url("ViewStep" + String.valueOf(step+1));
 										}
 								%>	
-										<a href="#<%=_ctx.appRes(uicomponent.getId() + ".label."+action)%>" onclick="$actionLink" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".label."+action)%></a>
-										<a href="#<%=_ctx.appRes(uicomponent.getId() + ".label.abort")%>" onclick="<%=uicomponent.event("Abort", "");%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".label.abort")%></a>
+										<a onclick="eXo.ajaxLinkHandler(this,event)" href="$actionLink" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".label."+action)%></a>
+										<a onclick="eXo.ajaxLinkHandler(this,event)" href="<%=uicomponent.url("Abort", "");%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".label.abort")%></a>
 	
 								<% 
 								int showBack = step;
@@ -81,7 +81,7 @@
 									actionLink = uicomponent.url("ViewStep" + String.valueOf(step-1));
 									String display = "LightBlueStyle";
 								%>
-										<a href="#<%=_ctx.appRes(uicomponent.getId() + ".label.back")%>" onclick="$actionLink" class="ActionButton $display"><%=_ctx.appRes(uicomponent.getId() + ".label.back")%></a>
+										<a onclick="eXo.ajaxLinkHandler(this,event)" href="$actionLink" class="ActionButton $display"><%=_ctx.appRes(uicomponent.getId() + ".label.back")%></a>
 								<% } %>
 								<%} // End if (step != 3)%> 
 							</div>

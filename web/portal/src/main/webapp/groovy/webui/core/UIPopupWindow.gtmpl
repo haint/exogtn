@@ -35,8 +35,7 @@
 <div class="UIPopupWindow UIDragObject NormalStyle" id="$popupId" style="$widthStyle display: $show;">
 	<div class="OverflowContainer ClearFix">
 		<%if( showCloseButton ) {%>
-			<!-- <div class="CloseButton" title="Close Window" onclick="<%=uicomponent.event("ClosePopup")%>"><span></span></div> -->
-			<a href="#<%=_ctx.appRes("UIPopupWindow.Close")%>" class="CloseButton" title="<%=_ctx.appRes("UIPopupWindow.Close")%>" onclick="<%=uicomponent.event(uicomponent.getCloseEvent())%>"></a>
+			<a onclick="eXo.ajaxLinkHandler(this,event)" class="CloseButton" title="<%=_ctx.appRes("UIPopupWindow.Close")%>" href="<%=uicomponent.url(uicomponent.getCloseEvent())%>"></a>
 		<% } else { %>
 			<div class="PopupTitleIconRight"><span></span></div>
 		<% } %>

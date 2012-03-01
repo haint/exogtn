@@ -35,7 +35,7 @@
 				<li class="LastNode Node">
 					<% 
 					String objId = String.valueOf(uicomponent.getId(object));
-					String actionLink = uicomponent.event("ChangeNode", objId);
+					String actionLink = uicomponent.url("ChangeNode", objId);
 					%>
 					<%=uicomponent.renderNode(object);%>											
 					<%	

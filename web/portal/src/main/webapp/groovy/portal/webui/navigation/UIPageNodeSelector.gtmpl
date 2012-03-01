@@ -31,8 +31,8 @@
 				<%/*Begin PageNodeSelectorContainer*/%>
 				<div class="UIContainerConfigOptions ItemSelectorAncestor"> 
 					<div class="ContainerConfigOptions">
-						<a class="AddNavigationIcon" href ="<%=uicomponent.event("CreateNavigation"); %>" title="<%=_ctx.appRes("UIPageNodeSelector.tooltip.newPageNavigation")%>"><span></span></a>
-							<div class="UIVerticalSlideTabs ItemList CategoryContainer" style="padding: 1px;">
+						<a class="AddNavigationIcon" onclick="eXo.ajaxLinkHandler(this,event)" href ="<%=uicomponent.url("CreateNavigation"); %>" title="<%=_ctx.appRes("UIPageNodeSelector.tooltip.newPageNavigation")%>"><span></span></a>
+						<div class="UIVerticalSlideTabs ItemList CategoryContainer" style="padding: 1px;">
 							<% uicomponent.renderChild(UITree.class);%>
 						</div>
 					</div>

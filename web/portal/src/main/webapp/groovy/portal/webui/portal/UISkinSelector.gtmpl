@@ -29,7 +29,7 @@
 						</div>
 					<div class="UIAction">
 						<a href="#<%=_ctx.appRes("UIChangeSkin.action.save");%>" onclick="eXo.portal.UIPortal.changeSkin('<%=uicomponent.url("Save");%>');" class="ActionButton LightBlueStyle"><%=_ctx.appRes("UIChangeSkin.action.save");%></a>
-						<a href="#<%=_ctx.appRes("UIChangeSkin.action.close");%>" onclick="<%=uicomponent.event("Close");%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes("UIChangeSkin.action.close");%></a>
+						<a href="<%=uicomponent.url("Close");%>" onclick="eXo.ajaxLinkHandler(this,event)" class="ActionButton LightBlueStyle"><%=_ctx.appRes("UIChangeSkin.action.close");%></a>
 					</div>
 					</div>
 				</div>

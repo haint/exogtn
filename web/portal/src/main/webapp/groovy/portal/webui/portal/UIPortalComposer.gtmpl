@@ -11,13 +11,13 @@
 	<div class="OverflowContainer ClearFix">
 		<span class="<%=uicomponent.isCollapsed ? "CollapseIcon" : "ExpandIcon"%>" onclick="eXo.portal.UIPortal.toggleComposer(this)"></span>
 			<% if(uicomponent.isShowControl) { %>
-			<a class="CloseButton" title="<%=_ctx.appRes("word.abort")%>" href="<%=uicomponent.event("CloseComposer")%>"></a>
+			<a class="CloseButton" title="<%=_ctx.appRes("word.abort")%>" onclick="eXo.ajaxLinkHandler(this,event)" href="<%=uicomponent.url("CloseComposer")%>"></a>
 				<% if (uicomponent.isUsedInWizard()) { %>
 					<a class="<%= isEditted ? "EdittedSaveButton" : "SaveButton" %>" title="<%=_ctx.appRes("word.finish")%>" href="<%=uicomponent.url("Finish")%>" onclick="eXo.core.DOMUtil.disableOnClick(this);" ><span></span></a>
-					<a class="BackButton" title="<%=_ctx.appRes("word.back")%>" href="<%=uicomponent.event("Back")%>">
+					<a class="BackButton" title="<%=_ctx.appRes("word.back")%>" onclick="eXo.ajaxLinkHandler" href="<%=uicomponent.url("Back")%>">
 					</a>
 				<% } else {%>
-					<a class="<%= isEditted ? "EdittedSaveButton" : "SaveButton" %>" title="<%=_ctx.appRes("word.finish")%>" href="<%=uicomponent.event("Finish")%>"><span></span></a>
+					<a class="<%= isEditted ? "EdittedSaveButton" : "SaveButton" %>" title="<%=_ctx.appRes("word.finish")%>" onclick="eXo.ajaxLinkHandler(this,event)" href="<%=uicomponent.url("Finish")%>"><span></span></a>
 			<%	 }
 				 } %>
 		<span class="PopupTitle"><%=_ctx.appRes(popupId + ".title."+ popupId)%></span>
@@ -27,13 +27,13 @@
 			<% uicomponent.renderChildren(); %>
 		</div>
 		<div class="UIAction"> 
-			<span onclick="<%= uicomponent.event("ViewProperties") %>" class="ActionButton SimpleStyle1">
-				<a href="#<%=_ctx.appRes(popupId + ".action.ViewProperties")%>" class="PageProfileIcon"><%=_ctx.appRes(popupId + ".action.ViewProperties")%></a>
-			</span>
-			<% String changeEditMode = uicomponent.event("SwitchMode", null, null); %>
-			<span onclick="$changeEditMode" class="ActionButton SimpleStyle1">
-				<a href="#<%=_ctx.appRes(popupId + ".action.SwitchMode")%>" class="ViewAsBlockIcon"><%=_ctx.appRes(popupId + ".action.SwitchMode")%></a>
-			</span>						
+			<a onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("ViewProperties") %>" class="ActionButton SimpleStyle1">
+				<span class="PageProfileIcon"><%=_ctx.appRes(popupId + ".action.ViewProperties")%></span>
+			</a>
+			<% String changeEditMode = uicomponent.url("SwitchMode", null, null); %>
+			<a onclick="eXo.ajaxLinkHandler(this,event)" href="$changeEditMode" class="ActionButton SimpleStyle1">
+				<span class="ViewAsBlockIcon"><%=_ctx.appRes(popupId + ".action.SwitchMode")%></span>
+			</a>						
 		</div>
 		<span class="ResizeButton"></span>
 	</div>

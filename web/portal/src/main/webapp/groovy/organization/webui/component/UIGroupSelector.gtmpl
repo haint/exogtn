@@ -33,7 +33,7 @@
 		</div>
 	
 	<div class="UIAction"> 
-		<a href="#<%=_ctx.appRes("UIGroupSelector.action.done")%>" onclick="<%=uicomponent.event("SelectGroup");%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes("UIGroupSelector.action.done")%></a>
+		<a onclick="eXo.ajaxLinkHandler(this,event)" href="<%=uicomponent.url("SelectGroup");%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes("UIGroupSelector.action.done")%></a>
 	</div>
 
 </div> 		

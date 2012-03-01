@@ -56,7 +56,7 @@
                                    uiChild.setTitle(title);
 								}
 								else title = ExpressionUtil.getExpressionValue(res, title);
-								String selectTab = uicomponent.event("SelectTab", tabId);
+								String selectTab = uicomponent.url("SelectTab", tabId);
 								String tabState = uicomponent.getTabState(uiChild, uicomponent);
 						%>
 							 	<div class="UITab NormalTabStyle">
@@ -66,11 +66,15 @@
 									 				<%
 														if(modeState > 0){
 															String showCategory = "eXo.webui.UIPopupSelectCategory.show(this, event);"
-															String moveLeftAction = uicomponent.event("MoveLeft", tabId);
-															String moveRightAction = uicomponent.event("MoveRight", tabId);
+															String moveLeftAction = uicomponent.url("MoveLeft", tabId);
+															String moveRightAction = uicomponent.url("MoveRight", tabId);
 													%>
-														<div class="MiddleTab ClearFix"> 
-											 				<div class="TabLabel FL" onclick="eXo.webui.UIHorizontalTabs.changeTabForUITabPane(this,'$id', '$tabId' );<%= selectTab %>"><%=title%></div>
+														<div class="MiddleTab ClearFix">
+															<a href="$selectTab"  onclick="eXo.webui.UIHorizontalTabs.changeTabForUITabPane(this,'$id', '$tabId' );eXo.ajaxLinkHandler(this,event)"> 
+											 					<div class="TabLabel FL">
+												 					<%=title%>
+											 					</div>
+											 				</a>
 															<div class="EditIcon" onclick="$showCategory">
 															   <div style="position: relative; width: 100%">
 															      <div class="UIPopupCategory" style="display: none;">
@@ -84,13 +88,13 @@
 															               <div class="PopupCategoryMR">
 															                  <div class="PopupCategoryMC">
 															                     <% if (!tabState.equals(org.exoplatform.portal.webui.container.UITabContainer.FIRST_TAB)) {%>
-															                     <a href="#<%= _ctx.appRes("UITabContainer.label.moveLeft") %>" class="CategoryItem">
-															                        <div class="CategoryItemLabel" onclick="$moveLeftAction;eXo.portal.UIPortal.changeComposerSaveButton()"><%= _ctx.appRes("UITabContainer.label.moveLeft") %></div>
+															                     <a href="$moveLeftAction" onclick="eXo.ajaxLinkHandler(this,event);eXo.portal.UIPortal.changeComposerSaveButton()" class="CategoryItem">
+															                        <div class="CategoryItemLabel"><%= _ctx.appRes("UITabContainer.label.moveLeft") %></div>
 															                     </a>
 															                     <% } %>
 															                     <% if (!tabState.equals(org.exoplatform.portal.webui.container.UITabContainer.LAST_TAB)) { %>															                      
-															                     <a href="#<%= _ctx.appRes("UITabContainer.label.moveRight") %>" class="CategoryItem">
-															                        <div class="CategoryItemLabel" onclick="$moveRightAction;eXo.portal.UIPortal.changeComposerSaveButton()"><%= _ctx.appRes("UITabContainer.label.moveRight") %></div>
+															                     <a href="$moveRightAction" onclick="eXo.ajaxLinkHandler(this,event);eXo.portal.UIPortal.changeComposerSaveButton()" class="CategoryItem">
+															                        <div class="CategoryItemLabel"><%= _ctx.appRes("UITabContainer.label.moveRight") %></div>
 															                     </a>
 															                     <% } %>
 															                  </div>
@@ -107,7 +111,7 @@
 															</div>
 													<%} else {%>
 														<div class="MiddleTab"> 
-											 				<a href="#<%=title%>" class="TabLabel" onclick="eXo.webui.UIHorizontalTabs.changeTabForUITabPane(this,'$id', '$tabId' );<%= selectTab %>"><%=title%></a>
+											 				<a href="$selectTab" class="TabLabel" onclick="eXo.webui.UIHorizontalTabs.changeTabForUITabPane(this,'$id', '$tabId' );eXo.ajaxLinkHandler(this,event)"><%=title%></a>
 											 		<%} %>
 												</div>
 											</div>

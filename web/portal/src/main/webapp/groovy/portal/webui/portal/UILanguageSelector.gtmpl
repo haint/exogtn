@@ -71,7 +71,7 @@
 						
 		 				<div class="UIAction"> 
 							<a href="#<%=_ctx.appRes("UIChangeLanguage.action.save");%>" onclick="eXo.portal.UIPortal.changeLanguage('<%=uicomponent.url("Save");%>');" class="ActionButton LightBlueStyle"><%=_ctx.appRes("UIChangeLanguage.action.save");%></a>
-							<a href="#<%=_ctx.appRes("UIChangeLanguage.action.close");%>" onclick="<%=uicomponent.event("Close");%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes("UIChangeLanguage.action.close");%></a>
+							<a href="<%=uicomponent.url("Close");%>" onclick="eXo.ajaxLinkHandler(this,event)" class="ActionButton LightBlueStyle"><%=_ctx.appRes("UIChangeLanguage.action.close");%></a>
 						</div>
 	
 					</div>

@@ -23,7 +23,7 @@
 						even = !even;
 					%>
 						<div class="$rowCssClass">
-							<a class="ItemIcon" href="<%=uicomponent.event("SelectMembership", member)%>" title="$member">$member</a>
+							<a class="ItemIcon" onclick="eXo.ajaxLinkHandler(this,event)" href="<%=uicomponent.url("SelectMembership", member)%>" title="$member">$member</a>
 						</div>
 					<%}%>
 				</div>

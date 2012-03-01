@@ -124,15 +124,17 @@ UIRightClickPopupMenu.prototype.clickRightMouse = function(event, elemt, menuId,
 
 	if(params) {
 		params = "," + params + "," ;
-		var items = contextMenu.getElementsByTagName("a") ;
-		for(var i = 0; i < items.length; i++) {
-			if(params.indexOf(items[i].getAttribute("exo:attr")) > -1) {
-				items[i].style.display = 'block' ;
+		var inputs = contextMenu.getElementsByTagName("input");
+		for(var i = 0; i < inputs.length; i++) {
+			var item = inputs[i].nextSibling.nextSibling;
+			if(params.indexOf(inputs[i].value) > -1) {
+				item.style.display = 'block' ;
 			} else {
-				items[i].style.display = 'none' ;
+				item.style.display = 'none' ;
 			}
 		}
-	}
+	} 
+
 	var customItem = eXo.core.DOMUtil.findFirstDescendantByClass(elemt, "div", "RightClickCustomItem") ;
 	var tmpCustomItem = eXo.core.DOMUtil.findFirstDescendantByClass(contextMenu, "div", "RightClickCustomItem") ;
 	if(tmpCustomItem) {

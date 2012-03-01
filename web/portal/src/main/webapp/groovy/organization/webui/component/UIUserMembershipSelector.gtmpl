@@ -11,45 +11,6 @@
 	<%//Begin Membership List%>
 	<div class="MembershipList">
 	<%uicomponent.renderChild(UIGrid.class)%>
-<!--		 
-		<table class="UIGrid" cellspacing="0" borderspacing="0" style="width: 99%">
-			<thead>
-			 <tr>										
-					<%
-						def labels = ["userName", "groupId", "membershipType", "action"];
-						for(label in labels){
-					%>
-						<th><%=_ctx.appRes(uicomponent.getId() + ".header." + label)%></th>						
-					<%}%>
-				</tr>
-			</thead>
-			<tbody>
-				<%
-					String rowClass = null;
-					boolean even = true;		
-					//TODO:	Do not use the	syntax
-					membership.eachWithIndex() {							
-						member, i ->	
-						if(even) rowClass = "OddRow";
-						else rowClass = "EvenRow";
-							even = !even;
-				%>
-						<tr class="<%=rowClass%>">
-							<td>$member.userName</td>
-							<td>$member.groupId</td>
-							<td>$member.membershipType</td>
-							<td>
-								<div class="ActionContainer" style="width: 19px; margin: auto">
-									<div class="OverflowContainer">
-										<a class="DustBin16x16Icon" href="<%=uicomponent.event("DeleteMembership", String.valueOf(i))%>"><span></span></a>
-									</div>	
-								</div>
-							</td>
-						</tr>
-				<%}%>
-			</tbody>
-		</table>
--->			
 	</div>
 	<%//End Membership List%>
 	<% if(uicomponent.isAdminRole()) { %>

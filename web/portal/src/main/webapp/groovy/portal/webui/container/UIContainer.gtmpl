@@ -69,8 +69,8 @@
 								%>
 								<div class="ContainerIcon"><%=hasPermission ? strTitle : _ctx.appRes("UIPortlet.label.protectedContent")%></div>
 								<%if(hasPermission) {%>
-									<a href="<%=uicomponent.event("EditContainer")%>" class="EditIcon" title="<%=_ctx.appRes("UIContainer.tooltip.editContainer")%>"></a>
-									<a href="<%=uicomponent.event("DeleteComponent")%>" class="DeleteIcon" title="<%=_ctx.appRes("UIContainer.tooltip.closeContainer")%>"><span></span></a>
+									<a href="<%=uicomponent.url("EditContainer")%>" onclick="eXo.ajaxLinkHandler(this,event)" class="EditIcon" title="<%=_ctx.appRes("UIContainer.tooltip.editContainer")%>"></a>
+									<a href="<%=uicomponent.url("DeleteComponent")%>" onclick="eXo.ajaxLinkHandler(this,event)" class="DeleteIcon" title="<%=_ctx.appRes("UIContainer.tooltip.closeContainer")%>"><span></span></a>
 								<%}%>
 							</div>						
 						<%/*End InfoBar*/ %>

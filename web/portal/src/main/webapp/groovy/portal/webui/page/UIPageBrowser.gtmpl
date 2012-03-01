@@ -8,7 +8,7 @@
 	<%if(uicomponent.isShowAddNewPage()) {%>
 		 
 			<div class="UIAction"> 
-				<a href="#<%=_ctx.appRes(uicomponent.getId() + ".action.addNewPage")%>" onclick="<%=uicomponent.event("AddNew")%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".action.addNewPage")%></a>
+				<a onclick="eXo.ajaxLinkHandler(this,event)" href="<%=uicomponent.url("AddNew")%>" class="ActionButton LightBlueStyle"><%=_ctx.appRes(uicomponent.getId() + ".action.addNewPage")%></a>
 			</div>			
 	<%}%>
 </div>

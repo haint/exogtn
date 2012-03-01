@@ -87,8 +87,8 @@
 				<a href="#<%=_ctx.appRes(uicomponent.getId() + ".label.createPage")%>" class="GreenPlusPage16x16Icon Icon"><%=_ctx.appRes(uicomponent.getId() + ".label.createPage")%></a>
 			</span> 	
 		<% } %>
-			<span class="ActionButton SimpleStyle" onclick="<%=uicomponent.event("OpenSelectPagePopUp")%>" title="<%=_ctx.appRes(uicomponent.getId()+".label.searchandSelectPage")%>">
-				<a href="#<%=_ctx.appRes(uicomponent.getId()+".label.searchandSelectPage")%>" class="Icon SelectPageIcon"><%=_ctx.appRes(uicomponent.getId()+".label.searchandSelectPage")%></a>
-			</span>		
+			<a class="ActionButton SimpleStyle" onclick="eXo.ajaxLinkHandler(this,event)" href="<%=uicomponent.url("OpenSelectPagePopUp")%>" title="<%=_ctx.appRes(uicomponent.getId()+".label.searchandSelectPage")%>">
+				<span class="Icon SelectPageIcon"><%=_ctx.appRes(uicomponent.getId()+".label.searchandSelectPage")%></span>
+			</a>		
 	</div>
 </div>

@@ -17,8 +17,9 @@
 				<div class="UIRightPopupMenuContainer">
 					<%for(action in uicomponent.getActions()) {%>
 					
-					 	<div class="MenuItem"> 	
-							<a exo:attr="$action" href="<%= uicomponent.event(action)%>" onclick="eXo.webui.UIRightClickPopupMenu.prepareObjectId(event, this);" class="ItemIcon ${action}16x16Icon" >
+					 	<div class="MenuItem">
+					 		<input type="hidden" name="exo-attr" value="$action" /> 	
+							<a href="<%= uicomponent.url(action)%>" onclick="eXo.webui.UIRightClickPopupMenu.prepareObjectId(event, this);eXo.ajaxLinkHandler(this,event);" class="ItemIcon ${action}16x16Icon" >
 								<%=_ctx.appRes(uicomponent.getId() + ".event." + action) %>
 							</a>
 					 	</div>						
