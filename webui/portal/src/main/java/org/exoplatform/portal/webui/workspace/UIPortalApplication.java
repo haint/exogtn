@@ -32,7 +32,6 @@ import org.exoplatform.portal.resource.Skin;
 import org.exoplatform.portal.resource.SkinConfig;
 import org.exoplatform.portal.resource.SkinService;
 import org.exoplatform.portal.resource.SkinURL;
-import org.exoplatform.web.url.MimeType;
 import org.exoplatform.web.url.navigation.NodeURL;
 import org.exoplatform.portal.webui.application.UIPortlet;
 import org.exoplatform.portal.webui.page.UIPageActionListener.ChangeNodeActionListener;
@@ -48,7 +47,6 @@ import org.exoplatform.services.resources.LocaleConfig;
 import org.exoplatform.services.resources.LocaleConfigService;
 import org.exoplatform.services.resources.LocaleContextInfo;
 import org.exoplatform.services.resources.Orientation;
-import org.exoplatform.web.application.javascript.Javascript;
 import org.exoplatform.web.application.javascript.Javascript.PortalJScript;
 import org.exoplatform.web.application.javascript.JavascriptConfigService;
 import org.exoplatform.webui.application.WebuiRequestContext;
@@ -840,11 +838,30 @@ public class UIPortalApplication extends UIApplication
     */
    public String getPortalURLTemplate() throws UnsupportedEncodingException
    {
+      return createPortalURL(EMPTY_COMPONENT.getId(), "{portal:action}");
+   }
+
+   /**
+    * Return a portal URL. The <code>URL</code> includes portal component and portal action parameter in query string
+    * 
+    * @param componentId
+    * @param action
+    * @return
+    */
+   public String createPortalURL(final String componentId, String action)
+   {
       PortalRequestContext pcontext = Util.getPortalRequestContext();
       ComponentURL urlTemplate = pcontext.createURL(ComponentURL.TYPE);
       urlTemplate.setPath(pcontext.getNodePath());
-      urlTemplate.setResource(EMPTY_COMPONENT);
-      urlTemplate.setAction("{portal:action}");
+      urlTemplate.setAction(action);
+      urlTemplate.setResource(new UIComponent()
+      {
+         @Override
+         public String getId()
+         {
+            return componentId;
+         }
+      });
 
       return urlTemplate.toString();
    }

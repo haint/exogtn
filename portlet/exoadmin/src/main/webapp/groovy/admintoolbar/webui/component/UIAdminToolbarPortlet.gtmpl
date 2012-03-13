@@ -18,6 +18,7 @@
 	String editPageAndNaviLabel = _ctx.appRes("UIAdminToolbarPortlet.action.EditPageAndNavigation");
 	String editSiteLayout = _ctx.appRes("UIAdminToolbarPortlet.action.EditSiteLayout");
 	String editorLabel = _ctx.appRes("UIAdminToolbarPortlet.action.Editor");
+	UIPortalApplication portalApp = Util.getUIPortalApplication();
 	
 	boolean userCouldEditNavigation = uicomponent.hasEditPermissionOnNavigation();
 	boolean userCouldEditPage = uicomponent.hasEditPermissionOnPage();
@@ -32,26 +33,29 @@
 	<li class="UITab NormalToolbarTab">
 		<a class="EditorIcon TBIcon" href="#$editorLabel">$editorLabel</a>
 		<ul class="MenuItemContainer" style="display:none;">
-			<% if(userCouldEditNavigation){ %>
+			<% if (userCouldEditNavigation) {
+			      String addPageURL = portalApp.createPortalURL("UIWorkingWorkspace", "PageCreationWizard");
+			%>
 				<li class="MenuItem">	
-					<a href="#$addPageLabel" onclick="ajaxGet(eXo.env.server.createPortalURL('UIWorkingWorkspace', 'PageCreationWizard', true))" title="" class="ItemIcon AddPageIcon">$addPageLabel</a>
+					<a href="$addPageURL" onclick="eXo.ajaxLinkHandler(this, event)" title="" class="ItemIcon AddPageIcon">$addPageLabel</a>
 				</li>
 			<% } %>
 			
 			<% if(userCouldEditPage){ 
 			
-				UIPortalApplication portalApp = Util.getUIPortalApplication();
 				UIPage uiPage = portalApp.findFirstComponentOfType(UIPage.class);//TODO: Find a better solution than this traversing
-				String editPageRequest = "ajaxGet(eXo.env.server.createPortalURL('" + uiPage.getId() + "', 'EditCurrentPage', true))";
+				String editPageURL = portalApp.createPortalURL(uiPage.getId(), "EditCurrentPage");
 			%>
 				<li class="MenuItem">
-					<a href="#$editPageLabel" onclick="$editPageRequest" title="" class="ItemIcon EditPageIcon">$editPageLabel</a>
+					<a href="$editPageURL" onclick="eXo.ajaxLinkHandler(this, event)" title="" class="ItemIcon EditPageIcon">$editPageLabel</a>
 				</li>
 			<% } %>
 			
-			<% if(userCouldEditPortal){ %>								 
+			<% if(userCouldEditPortal){
+			      String editSiteLayoutURL = portalApp.createPortalURL("UIWorkingWorkspace", "EditInline");
+			%>
 				<li class="MenuItem">	
-					<a href="#$editSiteLayout" onclick="ajaxGet(eXo.env.server.createPortalURL('UIWorkingWorkspace', 'EditInline', true))" title="" class="ItemIcon EditSiteIcon">$editSiteLayout</a>
+					<a href="$editSiteLayoutURL" onclick="eXo.ajaxLinkHandler(this, event)" title="" class="ItemIcon EditSiteIcon">$editSiteLayout</a>
 				</li>
 			<% } %>
 		</ul>
