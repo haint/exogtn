@@ -252,7 +252,7 @@
 							<div class="PortletIcon $portletIcon"><%=hasPermission ? title : _ctx.appRes("UIPortlet.label.protectedContent")%></div>
 							<%if(hasPermission) {%>
 								<a onclick="eXo.ajaxLinkHandler(this,event)" href="<%=uicomponent.url("EditPortlet","$uicomponent.id")%>" class="EditIcon" title="<%=_ctx.appRes("UIPortlet.tooltip.editPortlet");%>"></a>
-								<a onclick="eXo.ajaxLinkHandler(this,event)" href="<%=uicomponent.url("DeleteComponent","$uicomponent.id")%>" class="DeleteIcon" title="<%=_ctx.appRes("UIPortlet.tooltip.deletePortlet");%>"></a>
+								<a href="<%=uicomponent.event("DeleteComponent","$uicomponent.id")%>" class="DeleteIcon" title="<%=_ctx.appRes("UIPortlet.tooltip.deletePortlet");%>"></a>
 							<%}%>	
 						</div>
 						<%/*End InfoBar*/ %>
