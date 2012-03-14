@@ -10,7 +10,7 @@ def selectedApp = uicomponent.getSelectedApplication();
 	<div class="UIControlbar ClearFix">
 		<a class="IconControl AddCategoryIcon" onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("AddCategory") %>"><%=_ctx.appRes("UIOrganizer.label.addCategory")%></a>
 		<% if(uicomponent.isShowImport()) { %>
-			<a class="IconControl ImportIcon" onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("ImportAllApplications") %>"><%=_ctx.appRes("UIOrganizer.label.autoImport")%></a> 
+			<div class="IconControl ImportIcon" onclick="<%= uicomponent.event("ImportAllApplications") %>"><%=_ctx.appRes("UIOrganizer.label.autoImport")%></div> 
 		<% } %>	
 	</div>	
 	<div class="AppRegistryContainer ClearFix">

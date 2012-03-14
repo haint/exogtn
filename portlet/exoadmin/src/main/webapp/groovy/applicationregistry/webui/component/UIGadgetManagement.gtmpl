@@ -25,7 +25,7 @@
 						<div class="$cssItem ItemContent ClearFix">
 						<% def gadgetLabel = gadget.getTitle() %>
 							<a onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("SelectGadget", gadget.getName()) %>" class="TabLabel $gadgetType" title="<%= gadget.getTitle() %>"><%= (gadgetLabel.length() <= 31) ? gadgetLabel : gadgetLabel.substring(0, 28)+"..." %></a>
-							<a onclick="eXo.ajaxLinkHandler(this,event)" href="<%= uicomponent.url("RemoveGadget", gadget.getName()) %>" title="<%=_ctx.appRes("UIGadgetManagement.title.deleteGadget")%>" class="ControlIcon DeletePortalIcon"><span></span></a>
+							<a href="#<%=_ctx.appRes("UIGadgetManagement.title.deleteGadget")%>" title="<%=_ctx.appRes("UIGadgetManagement.title.deleteGadget")%>" class="ControlIcon DeletePortalIcon" onclick="<%= uicomponent.event("RemoveGadget", gadget.getName()) %>"><span></span></a>
 						</div>
 					<% } %>
 					</div>
