@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+             version="2.0"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd
+   http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
+   <portlet>
+     <portlet-name>RegisterApplication</portlet-name>
+     <display-name xml:lang="EN">Juzu Register Portlet</display-name>
+     <portlet-class>org.juzu.portlet.JuzuPortlet</portlet-class>
+     <init-param>
+       <name>juzu.app_name</name>
+       <value>RegisterApplication</value>
+     </init-param>
+     <init-param>
+       <name>juzu.run_mode</name>
+       <value>dev</value>
+     </init-param>
+     <init-param>
+       <name>juzu.inject</name>
+       <value>weld</value>
+      <!-- <value>spring</value>  -->
+     </init-param>
+     <supports>
+       <mime-type>text/html</mime-type>
+     </supports>
+     <portlet-info>
+       <title>Register Portlet</title>
+       <keywords>web,juzu</keywords>
+     </portlet-info>
+   </portlet>
+</portlet-app>

@@ -1,0 +1,8 @@
+<div class="UIFormWithTitle">
+	<div class="TitleBar">Create a new account</div>
+	<div class="HorizontalLayout">
+		<div class="FormContainer">
+		#{insert/}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,3 @@
+#{param name=msg/}
+
+<strong>${msg}</strong>
