@@ -21,6 +21,10 @@
        <value>weld</value>
       <!-- <value>spring</value>  -->
      </init-param>
+     <init-param>
+       <name>juzu.src_path</name>
+       <value>/home/haint/java/exo-trunk/exogtn/portlet/juzu/src/main/java</value>
+     </init-param>
      <supports>
        <mime-type>text/html</mime-type>
      </supports>

@@ -25,71 +25,22 @@ import org.juzu.FlashScoped;
 /**
  * @author <a href="mailto:haithanh0809@gmail.com">Hai Thanh Nguyen</a>
  * @version $Id$
- *
+ * 
  */
 
 @Named("flash")
 @FlashScoped
 public class Flash
 {
-
-   private String username = "";
-   
-   private String success = "";
-   
-   private String error = "";
-   
    private String captcha = "";
-   
-   private boolean valid = true;
 
-   public String getUsername()
+   public String getCaptcha()
    {
-      return username;
+      return captcha;
    }
 
-   public void setUsername(String username)
+   public void setCaptcha(String captcha)
    {
-      this.username = username;
-   }
-
-   public String getSuccess()
-   {
-      return success;
-   }
-
-   public void setSuccess(String success)
-   {
-      this.success = success;
-   }
-
-   public String getError()
-   {
-      return error;
-   }
-
-   public void setError(String error)
-   {
-      this.error = error;
-   }
-   
-   public String getCaptcha() 
-   {
-   	return captcha;
-   }
-   
-   public void setCaptcha(String captcha) 
-   {
-   	this.captcha = captcha;
-   }
-   
-   public boolean isValid() 
-   {
-   	return valid;
-   }
-   
-   public void setValid(boolean valid) 
-   {
-   	this.valid = valid;
+      this.captcha = captcha;
    }
 }

@@ -26,7 +26,7 @@ import org.juzu.impl.inject.MetaProvider;
 /**
  * @author <a href="mailto:haithanh0809@gmail.com">Hai Thanh Nguyen</a>
  * @version $Id$
- *
+ * 
  */
 public class GateInMetaProvider implements MetaProvider
 {

@@ -1,0 +1,68 @@
+<form id="form" action="@{RegisterController.saveUser()}" method="post">
+	<table class="UIFormGrid">
+		<tr>
+			<td class="FieldLabel">
+				<label for="username">Username(*)</label>
+			</td>
+			<td class="FieldComponent">
+				<input type="text" id="username" name="username"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="FieldLabel">
+				<label for="password">Password(*)</label>
+			</td>
+			<td class="FieldComponent">
+				<input type="password" id="password" name="password"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="FieldLabel">
+				<label for="confirmPassword">Confirm password(*)</label>
+			</td>
+			<td class="FieldComponent">
+				<input type="password" id="confirmPassword" name="confirmPassword"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="FieldLabel">
+				<label for="firstName">First name(*)</label>
+			</td>
+			<td class="FieldComponent">
+				<input type="text" id="firstName" name="firstName"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="FieldLabel">
+				<label for="lastName">Last name(*)</label>
+			</td>
+			<td class="FieldComponent">
+				<input type="text" id="lastName" name="lastName"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="FieldLabel">
+				<label for="emailAddress">Email(*)</label>
+			</td>
+			<td class="FieldComponent">
+				<input type="text" id="emailAddress" name="emailAddress"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="FieldLabel">
+				<label for="captcha">Text Validation(*)</label>
+			</td>
+			<td class="FieldComponent">
+				<div>
+				<img src="@{RegisterController.serveImage()}" />
+				<br/>
+				<input type="text" id="captcha" name="captcha"/>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div class="UIAction">
+		<a class="ActionButton LightBlueStyle" id="subscribe">Subscribe</a>
+		<a class="ActionButton LightBlueStyle" id="reset">Reset</a>
+	</div>
+</form>
