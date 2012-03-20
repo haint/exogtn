@@ -41,7 +41,6 @@ import org.exoplatform.webui.form.validator.NaturalLanguageValidator;
 import org.exoplatform.webui.form.validator.PasswordStringLengthValidator;
 import org.exoplatform.webui.form.validator.UsernameValidator;
 import org.exoplatform.webui.form.validator.Validator;
-import org.juzu.Action;
 import org.juzu.Controller;
 import org.juzu.Path;
 import org.juzu.Resource;

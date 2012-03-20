@@ -1,4 +1,4 @@
-<form id="form" action="@{RegisterController.saveUser()}" method="post">
+<form id="form" class="UIForm" action="@{RegisterController.saveUser()}" method="post">
 	<table class="UIFormGrid">
 		<tr>
 			<td class="FieldLabel">

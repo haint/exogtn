@@ -3,8 +3,7 @@
    @Script(src = "public/javascripts/jquery.form.js"),
    @Script(src = "public/javascripts/jquery.validate.min.js"),
    @Script(src = "public/javascripts/register.js")}, stylesheets = {
-   @Stylesheet(src = "public/stylesheets/UIFormWithTitle.css"),
-   @Stylesheet(src = "public/stylesheets/UIForm.css")})
+   @Stylesheet(src = "public/stylesheets/stylesheet.css")})
 @Bindings(@Binding(value = org.exoplatform.services.organization.OrganizationService.class, implementation = GateInMetaProvider.class))
 package org.exoplatform.juzu.register;
 import org.juzu.plugin.binding.Bindings;

@@ -2,16 +2,6 @@
 	<div class="TitleBar">Create a new account</div>
 	<div class="HorizontalLayout">
 		<div id="result">
-		<% if (flash.error != "") { %>
-		<p>
-			<strong>${flash.error}</strong>
-		</p>
-		<% } %>
-		<% if (flash.success != "") { %>
-		<p>
-			<strong>${flash.success}</strong>
-		</p>
-		<% } %>
 		</div>
 		
 		<div class="FormContainer">
