@@ -1,0 +1,11 @@
+#{param name=controller/}
+
+<div style="padding: 10px 30px;">
+  <div id="sidetreecontrol"> <a href="?#">Collapse All</a> | <a href="?#">Expand All</a> </div>
+  <ul class="treeview" id="tree">
+  <%
+    String treeView = controller.treeView();
+  %>
+  <div>${treeView}</div>
+  </ul>
+</div>
