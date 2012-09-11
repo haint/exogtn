@@ -1,0 +1,406 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+        <!ENTITY % BOOK_ENTITIES SYSTEM "../../User_Guide.ent">
+        %BOOK_ENTITIES;
+        ]>
+<section id="sect-User_Guide-Manage_Portals">
+<title>Manage sites</title>
+  <section id="sect-User_Guide-Create_a_New_Portal">
+    <title>Create a new portal</title>
+    <para>
+      You can perform this action only when you are a member of the
+      <emphasis>/platform/administrators</emphasis> group.
+    </para>
+
+    <procedure>
+      <step>
+        <para>Open the
+          <guilabel>Create New Portal</guilabel>
+          window by following one of the two ways:
+        </para>
+        <para><emphasis role="bold">The first way</emphasis> </para>
+        <para>
+          Hover your cursor over <menuchoice><guimenu>Edit</guimenu><guimenuitem>Site</guimenuitem></menuchoice> on the <guilabel>Administration</guilabel> bar, then select <guilabel>Add site</guilabel> from the drop-down menu.
+        </para>
+        <mediaobject>
+          <imageobject role="html">
+            <imagedata fileref="images/Add_site1.png" format="PNG" align="center" scale="110"/>
+          </imageobject>
+          <imageobject role="fo">
+            <imagedata fileref="images/Add_site1.png" format="PNG" align="center" scalefit="1" width="70mm"/>
+          </imageobject>
+        </mediaobject>
+        <para><emphasis role="bold">The second way</emphasis> </para>
+        <para>
+          <emphasis role="bold">i.</emphasis> Hover your cursor over
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/sawtooth_icon.png" format="PNG" scalefit="1" width="4mm"/>
+            </imageobject>
+          </inlinemediaobject>
+          on the <guilabel>Administration</guilabel> bar, then select <menuchoice><guimenu>Portal</guimenu><guimenuitem>Sites</guimenuitem></menuchoice> from the drop-down menu.
+        </para>
+        <mediaobject>
+          <imageobject role="html">
+            <imagedata fileref="images/AddPortal.png" format="PNG" align="center" scale="110"/>
+          </imageobject>
+          <imageobject role="fo">
+            <imagedata fileref="images/AddPortal.png" format="PNG" align="center" scalefit="1" width="150mm"/>
+          </imageobject>
+        </mediaobject>
+        <para><emphasis role="bold">ii.</emphasis> Click the <guibutton>Add New Portal</guibutton> button.
+        </para>
+        <para>
+          By default, the
+          <guilabel>Create New Portal</guilabel>
+          window, which contains the
+          <guilabel>Portal Settings</guilabel> tab,
+          will open.
+          <mediaobject>
+            <imageobject role="html">
+              <imagedata fileref="images/PortalTemplate.png" format="PNG" align="center" scale="100"/>
+            </imageobject>
+            <imageobject role="fo">
+              <imagedata fileref="images/PortalTemplate.png" format="PNG" align="center" scalefit="1" width="100mm"/>
+            </imageobject>
+          </mediaobject>
+        </para>
+      </step>
+      <step>
+        <para>
+          Enter a string into the <guilabel>Portal Name</guilabel> field. This field is required and must be unique. Only alphabetical, numerical and underscore characters are
+          allowed for this field with the length from 3 to 30 characters.
+        </para>
+      </step>
+      <step>
+        <para>
+          Select the default display language for the portal from the <guilabel>Locale</guilabel> field.
+        </para>
+      </step>
+      <step>
+        <para>
+          Click the
+          <guilabel>Properties</guilabel>
+          tab to set the properties of a portal.
+        </para>
+        <mediaobject>
+          <imageobject role="html">
+            <imagedata fileref="images/show-info-bar.png" format="PNG" align="center" scale="100"/>
+          </imageobject>
+          <imageobject role="fo">
+            <imagedata fileref="images/show-info-bar.png" format="PNG" align="center" scalefit="1" width="150mm"/>
+          </imageobject>
+        </mediaobject>
+ <para><emphasis role="bold">Details:</emphasis></para>
+ <table>
+ <title></title>
+        <tgroup cols="2">
+          <thead>
+            <row>
+              <entry>
+                Field
+              </entry>
+              <entry>
+                Description
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+           <row>
+              <entry>
+                 <guilabel>Keep session alive</guilabel>
+              </entry>
+              <entry>
+                 Keep the working session for a long time to avoid the time-out. There are 3 options:
+               <para>
+              <guilabel>Never:</guilabel>
+               The session will time out if the logged-in user does not do any action after a given period. In this case, there will be a message which asks the user to log in again.
+              </para>
+              <para>
+              <guilabel>On Demand:</guilabel>
+              The session will time out to the application's requirement. If there is no request from the application, the session will time out after the given period that is similar to that of <emphasis role="bold">Never.</emphasis>
+            </para>
+            <para>
+              <guilabel>Always:</guilabel>
+             The session will never time out even if the logged-in user does not do any action after a long time.
+            </para>
+              </entry>
+            </row>
+            <row>
+            <entry><guilabel>Show info bar by default</guilabel>
+            </entry>
+            <entry> Tick the checkbox to show the info bar of the porlet by default when the portlet is used in a page of the portal.
+                    <para>
+          The "Show info bar by default" option only takes effect on new porlets as from the time you select the checkbox rather than all portlets of the portal. 
+          In particular, after creating your new portal with the "Show info bar by default" option checked, newly created portlets of the portal will be displayed with the info bar by default. 
+          However, if you deselect the "Show info bar by default" option when editing the portal's configuration, the former portlets with the shown info bars are remained; meanwhile new portlets, 
+          which are created after this option is deselected, will be shown without the info bars. 
+        </para>
+            </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+      </step>
+      <step>
+        <para>
+          Click the
+          <guilabel>Permission Settings</guilabel>
+          tab to set permissions on the portal.
+        </para>
+        <para>
+          The list of <emphasis>Access</emphasis> permissions for the portal is empty by default. You have to select at least one or tick the
+          <guilabel>Make it public (everyone can access)</guilabel>
+          checkbox to assign the <emphasis>Access</emphasis> permission to everyone.
+        </para>
+		<note>
+		<para>
+		For more details on how to grant permissions on the portal, see the <link linkend="sect-User_Guide-Manage_Permission-Set_Portal_Permission">Set permissions on a portal</link> section.	
+		</para>
+		</note>
+      </step>
+      <step>
+        <para>
+          Click the
+          <guilabel>Portal Templates</guilabel>
+          tab to select the template for your portal.
+        </para>
+      </step>
+      <step>
+        <para>
+          Click
+          <guibutton>Save</guibutton>
+          to accept creating your new portal.
+        </para>
+      </step>
+    </procedure>
+  </section>
+   <section id="sect-User_Guide-Switching_between_Portals">
+    <title>Switch between portals</title>
+    <para>This function enables you to select and use another portals (gateway, starting site). You can perform this
+      action only when you are assigned the appropriate permission by the administrators.
+    </para>
+    <para>
+      To switch between portals, hover your cursor over
+      <guilabel>My Sites</guilabel>
+      on the <guilabel>Administration</guilabel> bar for a list of all portals in which you have at least access rights, then click the
+      desired portal. You need to wait a few seconds to be switched to your selected portal.
+    <mediaobject>
+      <imageobject role="html">
+        <imagedata fileref="images/SitePortlet.png" format="PNG" align="center" scale="110"/>
+      </imageobject>
+      <imageobject role="fo">
+        <imagedata fileref="images/SitePortlet.png" format="PNG" align="center" scalefit="1" width="50mm"/>
+      </imageobject>
+    </mediaobject>
+	</para>
+  </section>
+  <section id="sect-User_Guide-Manage_Portals-Edit_a_Portal">
+    <title>Edit a portal</title>
+    <note>
+	<para>
+      The function allows you to edit layouts, navigations and properties of a portal. To do this, you must have the <emphasis>Edit</emphasis> permission by contacting your administrator.
+	</para>
+	</note>
+	<para xml:id="sect-User_Guide-Manage_Portals-Edit_a_Portal-Ways_to_relevant_forms">
+	<emphasis role="bold">
+	  When you have the <emphasis>Edit</emphasis> permission, follow either of two ways below to go to the relevant form that allows you to do actions related to editing a portal.
+    </emphasis>
+	</para>
+    <para xml:id="User_Guide-Manage_Portals-Edit_a_Portal-first_way">
+    <emphasis role="bold">The first way</emphasis></para>
+      <procedure>
+        <step>
+          <para>
+            Hover your cursor over
+            <guilabel>My Sites</guilabel>
+            on the <guilabel>Administration</guilabel> bar and select the portal you want to edit from the drop-down menu.
+		 </para>
+		 <para>You will be switched to your selected portal just after a few seconds.
+          </para>
+        </step>
+        <step>
+          <para>Hover your cursor over <guilabel>Edit</guilabel> on the <guilabel>Administration</guilabel> bar to open the drop-down menu.</para>
+		  <para><emphasis role="bold">i.</emphasis> Select <menuchoice><guimenu>Site</guimenu><guimenuitem>Layout</guimenuitem></menuchoice>.
+          </para>
+		  <para>
+		  You will be directed to the <emphasis role="bold">Edit Portal</emphasis> page. From here, you can make changes on the <link linkend="proc-User_Guide-Manage_Portals-Edit_Layout">layout of your selected portal,</link> or on <link linkend="proc-User_Guide-Manage_Portals-Edit_Properties">its configurations</link> by selecting <emphasis role="bold">Site's Config</emphasis> at the bottom of the <emphasis role="bold">Edit Inline Composer</emphasis> form.
+		  </para>
+		  <para><emphasis role="bold">ii.</emphasis> Select <menuchoice><guimenu>Site</guimenu><guimenuitem>Navigation</guimenuitem></menuchoice>.</para>
+		  <para>From here, you can <link linkend="proc-User_Guide-Manage_Portals-Edit_Navigation">edit your selected portal's navigation.</link></para>
+        </step>
+      </procedure>
+    <para xml:id="User_Guide-Manage_Portals-Edit_a_Portal-second_way">
+      <emphasis role="bold">The second way</emphasis>
+    </para>
+      <procedure>
+        <step>
+          <para>
+            Hover your cursor over
+            <inlinemediaobject>
+              <imageobject>
+                <imagedata fileref="images/sawtooth_icon.png" format="PNG" scalefit="1" width="4mm"/>
+              </imageobject>
+            </inlinemediaobject>
+            to open the drop-down menu.
+          </para>
+        </step>
+        <step>
+          <para>Select <menuchoice><guimenu>Portal</guimenu><guimenuitem>Sites</guimenuitem></menuchoice>
+            to show the list of active portals.</para>
+          <mediaobject>
+            <imageobject role="html">
+              <imagedata fileref="images/ActivePortals.png" format="PNG" align="center" scale="110"/>
+            </imageobject>
+            <imageobject role="fo">
+              <imagedata fileref="images/ActivePortals.png" format="PNG" align="center" contentwidth="150mm"/>
+            </imageobject>
+          </mediaobject>
+
+        </step>
+		<step>
+			<para>Specify your desired portal, and do the following actions:
+			</para>
+		</step>
+      </procedure>
+	  <itemizedlist>
+		<listitem>
+			<para>
+			<link linkend="proc-User_Guide-Manage_Portals-Edit_Layout">Edit the portal's layout</link> by clicking <guilabel>Edit Layout.</guilabel>
+			</para>
+		</listitem>
+		<listitem>
+		<para>
+		<link linkend="proc-User_Guide-Manage_Portals-Edit_Navigation">Change the portal's navigation</link> by clicking <guilabel>Edit Navigation</guilabel>.
+		</para>
+		</listitem>
+		<listitem>
+		<para>
+		<link linkend="proc-User_Guide-Manage_Portals-Edit_Properties">Edit the portal's configurations</link> by clicking <guilabel>Edit Portal's Config</guilabel>.
+		</para>
+		</listitem>
+		<listitem>
+			<para><link linkend="sect-User_Guide-Manage_Portals-Delete_a_Portal">Delete the portal</link> by clicking <guilabel>Delete</guilabel>.
+			</para>
+		</listitem>
+		</itemizedlist>
+    <section id="proc-User_Guide-Manage_Portals-Edit_Layout">
+      <title>Edit layout</title>
+      <para>
+        To edit your selected portal's layout, your first need to follow <link linkend="sect-User_Guide-Manage_Portals-Edit_a_Portal-Ways_to_relevant_forms">one of ways above</link> to open the <guilabel>Edit Layout</guilabel> form.
+      </para>
+      <para>
+        New applications, containers or gadgets can be dragged and dropped from the 
+        <guilabel>Edit Inline Composer</guilabel>
+        window to the main portal body.
+      </para>
+      <para>
+        You can rearrange elements in the portal body by dragging and dropping them into your desired positions. Also, you can edit or remove any element by hovering your cursor over it and selecting 
+		<inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/edit_icon1.png" format="PNG" scalefit="1" width="4mm"/>
+            </imageobject>
+          </inlinemediaobject>, or 	
+		  <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/Delete_element_icon.png" format="PNG" scalefit="1" width="4mm"/>
+            </imageobject>
+          </inlinemediaobject> respectively.
+      <mediaobject>
+        <imageobject role="html">
+          <imagedata fileref="images/EditLayout3.png" format="PNG" align="center" scale="110"/>
+        </imageobject>
+        <imageobject role="fo">
+          <imagedata fileref="images/EditLayout3.png" format="PNG" align="center" contentwidth="150mm"/>
+        </imageobject>
+      </mediaobject>
+	   </para>
+	  	  <note>
+		  <para>For more details on how to edit elements, see the <link linkend="sect-User_Guide-Dashboard_Portlet-Edit_Specific_Portlet">Edit a specific portlet</link> section.
+	  </para>
+	  </note>
+    </section>
+    <section id="proc-User_Guide-Manage_Portals-Edit_Navigation">
+      <title>Edit navigation</title>
+      <para>
+        To edit your selected's navigation, your first need to follow <link linkend="sect-User_Guide-Manage_Portals-Edit_a_Portal-Ways_to_relevant_forms">one of ways above</link> to open the <emphasis role="bold">Edit Navigation</emphasis> form.
+          <mediaobject>
+            <imageobject role="html">
+              <imagedata fileref="images/EditNavigation1.png" format="PNG" align="center" scale="110"/>
+            </imageobject>
+            <imageobject role="fo">
+              <imagedata fileref="images/EditNavigation1.png" format="PNG" align="center" scalefit="1" width="150mm"/>
+            </imageobject>
+          </mediaobject>
+		  </para>
+          <para xml:id="Navigation_Management_window">
+            The
+            <guilabel>Navigation Management</guilabel> form appears.
+          <mediaobject>
+            <imageobject role="html">
+              <imagedata fileref="images/NavigationManagement.png" format="PNG" align="center" scale="100"/>
+            </imageobject>
+            <imageobject role="fo">
+              <imagedata fileref="images/NavigationManagement.png" format="PNG" align="center" scalefit="1" width="70mm"/>
+            </imageobject>
+          </mediaobject>
+		  </para>
+      <note>
+	  <para>
+        For more information about actions, which can be done in the <link linkend="Navigation_Management_window">Navigation Management</link> form, see the <link linkend="Platform_User_Guide.Manage_Your_Portals.Manage_Navigation_Nodes">Manage navigation nodes</link> section.
+	  </para>
+	  </note>
+	 </section>
+    <section id="proc-User_Guide-Manage_Portals-Edit_Properties">
+      <title>Edit configurations</title>
+      <para>
+	  Configurations of a portal include settings, properties and permissions that can be set by following <link linkend="sect-User_Guide-Manage_Portals-Edit_a_Portal-Ways_to_relevant_forms">one of ways above</link> to open the <emphasis role="bold">Edit Configurations</emphasis> window.
+      <mediaobject>
+        <imageobject role="html">
+          <imagedata fileref="images/EditPortal2.6New.png" format="PNG" align="center" scale="110"/>
+        </imageobject>
+        <imageobject role="fo">
+          <imagedata fileref="images/EditPortal2.6New.png" format="PNG" align="center" scalefit="1" width="100mm"/>
+        </imageobject>
+      </mediaobject>
+	  </para>
+      <para>
+        In this window, you can make changes on fields in the various tabs, except the <guilabel>Portal Name</guilabel> in the <guilabel>Portal Settings</guilabel> tab.
+      </para>
+	<note>
+	<para>For more details on these fields, refer to the <link linkend="sect-User_Guide-Create_a_New_Portal">Create a new portal</link> section.
+	</para>
+	</note>
+    </section>
+  </section>
+  <section id="sect-User_Guide-Manage_Portals-Delete_a_Portal">
+    <title>Delete a portal</title>
+    <note>
+	<para>
+      To delete a portal, you must be in the group that has the
+      <emphasis role="bold">Edit Permission</emphasis>
+      on that portal.
+	</para>
+    </note>
+    <procedure>
+	  <step>
+		<para>Open the list of existing portals by following steps as stated in the <link linkend="User_Guide-Manage_Portals-Edit_a_Portal-second_way">second way.</link>
+		</para>
+	  </step>
+      <step>
+        <para>
+          Click
+          <guilabel>Delete</guilabel>
+          corresponding to the portal you want to delete.
+        </para>
+      </step>
+      <step>
+        <para>
+          Click
+          <guibutton>OK</guibutton>
+          in the confirmation message to accept your deletion.
+        </para>
+      </step>
+    </procedure>
+  </section>
+</section>

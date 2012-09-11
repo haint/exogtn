@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+        <!ENTITY % BOOK_ENTITIES SYSTEM "../../User_Guide.ent">
+        %BOOK_ENTITIES;
+        ]>
+<section id="sect-User_Guide-User_Management-Add_a_user">
+<title>Add a user</title>
+    <procedure>
+      <step>
+        <para>
+          Click
+          <guilabel>Add Users</guilabel>
+          from the drop-down menu.
+        </para>
+        <mediaobject>
+          <imageobject role="html">
+            <imagedata fileref="images/Add_user_button.png" format="PNG" align="center" scalefit="0" width="100mm"/>
+          </imageobject>
+          <imageobject role="fo">
+            <imagedata fileref="images/Add_user_button.png" format="PNG" align="center" scalefit="1" width="70mm"/>
+          </imageobject>
+        </mediaobject>
+        <para>The
+          <guilabel>Create New Account</guilabel>
+          window will open with two tabs: <guilabel>Account Settings</guilabel> and <guilabel>User Profile</guilabel>.
+        </para>
+        <mediaobject>
+          <imageobject role="html">
+            <imagedata fileref="images/NewStaff.png" format="PNG" align="center" scale="110"/>
+          </imageobject>
+          <imageobject role="fo">
+            <imagedata fileref="images/NewStaff.png" format="PNG" align="center" scalefit="1" width="100mm"/>
+          </imageobject>
+        </mediaobject>
+      </step>
+      <step>
+        <para>
+          Fill all fields in the
+          <guilabel>Account Settings</guilabel>
+          tab which must be completed. For more details on these fields, see <link linkend="Create_New_Account_form_details">here.</link>
+        </para>
+        <para>
+          Further information about the user, such as nickname, or birthday, can be added in the
+          <guilabel>User Profile</guilabel>
+          tab that is not required.
+        </para>
+      </step>
+      <step>
+        <para>
+          Click
+          <guibutton>Save</guibutton>
+          to accept your new account. If you want to refresh the input information, simply click
+          <guibutton>Reset</guibutton>.
+        </para>
+      </step>
+    </procedure>
+  </section>

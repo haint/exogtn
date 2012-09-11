@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "../../User_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="sect-User_Guide-Sign_In_and_Sign_Out">
+  <title>Sign in &amp; Sign out</title>
+  <citetitle>
+  <para xml:id="sect-User_Guide-Sign_in"><emphasis role="bold">Sign in a portal</emphasis></para>
+      </citetitle>
+  <para>
+    To enter the portal in the private mode, you just need to use your registered account. In eXo Platform 3.5, you can sign in the portal via two ways:
+  </para>
+  <para xml:id="sect-User_Guide-Sign_In_and_Sign_Out-Sign_in-First_way"><emphasis role="bold">The first way</emphasis></para>
+  <itemizedlist>
+    <listitem>
+      <para>
+        Click directly one of the default user accounts at the lower of screen right in the welcome page or
+        after entering your selected page.
+        <mediaobject>
+          <imageobject role="html">
+            <imagedata fileref="images/Default_account1.png" format="PNG" align="center" scale="110"/>
+          </imageobject>
+          <imageobject role="fo">
+            <imagedata fileref="images/Default_account1.png" format="PNG" align="center" width="100mm" scalefit="1"/>
+          </imageobject>
+        </mediaobject>
+		</para>
+		</listitem>
+		<listitem>
+        <para>
+          Or, after entering your selected portal, for example ACME website, click one of the default users at the
+          bottom of body as below.
+          <mediaobject>
+            <imageobject role="html">
+              <imagedata fileref="images/Default_account2.png" format="PNG" align="center" scale="110"/>
+            </imageobject>
+            <imageobject role="fo">
+              <imagedata fileref="images/Default_account2.png" format="PNG" align="center" width="100mm" scalefit="1"/>
+            </imageobject>
+          </mediaobject>
+        </para>
+    </listitem>
+    </itemizedlist>
+      <para xml:id="sect-User_Guide-Sign_In_and_Sign_Out-Sign_in-Second_way"><emphasis role="bold">
+        The second way
+		</emphasis>
+      </para>
+      <procedure>
+        <step>
+          <para>
+            Click the
+            <guilabel>Login</guilabel>
+            link to open the
+            <guilabel>Sign in</guilabel>
+            form.
+            <mediaobject>
+              <imageobject role="html">
+                <imagedata fileref="images/Sign_in_form.png" format="PNG" align="center" scale="110"/>
+              </imageobject>
+              <imageobject role="fo">
+                <imagedata fileref="images/Sign_in_form.png" format="PNG" align="center" width="100mm" scalefit="1"/>
+              </imageobject>
+            </mediaobject>
+          </para>
+        </step>
+        <step>
+          <para>
+            Input your registered
+            <guilabel>Username</guilabel>
+            and
+            <guilabel>Password</guilabel>
+            in the
+            <guilabel>Sign in</guilabel>
+            form.
+          </para>
+        </step>
+        <step>
+          <para>
+            Select the
+            <guilabel>Remember My Login</guilabel>
+            checkbox for the first time if you want to automatically return to this portal without signing in again.
+            This feature enables you to be automatically authenticated to avoid doing an explicit authentication when
+            you access the portal.
+          </para>
+        </step>
+        <step>
+          <para>
+            Click
+            <guibutton>Sign in</guibutton>
+            to submit the form, or
+            <guibutton>Discard</guibutton>
+            to quit.
+          </para>
+        </step>
+      </procedure>
+  <note>
+    <para>
+      After selecting <guilabel>Remember My Login</guilabel>, if you do not sign out when you leave the
+      portal, you will be automatically authenticated for your next visit.
+    </para>
+  </note>
+    <citetitle>
+  <para xml:id="sect-User_Guide-Sign_Out">
+    <emphasis role="bold">Sign out a portal</emphasis>
+    </para>
+      </citetitle>
+    <para>
+      This feature ends your authenticated session and returns you to the anonymous portal. To sign out, simply hover your cursor over your display name at the top right corner of the site, then select <guilabel>Logout</guilabel> from the drop-down menu.
+    <mediaobject>
+      <imageobject role="html">
+        <imagedata fileref="images/Sign_out1.png" format="PNG" align="center" scale="110"/>
+      </imageobject>
+      <imageobject role="fo">
+        <imagedata fileref="images/Sign_out1.png" format="PNG" align="center" width="70mm" scalefit="1"/>
+      </imageobject>
+    </mediaobject>
+	</para>
+</section>

@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "../../Reference_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="sect-Reference_Guide-Setup_a_Gadget_Server">
+	<title>Set up a Gadget Server</title>
+	<section id="sect-Reference_Guide-Setup_a_Gadget_Server-Virtual_servers_for_gadget_rendering">
+		<title>Virtual servers for gadget rendering</title>
+		<para>
+			&PRODUCT; recommends using two virtual hosts for security. If the gadget is running on a different domain other than the container (the website that &#39;contains&#39; the app), it is unable to interfere with the portal by modifying the code or cookies.
+		</para>
+		<para>
+			An example would hosting the portal from http://www.sample.com and the gadgets from http://www.samplemodules.com.
+		</para>
+		<para>
+			To do this, configure a parameter called <emphasis>gadgets.hostName</emphasis>. The value is the <emphasis>path/to/gadgetServer</emphasis> in <literal>GadgetRegisteryService</literal>:
+		</para>
+		
+<programlisting language="xml">&#60;component&#62;
+  &#60;key&#62;org.exoplatform.application.gadget.GadgetRegistryService&#60;/key&#62;
+  &#60;type&#62;org.exoplatform.application.gadget.jcr.GadgetRegistryServiceImpl&#60;/type&#62;
+  &#60;init-params&#62;
+    &#60;value-param&#62;
+      &#60;name&#62;gadgets.hostName&#60;/name&#62;
+      &#60;description&#62;Gadget server url&#60;/description&#62;
+      &#60;value&#62;http://localhost:8080/GateInGadgetServer/gadgets/&#60;/value&#62;
+    &#60;/value-param&#62;
+  &#60;/init-params&#62;
+&#60;/component&#62;
+</programlisting>
+		<para>
+			It is also possible to have multiple rendering servers. This helps to balance the rendering load across multiple servers.
+		</para>
+		<para>
+			When deploying on the same server, ensure the gadget initiates before anything that calls it (for example; the webapp <literal>GateInGadgets</literal> which uses <literal>org.exoplatform.application.gadget.GadgetRegister</literal>).
+		</para>
+	</section>
+	
+	<section id="sect-Reference_Guide-Setup_a_Gadget_Server-Configuration">
+		<title>Configuration</title>
+		<section id="sect-Reference_Guide-Configuration-Security_key">
+      <title>Security key</title>
+      <para>In GateIn, the gadget container is using three security files for authentication and authorization
+        gadgets:
+      </para>
+      <itemizedlist>
+        <listitem>
+          <para>
+            <emphasis>key.txt</emphasis>
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis>oauthkey.pem</emphasis>
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <emphasis>oauthkey_pub.pem</emphasis>
+          </para>
+        </listitem>
+      </itemizedlist>
+      <para>By default, they are located in the
+        <emphasis>tomcat/gatein/conf/gadgets</emphasis>
+        folder and are configured by system variables in the
+        <emphasis>tomcat/gatein/conf/configuration.properties</emphasis>
+        file:
+      </para>
+      <programlisting>
+        <command>gatein.gadgets.securitytokenkeyfile=${gatein.conf.dir}/gadgets/key.txt</command>
+        <command>gatein.gadgets.signingkeyfile=${gatein.conf.dir}/gadgets/oauthkey.pem</command>
+      </programlisting>
+      <para>In case you have other files, you can change these variables to point to them.</para>
+      <para>The
+        <emphasis>key.txt</emphasis>
+        file contains a secret key used to encrypt the security token used for the user authentication. When starting
+        GateIn, this file is read via the
+        <emphasis>gatein.gadgets.securitytokenkeyfile</emphasis>
+        path. In case the <emphasis>key.txt</emphasis> file is not found, GateIn automatically generates a new
+        <emphasis>key.txt</emphasis>
+        one and save it to the
+        <emphasis>gatein.gadgets.securitytokenkeyfile</emphasis>
+        path.
+      </para>
+      <para>
+        <emphasis>oauthkey.pem</emphasis>
+        and
+        <emphasis>oauthkey_pub.pem</emphasis>
+        are a key pair of RSA cryptography standard.
+        <emphasis>oauthkey.pem</emphasis>
+        is known as a private key and
+        <emphasis>oauthkey_pub.pem</emphasis>
+        is a public key. They are the default keys of the gadget container which OAuth gadgets will use to authorize
+        with external service providers.
+      </para>
+		</section>
+		
+		<section id="sect-Reference_Guide-Configuration-Gadget_proxy_and_concat_configuration">
+			<title>Gadget proxy and concat configuration</title>
+			<para>
+				These servers have to be on the same domain as the gadget server. You can configure the container in <emphasis>eXoGadgetServer:/WEB-INF/classes/containers/default/container.js</emphasis>.
+			</para>
+			
+<programlisting language="javascript">&#34;gadgets.content-rewrite&#34; : {
+  &#34;include-urls&#34;: &#34;.*&#34;,
+  &#34;exclude-urls&#34;: &#34;&#34;,
+  &#34;include-tags&#34;: [&#34;link&#34;, &#34;script&#34;, &#34;embed&#34;, &#34;img&#34;, &#34;style&#34;],
+  &#34;expires&#34;: &#34;86400&#34;,
+  &#34;proxy-url&#34;: &#34;http://localhost:8080/eXoGadgetServer/gadgets/proxy?url=&#34;,
+  &#34;concat-url&#34;: &#34;http://localhost:8080/eXoGadgetServer/gadgets/concat?&#34;
+},
+</programlisting>
+		</section>
+		
+		<section id="sect-Reference_Guide-Configuration-Proxy">
+			<title>Proxy</title>
+			<para>
+				To allow external gadgets when the server is behind a proxy, add the following code to the beginning of the JVM:
+			</para>
+			
+<programlisting>-Dhttp.proxyHost=proxyhostURL -Dhttp.proxyPort=proxyPortNumber -Dhttp.proxyUser=someUserName -Dhttp.proxyPassword=somePassword
+</programlisting>
+		</section>
+
+	</section>
+
+</section>
+
+

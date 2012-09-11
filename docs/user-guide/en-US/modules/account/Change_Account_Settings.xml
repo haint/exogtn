@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "../../User_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="sect-User_Guide-Change_Account_Settings">
+  <title>Change account settings</title>
+  <para>
+    To change your account information, hover your cursor over the account name at the top right corner of the site and
+    click
+    <guilabel>My Account</guilabel>
+    from the drop-down menu.
+  </para>
+  <mediaobject>
+    <imageobject role="html">
+      <imagedata fileref="images/ChangeAccount.png" format="PNG" align="center" scale="110"/>
+    </imageobject>
+    <imageobject role="fo">
+      <imagedata fileref="images/ChangeAccount.png" format="PNG" align="center" width="70mm" scalefit="1"/>
+    </imageobject>
+  </mediaobject>
+  <para>
+    The
+    <guilabel>Account Profiles</guilabel>
+    form appears.
+  </para>
+  <mediaobject>
+    <imageobject role="html">
+      <imagedata fileref="images/AccountProfiles3.png" format="PNG" align="center" scale="110"/>
+    </imageobject>
+    <imageobject role="fo">
+      <imagedata fileref="images/AccountProfiles3.png" format="PNG" align="center" width="70mm" scalefit="1"/>
+    </imageobject>
+  </mediaobject>
+  <citetitle>
+  <para>
+    <emphasis role="bold">Change your profile information</emphasis>
+  </para>
+  </citetitle>
+  <procedure>
+    <step>
+      <para>
+        Select the
+        <guilabel>Account Profiles</guilabel>
+        tab.
+      </para>
+    </step>
+    <step>
+      <para>
+        Change your <guilabel>First Name, Last Name, Email</guilabel>. Your <guilabel>Username</guilabel> cannot be changed.
+      </para>
+    </step>
+    <step>
+      <para>
+        Click
+        <guibutton>Save</guibutton>
+        to submit your changes.
+      </para>
+    </step>
+  </procedure>
+    <note>
+          <para>
+          The email address changed must be in the valid format. See details about the <emphasis role="bold">Email Address</emphasis> format <link linkend="Create_New_Account_form_details">here</link>.
+          </para>
+      </note>
+  <citetitle>
+  <para>
+    <emphasis role="bold">Change your password</emphasis>
+  </para>
+  </citetitle>
+  <procedure>
+    <step>
+      <para>
+        Select the
+        <guilabel>Change Password</guilabel>
+        tab to go to the following form.
+      </para>
+      <mediaobject>
+        <imageobject role="html">
+          <imagedata fileref="images/ChangePassword.png" format="PNG" align="center" scale="110"/>
+        </imageobject>
+        <imageobject role="fo">
+          <imagedata fileref="images/ChangePassword.png" format="PNG" align="center" width="100mm" scalefit="1"/>
+        </imageobject>
+      </mediaobject>
+    </step>
+    <step>
+      <para>
+        Input your current password to identify that you are the owner of this account.
+      </para>
+    </step>
+    <step>
+      <para>
+        Input your new password which must have at least 6 characters.
+      </para>
+    </step>
+    <step>
+      <para>
+        Re-enter your password in the
+        <guilabel>Confirm New Password</guilabel>
+        field.
+      </para>
+    </step>
+    <step>
+      <para>
+        Click
+        <guibutton>Save</guibutton>
+        to accept your changes.
+      </para>
+    </step>
+  </procedure>
+  <note>
+    <para>
+      If the default accounts' passwords have been changed, you can no longer sign in the portal by clicking the default
+      accounts directly as stated in the <link linkend="sect-User_Guide-Sign_In_and_Sign_Out-Sign_in-First_way">first way.</link>
+    </para>
+  </note>
+</section>

@@ -1,0 +1,542 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+        <!ENTITY % BOOK_ENTITIES SYSTEM "../../User_Guide.ent">
+        %BOOK_ENTITIES;
+        ]>
+<section id="sect-User_Guide-Manage_Navigation_Nodes">
+<title>Manage navigation nodes</title>
+  <para>
+    If you are the portal administrator or granted the appropriate permission
+    privileges by the portal administrator, you can execute some special actions related to portal nodes, including copying, editing, cutting, cloning, deleting, adding existing nodes.
+    To do so, you first need to go to the nodes list by following steps described in the <link linkend="proc-User_Guide-Manage_Portals-Edit_Navigation">Edit navigation</link> section, then right-clicking your desired node to open the drop-down menu.
+  <mediaobject>
+    <imageobject role="html">
+
+      <imagedata fileref="images/Nodes_navigation_list.png" format="PNG" align="center" scale="110"/>
+    </imageobject>
+    <imageobject role="fo">
+      <imagedata fileref="images/Nodes_navigation_list.png" format="PNG" align="center" scalefit="1" width="70mm"/>
+    </imageobject>
+  </mediaobject>
+  </para>
+  <section id="sect-User_Guide-Manage_Navigation_Nodes-Add_a_new_node">
+    <title>Add a new node</title>
+    <procedure>
+      <step><para>
+          Select
+          <guilabel>Add New Node</guilabel> to create a node as a sub-node of the selected node.
+		  </para>
+		  <itemizedlist>
+		  <listitem>
+		  <para>
+          If you want to create a new node at the root level of the portal, click
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/Up_arrow.png" format="PNG" scalefit="1" width="4mm"/>
+            </imageobject>
+          </inlinemediaobject>, then right-click the empty space and select <guilabel>Add New Node</guilabel>;
+		  </para>
+		  </listitem>
+		  <listitem>
+		  <para>Or, simply click the <guibutton>Add Node</guibutton> button.</para>
+		  </listitem>
+		  </itemizedlist>
+		<para>The <guilabel>Add/Edit Page Node</guilabel> form appears.</para>
+		</step>
+		<step>
+		<para>Enter values in the <guilabel>Page Node Settings</guilabel> tab.
+        <mediaobject>
+          <imageobject role="html">
+            <imagedata fileref="images/AddNode4.png" format="PNG" align="center" scale="110"/>
+          </imageobject>
+          <imageobject role="fo">
+            <imagedata fileref="images/AddNode4.png" format="PNG" align="center" scalefit="1" width="100mm"/>
+          </imageobject>
+        </mediaobject>
+		</para>
+		<para><emphasis role="bold">Details:</emphasis></para>
+  <table>
+        <tgroup cols="2">
+          <thead>
+            <row>
+              <entry>
+                Field
+              </entry>
+              <entry>
+                Description
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+		    <row>
+              <entry>
+                <guilabel>Asterisk (*)</guilabel>
+              </entry>
+              <entry>
+                This mark next to each field means that it is required to enter values in the field.
+              </entry>
+            </row>
+           <row>
+              <entry>
+                <guilabel>Uri</guilabel>
+              </entry>
+              <entry>
+                An identification of the node that is auto-created after the new node has been created.
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <guilabel>Node Name</guilabel>
+              </entry>
+              <entry>
+                The node name which must be unique. Only alphabetic, numeric and underscore characters are allowed with
+                its length from 3 to 30 characters and without ANY SPACES.
+              </entry>
+            </row>
+             <row>
+              <entry>
+                <guilabel>Extended Label Mode</guilabel>
+              </entry>
+              <entry>
+                Tick this checkbox to activate the extended label mode for your page node's label.
+                If this checkbox is deselected, the <guilabel>Language</guilabel> field will disappear.
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <guilabel>Language</guilabel>
+              </entry>
+              <entry>
+                Select your desired language for the node label from the drop-down menu.
+              </entry>
+            </row>
+            <row>
+            <entry>
+            <guilabel>Label</guilabel>
+            </entry>
+            <entry>
+            The display name of the node on the screen in the selected language.
+                This field is not required and may be changed.
+                Its length must be between 3 and 120 characters, including SPACES.
+                For example, if you want to create a French label for your node, first select the <guilabel>Extended Label Mode</guilabel> checkbox.
+                Next, from the <guilabel>Language</guilabel> drop-down list, select your desired language and enter your French label into the <guilabel>Label</guilabel> field.
+            </entry>
+            </row>
+              <row>
+              <entry>
+                <guilabel>Visible</guilabel>
+              </entry>
+              <entry>
+                This checkbox enables the page and its node to be shown or hidden at the navigation bar and sitemap.
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <guilabel>Publication Date &amp; Time</guilabel>
+              </entry>
+              <entry>
+                This option enables this node to be published for a given period. Two fields, including
+                <guilabel>Start Publication Date</guilabel>
+                and
+                <guilabel>End Publication Date</guilabel>
+                only display when this option is checked.
+              </entry>
+            </row>
+              <row>
+              <entry>
+                <guilabel>Start Publication Date</guilabel>
+              </entry>
+              <entry>
+                The start date and time to publish the node.
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <guilabel>End Publication Date</guilabel>
+              </entry>
+              <entry>
+                The end date and time to publish the node.
+              </entry>
+            </row>
+         </tbody>
+        </tgroup>
+      </table>
+	   <note>
+            <para>
+              You can set date and time by clicking
+              <guilabel>Start Publication Date</guilabel>
+              and
+              <guilabel>End Publication Date</guilabel>
+              and selecting a date from the calendar pop-up.
+            </para>
+          </note>
+	  </step>
+	  <step>
+        <para>Select a page for this node in the <guilabel>Page Selector</guilabel> tab if you want.
+			<mediaobject>
+					<imageobject role="html">
+						<imagedata fileref="images/Page_selector_form.png" format="PNG" align="center" scale="110"/>
+					</imageobject>
+					<imageobject role="fo">
+						<imagedata fileref="images/Page_selector_form.png" format="PNG" align="center"  scalefit="1" width="100mm"/>
+					</imageobject>
+				</mediaobject>
+        </para>
+		<para><emphasis role="bold">Details:</emphasis></para>
+ <table>
+        <tgroup cols="2">
+          <thead>
+            <row>
+              <entry>
+                Field
+              </entry>
+              <entry>
+                Description
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+           <row>
+              <entry>
+                <guilabel>Page Id</guilabel>
+              </entry>
+              <entry>
+                The identification string of the page which is created automatically.              
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <guilabel>Name</guilabel>
+              </entry>
+              <entry>
+               The selected page's name.
+              </entry>
+            </row>
+             <row>
+              <entry>
+                <guilabel>Title</guilabel>
+              </entry>
+              <entry>
+                The selected page's title.
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <guilabel>Clear Page</guilabel>
+              </entry>
+              <entry>
+                Remove the inputted page information from fields.
+              </entry>
+            </row>
+            <row>
+            <entry><guilabel>Create Page</guilabel>
+            </entry>
+            <entry>
+          Create a new page with the inputted name and the title.
+            </entry>
+            </row>
+              <row>
+              <entry>
+                <guilabel>Search and Select Page</guilabel>
+              </entry>
+              <entry>
+                Search and select an existing page.
+              </entry>
+            </row>
+         </tbody>
+        </tgroup>
+      </table>
+          <itemizedlist>
+              <listitem>
+                  <para>If you select <guilabel>Create Page</guilabel>, input the name and title for the page.</para>
+              </listitem>
+              <listitem>
+                  <para>If you select <guilabel>Search and Select Page</guilabel>, you do not need to enter
+                      values in these fields. They are automatically recorded after you have selected an
+                      existing page from the <guilabel>Select Page</guilabel>
+                      form.
+                  </para>
+                      <mediaobject>
+                          <imageobject role="html">
+                              <imagedata fileref="images/SelectPage1.png" format="PNG" align="center" scale="110"/>
+                          </imageobject>
+                          <imageobject role="fo">
+                              <imagedata fileref="images/SelectPage1.png" format="PNG" align="center" scalefit="1"
+                                         width="100mm"/>
+                          </imageobject>
+                      </mediaobject>
+                  <para>
+                      This window lists all existing pages of
+                      <emphasis role="bold">Portal</emphasis>
+                      or
+                      <emphasis role="bold">Group</emphasis>
+                      with basic information for each page.
+                  </para>
+                  <para xml:id="proc-User_Guide-Manage_Navigation_Nodes-Search_for_a_page">
+                      You can select a page for creating a node by simply clicking
+                      <inlinemediaobject>
+                          <imageobject>
+                              <imagedata fileref="images/Select_page_icon.png" format="PNG" scalefit="1" width="3mm"/>
+                          </imageobject>
+                      </inlinemediaobject>
+                      , or search for a specific page as
+                      follows:
+                  </para>
+                  <para>
+                      <emphasis role="bold">i.</emphasis>
+                      Enter your page title into the
+                      <guilabel>Title</guilabel>
+                      field to search by title;
+                  </para>
+                  <para>
+                      Or, enter the site name into the
+                      <guilabel>Site Name</guilabel>
+                      field to search by the page's site name;
+                  </para>
+                  <para>
+                      Or, enter values into both fields to further limit your search results by both
+                      <guilabel>Title</guilabel>
+                      and
+                      <guilabel>Site Name.</guilabel>
+                  </para>
+                  <para>
+                      <emphasis role="bold">ii.</emphasis>
+                      Select the area in which you want to search into the
+                      <guilabel>Type</guilabel>
+                      field.
+                  </para>
+                  <para>
+                      <emphasis role="bold">iii.</emphasis>
+                      Click
+                      <inlinemediaobject>
+                          <imageobject>
+                              <imagedata fileref="images/Search_button.png" format="PNG" scalefit="1" width="3mm"/>
+                          </imageobject>
+                      </inlinemediaobject>
+                      to perform your search. All pages matching your search criteria will be listed.
+                  </para>
+                  <para>
+                      <emphasis role="bold">iv.</emphasis>
+                      Click
+                      <inlinemediaobject>
+                          <imageobject>
+                              <imagedata fileref="images/Select_page_icon.png" format="PNG" scalefit="1" width="3mm"/>
+                          </imageobject>
+                      </inlinemediaobject>
+                      on the row of the page to select.
+                  </para>
+                  <para>
+                      After selecting a page, you will see the page details in the
+                      <guilabel>Page Selector</guilabel>
+                      form.
+                  </para>
+              </listitem>
+          </itemizedlist>
+
+
+      </step>
+      <step>
+        <para>
+          Select one icon in the
+          <guilabel>Icon</guilabel>
+          tab if you want.
+        </para>
+      </step>
+      <step>
+        <para>
+          Click
+          <guibutton>Save</guibutton>
+          to accept the new node page, or
+          <guilabel>X</guilabel>
+          to close the form.
+        </para>
+      </step>
+    </procedure>
+    <note>
+	<para>To select a page, you must be a member in the <emphasis role="bold">Access Permission</emphasis> or <emphasis role="bold">Edit Permission</emphasis> list of the selected pages.
+      When the page type is 'User', you cannot select a page of another users.
+	</para>
+	<para>
+      If you do not have the <emphasis>Access</emphasis> permission for any page in the list, please contact your administrator to get appropriate permissions.
+	</para>
+    </note>
+  </section>
+
+  <section id="sect-User_Guide-Manage_Navigation_Nodes-Edit_a_node">
+    <title>Edit a node</title>
+    <para>This function is used to edit the node settings and reselect a page for a node.</para>
+    <procedure>
+      <step>
+        <para>
+          Select 
+          <guilabel>Edit this Node</guilabel>
+          from the drop-down menu to open the form with all similar fields when you <link linkend="sect-User_Guide-Manage_Navigation_Nodes-Add_a_new_node">add a new node.</link>
+        </para>
+      </step>
+      <step>
+        <para>
+          Change values in fields of the current node, except the <guilabel>Node Name</guilabel>.
+        </para>
+      </step>
+      <step>
+        <para>
+          Click
+          <guibutton>Save</guibutton>
+          to complete your changes.
+        </para>
+      </step>
+    </procedure>
+  </section>
+
+  <section id="sect-User_Guide-Manage_Navigation_Nodes-Copy_a_node">
+    <title>Copy/Paste a node</title>
+    <para>These functions are used to reproduce a node in another place.</para>
+    <procedure>
+      <step>
+        <para>
+          Select
+          <guilabel>Copy Node</guilabel> from the drop-down menu.
+        </para>
+      </step>
+      <step>
+        <para>
+          Right-click the position you want to paste this node and select
+          <guilabel>Paste Node</guilabel>.
+        </para>
+      </step>
+      <step>
+        <para>
+          Click
+          <guibutton>Save</guibutton>
+          to accept your changes.
+        </para>
+      </step>
+    </procedure>
+    <note>
+	<para>Two same node names in the same place are NOT allowed.
+	</para>
+	</note>
+  </section>
+
+  <section id="sect-User_Guide-Manage_Navigation_Nodes-Clone_nodes">
+    <title>Clone a node</title>
+    <para>
+      The
+      <emphasis role="bold">Clone Node</emphasis>
+      function allows you to copy a node. The difference between <emphasis role="bold">cloning</emphasis> and <emphasis role="bold">copying</emphasis> a node 
+      is that the cloned node has its own page with the same content as the selected node.
+      Therefore, there will be a new page that has the same name as the cloned node's page shown in the pages list when
+      you access the <emphasis role="bold">Pages Management</emphasis> page.
+    </para>
+    <procedure>
+      <step>
+        <para>
+          Select
+          <guilabel>Clone Node</guilabel>
+          from the drop-down menu.
+        </para>
+      </step>
+      <step>
+        <para>
+          Right-click the position that you want to paste this node and select
+          <guilabel>Paste Node.</guilabel>
+        </para>
+        <para>
+          The cloned node will be reproduced in a new place.
+        </para>
+      </step>
+      <step>
+        <para>
+          Click
+          <guibutton>Save</guibutton>
+          to accept your changes.
+        </para>
+      </step>
+    </procedure>
+  </section>
+
+  <section id="sect-User_Guide-Manage_Navigation_Nodes-Cut_a_node">
+    <title>Cut a node</title>
+    <para>This function enables you to change the position of a specific node, such as changing the page path.</para>
+    <procedure>
+      <step>
+        <para>
+          Select
+          <guilabel>Cut Node</guilabel>
+          from the drop-down menu.
+        </para>
+      </step>
+      <step>
+        <para>
+          Select the position that you want to paste this node, then click
+          <guilabel>Paste Node</guilabel>.
+        </para>
+      </step>
+      <step>
+        <para>Click
+          <guibutton>Save</guibutton>
+          to accept your change.
+        </para>
+        <para>The cut node will be moved to your newly selected place.</para>
+      </step>
+    </procedure>
+    <note>
+	<para>Two same node names in the same place are not allowed.
+	</para>
+	</note>
+  </section>
+
+  <section id="sect-User_Guide-Manage_Navigation_Nodes-Delete_a_node">
+    <title>Delete a node</title>
+    <para>This function is used to remove a node linking to a page. After the node has been removed, the page has been still existing.</para>
+    <procedure>
+      <step>
+        <para>
+          Select
+          <guilabel>Delete Node</guilabel>
+          from the drop-down menu.
+        </para>
+      </step>
+      <step>
+        <para>
+          Click
+          <guibutton>OK</guibutton>
+          in the confirmation message to accept your deletion.
+        </para>
+      </step>
+      <step>
+        <para>Click
+          <guibutton>Save</guibutton>
+          to accept your change.
+        </para>
+      </step>
+    </procedure>
+  </section>
+
+  <section id="sect-User_Guide-Change_Node_Order">
+    <title>Change nodes order</title>
+    <para>
+      You can easily move the position of nodes up or down in the navigation bar following these steps:
+    </para>
+    <procedure>
+      <step>
+        <para>
+          Select
+          <guilabel>Move Up</guilabel>
+          or
+          <guilabel>Move Down</guilabel>
+          from the drop-down menu.
+        </para>
+      </step>
+      <step>
+        <para>
+          Click
+          <guibutton>Save</guibutton>
+          to accept your changes.
+        </para>
+      </step>
+    </procedure>
+  </section>
+</section>
+
+

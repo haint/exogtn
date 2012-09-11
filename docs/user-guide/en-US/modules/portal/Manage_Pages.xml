@@ -1,0 +1,786 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+        <!ENTITY % BOOK_ENTITIES SYSTEM "../../User_Guide.ent">
+        %BOOK_ENTITIES;
+        ]>
+<section id="sect-User_Guide-Manage_Pages">
+<title>Manage pages</title>
+  <section id="sect-User_Guide-Page_Creation_Wizard">
+    <title>Add a new page using Page Creation Wizard</title>
+    <para>
+      The <emphasis role="bold">Page Creation Wizard</emphasis> is available to the portal's administrators and facilitates them to create and publish
+      portal pages quickly and
+      easily. The whole process to create a new page can be divided into
+      <emphasis role="bold">3</emphasis>
+      specific steps:
+    </para>
+    <citetitle>
+        <para xml:id="sect-User_Guide-Page_Creation_Wizard-Select_Navigation_Node_and_Create_Page">
+      <emphasis role="bold">Select a navigation node and create the page</emphasis></para>
+      </citetitle>
+      <para>In the first step, you have to set <guilabel>Node Name</guilabel> and <guilabel>Display Name</guilabel> of your page. You are also able to decide
+        the pages visibility and the publication period of the page.
+      </para>
+      <procedure>
+        <step>
+          <para>
+            Hover your cursor over
+            <guilabel>My Sites</guilabel>
+            and click one portal/site to which you want to add a new page from the drop-down menu.
+          </para>
+          <para>You will be switched to your selected portal only after a few seconds.</para>
+        </step>
+        <step>
+          <para>Hover your cursor over
+            <guilabel>Edit</guilabel>
+            on the <guilabel>Administration</guilabel> bar.
+          </para>
+        </step>
+        <step>
+          <para>Select <menuchoice>
+            <guimenu>Page</guimenu>
+            <guimenuitem>Add Page</guimenuitem>
+          </menuchoice>
+            from the drop-down menu to open the <guilabel>Page Creation Wizard</guilabel> form.
+          <mediaobject>
+            <imageobject role="html">
+              <imagedata fileref="images/Wizard1.png" format="PNG" align="center" scale="110"/>
+            </imageobject>
+            <imageobject role="fo">
+              <imagedata fileref="images/Wizard1.png" format="PNG" align="center" contentwidth="150mm"/>
+            </imageobject>
+          </mediaobject>
+		  </para>
+          <para>
+            The wizard is divided into two sections.</para>
+          <itemizedlist>
+            <listitem>
+              <para>The left pane contains existing pages/nodes displayed in the tree hierarchy. Here, you can navigate
+                up
+                and down the node/page structure.
+              </para>
+            </listitem>
+            <listitem>
+              <para>
+                The right pane displays
+                <guilabel>Page Editor</guilabel>
+                where you can make changes on the selected navigation node.
+                You can input parameters for your new page in this pane.
+              </para>
+            </listitem>
+          </itemizedlist>
+		  <para><emphasis role="bold">Details:</emphasis></para>
+ <table>
+        <tgroup cols="2">
+          <thead>
+            <row>
+              <entry>
+                Field
+              </entry>
+              <entry>
+                Description
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+           <row>
+              <entry>
+                <guilabel>Selected Page Node</guilabel>
+              </entry>
+              <entry>
+                The path of the selected node to add a new sub-page.     
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <guilabel>Node Name</guilabel>
+              </entry>
+              <entry>
+               The node name of the added page. This field is required with its length
+                  between 3 and 30 characters.
+              </entry>
+            </row>
+             <row>
+              <entry>
+                <guilabel>Extended Label Mode</guilabel>
+              </entry>
+              <entry>
+                Tick the checkbox to show the
+                  <guilabel>Language</guilabel>
+                  field for you to select another
+                  language for your created node's display name. It means that if this checkbox is deselected, the
+                  <guilabel>Language</guilabel>
+                  field
+                  will be deactivated.
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <guilabel>Language</guilabel>
+              </entry>
+              <entry>
+                Select your desired language for the node's display name from the drop-down menu.
+              </entry>
+            </row>
+            <row>
+            <entry><guilabel>Display Name</guilabel>
+            </entry>
+            <entry>
+          The display name of the node which contains the added page and must have a length between 3 and 120 characters.
+            </entry>
+            </row>
+              <row>
+              <entry>
+                <guilabel>Visible</guilabel>
+              </entry>
+              <entry>
+                <para>
+                  This checkbox toggles the global visibility of this page.
+                </para>
+                <para>
+                  If this option is checked, the page or the page node appears on the navigation bar, the page
+                  navigation and the
+                  sitemap. If "Visible" is checked, the visibility also depends on the <guilabel>Publication Date &amp; Time</guilabel>
+                  option.
+                </para>
+                <para>
+                  If not being unchecked, the page is hidden under any circumstances, even if the publication period is
+                  valid.
+                </para>
+              </entry>
+            </row>
+                        <row>
+              <entry>
+                <guilabel>Publication Date &amp; Time</guilabel>
+              </entry>
+              <entry>
+                    This option allows the page to be published for a given period. If this option is checked,
+                  <guilabel>Start Publication Date</guilabel>
+                  and
+                  <guilabel>End Publication Date</guilabel>
+                  will be shown.
+              </entry>
+            </row>
+              <row>
+              <entry>
+                <guilabel>Start Publication Date</guilabel>
+              </entry>
+              <entry>
+                The start date and time to publish the page.
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <guilabel>End Publication Date</guilabel>
+              </entry>
+              <entry>
+                The end date and time to publish the page.
+              </entry>
+            </row>
+         </tbody>
+        </tgroup>
+      </table>
+        </step>
+        <step>
+          <para>
+            Click
+            <guilabel>Next</guilabel>
+            or number '2' of the wizard steps to go to <link linkend="sect-User_Guide-Page_Creation_Wizard-Select_Page_Layout_Template">Step 2.</link>
+          </para>
+        </step>
+      </procedure>
+      <citetitle>
+      <para xml:id="sect-User_Guide-Page_Creation_Wizard-Select_Page_Layout_Template">
+      <emphasis role="bold">Select a page layout template</emphasis>
+      </para>
+      </citetitle>
+          <mediaobject>
+            <imageobject>
+              <imagedata fileref="images/PageWizard2.png" format="PNG" width="444" align="center"/>
+            </imageobject>
+          </mediaobject>
+      <procedure> 
+        <step>
+          <para>
+            Select
+            <guilabel>Empty Layout</guilabel>
+            or click the down-arrow icon in the right pane to see more templates.
+          </para>
+        </step>
+        <step>
+          <para>
+            Click
+            <guilabel>Next</guilabel>
+            or number '3' of the wizard steps to go to the <link linkend="sect-User_Guide-Page_Creation_Wizard-Rearrange_Page_Layout_and_Portlets">last step.</link>
+          </para>
+        </step>
+      </procedure>
+    <citetitle>
+    <para xml:id="sect-User_Guide-Page_Creation_Wizard-Rearrange_Page_Layout_and_Portlets">
+      <emphasis role="bold">Arrange the page layout</emphasis>
+      </para>
+     </citetitle>
+	   <para>In this step, you can arrange the page's layout as follows:
+	   </para>
+	   <itemizedlist>
+		<listitem>
+		<para>Add your desired applications, containers or gadgets by dragging and dropping them from <guilabel>Page Editor</guilabel> to the main page body.
+		</para>
+      <mediaobject>
+        <imageobject role="html">
+          <imagedata fileref="images/PageWizard3.png" format="PNG" width="444"/>
+        </imageobject>
+          <imageobject role="fo">
+          <imagedata fileref="images/PageWizard3.png" format="PNG" scalefit="1" width="150mm"/>
+        </imageobject>
+      </mediaobject>
+	  <para><emphasis role="bold">Details:</emphasis></para>
+ <table>
+        <tgroup cols="2">
+          <thead>
+            <row>
+              <entry>
+                Tab
+              </entry>
+              <entry>
+                Description
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <guilabel>Applications</guilabel>
+              </entry>
+              <entry>
+                This tab lists all existing categories and their portlets that you easily can drag and drop into the container.
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <guilabel>Containers</guilabel>
+              </entry>
+              <entry>
+                <para>
+              This tab contains all existing containers to build your page layout. You can add a container to your
+              page area by dragging and dropping available containers from
+              <guilabel>Page Editor</guilabel>
+              to the main page body.
+            </para>
+			<itemizedlist>
+			<listitem>
+            <para>
+              There are various layouts available, including
+              <guilabel>Rows Layout,</guilabel>
+              <guilabel>Columns Layout,
+              </guilabel>
+              <guilabel>Autofit Columns Layout,</guilabel>
+              <guilabel>Tabs Layout,</guilabel>
+              and
+              <guilabel>Mixed Layout</guilabel>. </para>
+             <para>For <guilabel>Tabs Layout,</guilabel> you can add more tabs to the layout, and reorder the position of the tabs.
+              <mediaobject>
+          <imageobject role="html">
+            <imagedata fileref="images/tabs_layout.png" format="PNG" align="center" scale="110"/>
+          </imageobject>
+            <imageobject role="fo">
+            <imagedata fileref="images/tabs_layout.png" format="PNG" align="center" scalefit="1" width="70mm"/>
+          </imageobject>
+        </mediaobject>
+            </para>
+			</listitem>
+			<listitem>
+            <para>
+              For each layout, you can edit different layers, from the parent container to its child containers. The
+              parent container holds its child containers and the child containers can hold applications. You can also drag a
+              container to another one that helps you create various layouts to
+              your desires.
+            </para>
+			</listitem>
+			<listitem>
+            <para>
+              Remember that you can also drag and drop the container to another one that helps you create your own various layouts to your desires.
+            </para>
+			</listitem>
+			<listitem>
+            <para>
+              For any container layout, you can edit the parent container or its child containers separately. Deleting
+              the parent container means that its child containers are removed as well.
+            </para>
+			</listitem>
+			<listitem>
+            <para>
+              You cannot drag and drop a child container to change its location, but can drag it outside its parent
+              container.
+            </para>
+			</listitem>
+			</itemizedlist>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+	  </listitem>
+	  <listitem>        
+      <para>
+        Rearrange elements in the page body by dragging and dropping them into your desired positions. Also, you can edit or remove any element by hovering your cursor over it and selecting 
+		<inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/edit_icon1.png" format="PNG" scalefit="1" width="4mm"/>
+            </imageobject>
+          </inlinemediaobject>, or 	
+		  <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/Delete_element_icon.png" format="PNG" scalefit="1" width="4mm"/>
+            </imageobject>
+          </inlinemediaobject> respectively.
+		</para>
+		</listitem>
+		<listitem><para> View page properties by clicking <guilabel>View Page Properties</guilabel> at the bottom of the <guilabel>Page Editor</guilabel> window.
+		</para>
+	  </listitem> 
+		<listitem>
+		<para>Preview your changes by clicking <guilabel>Switch View Mode.</guilabel>
+         </para>
+        </listitem>
+		</itemizedlist>
+        <note>
+      <para>
+        Click
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/Finish_icon1.png" format="PNG" scalefit="1" width="4mm"/>
+          </imageobject>
+        </inlinemediaobject>
+        in the
+        <guilabel>Page Editor</guilabel>
+        window to save all changes, or
+        <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/Discard_change_icon.png" format="PNG" scalefit="1" width="4mm"/>
+          </imageobject>
+        </inlinemediaobject>
+        to close without saving your changes.</para>
+      </note>
+  </section>
+  <section id="sect-User_Guide-Manage_Pages-Add_a_new_Page_in_the_Page_List">
+    <title>Add a new page using Page Management</title>
+    <procedure>
+      <step>
+        <para>
+          Hover your cursor over
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/sawtooth_icon.png" format="PNG" scalefit="1" width="4mm"/>
+            </imageobject>
+          </inlinemediaobject>
+          to open the drop-down menu.
+        </para>
+      </step>
+      <step>
+        <para>
+          Select <menuchoice>
+          <guimenu>Portal</guimenu>
+          <guimenuitem>Pages</guimenuitem>
+          </menuchoice>
+          to go to the
+          <guilabel>Pages Management</guilabel> page.
+        <mediaobject>
+          <imageobject role="html">
+            <imagedata fileref="images/ManagePage.png" format="PNG" align="center" scale="110"/>
+          </imageobject>
+            <imageobject role="fo">
+            <imagedata fileref="images/ManagePage.png" format="PNG" align="center" scalefit="1" width="150mm"/>
+          </imageobject>
+        </mediaobject>
+		</para>
+      </step>
+      <step>
+        <para>
+          Click
+          <guilabel>Add New Page</guilabel>
+          to open the
+          <guilabel>Add New Page</guilabel>
+          form with the <guilabel>Page Settings</guilabel> tab.
+        </para>
+        <mediaobject>
+          <imageobject role="html">
+            <imagedata fileref="images/PageSetting.png" format="PNG" align="center" scalefit="0" width="100mm"/>
+          </imageobject>
+            <imageobject role="fo">
+            <imagedata fileref="images/PageSetting.png" format="PNG" align="center" scalefit="1" width="100mm"/>
+          </imageobject>
+        </mediaobject>
+		<para><emphasis role="bold">Details:</emphasis></para>
+   <table>
+        <tgroup cols="2">
+          <thead>
+            <row>
+              <entry>
+                Field
+              </entry>
+              <entry>
+                Description
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <guilabel>Page Id</guilabel>
+              </entry>
+              <entry>
+                The page's identification string which will be automatically generated when the page is created.
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <guilabel>Owner Type</guilabel>
+              </entry>
+              <entry>
+			<itemizedlist>
+               <listitem>
+              <para>
+                If
+                <guilabel>Owner Type</guilabel>
+                is "<emphasis>portal</emphasis>", the page is created for a portal. Therefore, only users who have the
+                <emphasis>Edit</emphasis>
+                permission on the portal can create this page type.
+              </para>
+			  </listitem>
+			  <listitem>
+              <para>
+                If
+                <guilabel>Owner Type</guilabel>
+                is "<emphasis>group</emphasis>", the page is created for a group. Therefore, only users who are the
+                <emphasis>manager</emphasis>
+                of that group can create this page type.
+              </para>
+            </listitem>
+			</itemizedlist>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <guilabel>Owner Id</guilabel>
+              </entry>
+              <entry>
+                The identification name of the page's owner which will be automatically created after you have selected
+                <guilabel>Owner Type</guilabel>.
+			 <itemizedlist>
+			 <listitem>
+			 <para>
+			 When the owner type is set to "group", a
+                list of groups will allow you to select one user as the 'owner'.
+              </para>
+			 </listitem>
+			 <listitem>
+              <para>The name of the current portal is automatically selected for
+                <guilabel>Owner Id,</guilabel>
+                ensuring the <emphasis>Edit</emphasis> permission is assigned to users who can edit the current portal.
+              </para>
+            </listitem>
+			</itemizedlist>
+              </entry>
+            </row>
+              <row>
+              <entry>
+                <guilabel>Page Name</guilabel>
+              </entry>
+              <entry> The page name which is required and must be unique. Only alphabetical, numerical and
+                underscore characters are allowed with its length from 3 to 30 characters.
+              </entry>
+            </row>
+			<row>
+			<entry>
+			<guilabel>Page Title</guilabel>
+			</entry>
+			<entry>The page title which is optional with its length from 3 to 30 characters.
+			</entry>
+			</row>
+			<row>
+			<entry>
+			<guilabel>Show Max Window</guilabel>
+			</entry>
+			<entry>The option enables the page to be shown at the maximum size or not.
+			</entry>
+			</row>
+          </tbody>
+        </tgroup>
+      </table>
+      </step>
+      <step>
+        <para>
+          Define the page layout in the
+          <guilabel>Page Layout</guilabel>
+          template.
+        </para>
+      </step>
+      <step>
+        <para xml:id="Manage_Pages.Permission_Settings">
+          Define permissions in the
+          <guilabel>Permission Settings</guilabel>
+          tab. This tab consists of two sub-tabs named <guilabel>Access Permission Settings</guilabel> and
+            <guilabel>Edit Permission Settings</guilabel>.
+        </para>
+          <itemizedlist>
+              <listitem>
+          <para>The <guilabel>Access Permission Settings</guilabel> tab shows all users who can access the page:</para>
+          <itemizedlist>
+              <listitem>
+                  <para>If the value of the <guilabel>Owner Type</guilabel> field is "<emphasis>Portal</emphasis>",
+                   the name of the current portal is automatically selected for the <guilabel>Owner Id</guilabel> field, so that the <emphasis>Access</emphasis> permission is assigned to all users who can access the current portal.
+                  </para>
+              </listitem>
+              <listitem>
+                  <para>
+                      If the value of the <guilabel>Owner Type</guilabel> field is "<emphasis>Group</emphasis>",
+                      the <emphasis>Access</emphasis> permission is assigned to all users who are the members of the group
+                      that is selected in the <guilabel>Owner Id</guilabel> field of the <guilabel>Page Settings</guilabel> tab.
+                  </para>
+              </listitem>
+          </itemizedlist>
+              <para>To reassign the <emphasis>Access</emphasis>
+              permission for the page, see details in the <link linkend="sect-User_Guide-Manage_Permission-Set_the_Access_Permission_on_a_Portal">Access permission</link> section.
+              </para>
+              </listitem>
+              <listitem>
+                  <para>The <guilabel>Edit Permission Settings</guilabel> shows all users who have the <emphasis>edit</emphasis>
+              permission on the page.
+                  </para>
+              <itemizedlist>
+              <listitem>
+                  <para>If the value of the <guilabel>Owner Type</guilabel> field is "<emphasis>Portal</emphasis>",
+                   the <emphasis>Edit</emphasis> permission is assigned to users who can edit the current portal.
+                  </para>
+              </listitem>
+              <listitem>
+                  <para>
+                      If the value of the <guilabel>Owner Type</guilabel> field is "<emphasis>Group</emphasis>",
+                      the <emphasis>Edit</emphasis> permission is assigned to all users who are the members of the group
+                      that is selected in the <guilabel>Owner Id</guilabel> field of the <guilabel>Page Settings</guilabel> tab.
+                  </para>
+              </listitem>
+          </itemizedlist>
+                  <para>To reassign the <emphasis>Edit</emphasis>
+              permission for the page, see details in the <link linkend="sect-User_Guide-Manage_Permission-Set_the_Edit_Permission_on_a_Portal">Edit Permission</link> section.</para>
+              </listitem>
+          </itemizedlist>
+      </step>
+      <step>
+        <para>
+          Click
+          <guibutton>Save</guibutton>
+          to accept creating a new page.
+        </para>
+      </step>
+    </procedure>
+  </section>
+  <section id="sect-User_Guide-Manage_Pages-Edit_a_Page">
+    <title>Edit a page</title>
+    <procedure>
+      <step>
+        <para>Open the
+          <emphasis role="bold">Page Properties</emphasis>
+          page by following one of the two ways:
+        </para>
+          <para><emphasis role="bold">The first way</emphasis></para>
+              <para><emphasis role="bold">i.</emphasis> Open the
+                <guilabel>Navigation Management</guilabel>
+                form by doing the steps in the <link linkend="proc-User_Guide-Manage_Portals-Edit_Navigation">Edit navigation</link> section.
+              </para>
+              <para><emphasis role="bold">ii.</emphasis> Right-click your desired node and select <guilabel>Edit Node's Page</guilabel> from the drop-down menu.
+          <mediaobject>
+            <imageobject role="html">
+              <imagedata fileref="images/EditNodePage.png" format="PNG" align="center" scale="110"/>
+            </imageobject>
+            <imageobject role="fo">
+              <imagedata fileref="images/EditNodePage.png" format="PNG" align="center" scalefit="1" width="70mm"/>
+            </imageobject>
+          </mediaobject>
+        </para>
+        <para>
+          <emphasis role="bold">The second way</emphasis>
+          </para>
+              <para><emphasis role="bold">i.</emphasis> Hover your cursor over
+                <inlinemediaobject>
+                  <imageobject>
+                    <imagedata fileref="images/sawtooth_icon.png" format="PNG" scalefit="1" width="4mm"/>
+                  </imageobject>
+                </inlinemediaobject>
+                and select <menuchoice>
+                  <guimenu>Portal</guimenu>
+                  <guimenuitem>Pages</guimenuitem>
+                </menuchoice>
+                to open the 
+                <emphasis role="bold">Pages Management</emphasis> page.
+              </para>
+          
+              <para><emphasis role="bold">ii.</emphasis> Click
+              <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/edit_icon.png " format="PNG" scalefit="1" width="4mm"/>
+            </imageobject>
+          </inlinemediaobject> 
+             corresponding to the page you want to edit.</para>
+			 
+        <para>The <guilabel>Edit Page</guilabel> form will be displayed in the
+          <guilabel>Page Properties</guilabel> window.
+        </para>
+        <mediaobject>
+          <imageobject role="html">
+            <imagedata fileref="images/PageEditor.png" format="PNG" align="center" scale="1" contentwidth="70"/>
+          </imageobject>
+          <imageobject role="fo">
+            <imagedata fileref="images/PageEditor.png" format="PNG" align="center" scalefit="1" width="150mm"/>
+          </imageobject>
+        </mediaobject>
+      </step>
+      <step>
+        <para>
+          Click
+          <guilabel>View Page Properties</guilabel>
+          in the
+          <guilabel>Page Editor</guilabel>
+          window to edit page properties.
+        </para>
+		<para><emphasis role="bold">i.</emphasis> In the <guilabel>Page Settings</guilabel> tab, you cannot change values in
+                <guilabel>Page Id, Owner Type, Owner Id,</guilabel> and <guilabel>Page Name</guilabel>.
+              </para>
+        <para><emphasis role="bold">ii.</emphasis> In the <guilabel>Permission Settings</guilabel> tab, you can change or add more <emphasis>Access</emphasis> and <emphasis>Edit</emphasis> permissions.
+                This form is only supported for pages of a <emphasis>group</emphasis> or a <emphasis>portal.</emphasis>
+                Because the user's page is private, no one can access or edit it, except the creator.
+				<note><para>For more details on how to assign permissions on a page, refer to the <link linkend="sect-User_Guide-Manage_Permission-Set_Page_Permission">Set permissions on a page</link> section.
+				</para></note>
+              </para>
+              <!--para>
+                Permission on each page is set in two levels: <emphasis role="bold">Access Permission</emphasis> and <emphasis role="bold">Edit Permission.</emphasis>
+              </para-->
+			  <!--para>
+           <emphasis role="bold">Access Permission Settings</emphasis>
+            <mediaobject>
+              <imageobject role="html">
+                <imagedata fileref="images/Access_permission_page.png" format="PNG" align="center" scale="110"/>
+              </imageobject>
+              <imageobject role="fo">
+                <imagedata fileref="images/Access_permission_page.png" format="PNG" align="center" scalefit="1"
+                           contentwidth="150mm"/>
+              </imageobject>
+            </mediaobject>
+			</para-->
+			<!--itemizedlist>
+			<listitem>
+              <para>
+                This sub-tab enables you to see contents of a page or "borrow" that page for individual needs by
+                selecting a page for their node. You can click <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/Delete_icon.png" format="PNG"/>
+            </imageobject>
+          </inlinemediaobject> to remove your granted permissions, or
+                <emphasis role="bold">Add Permission</emphasis>
+                to add more permissions.
+              </para>
+			</listitem>
+			<listitem>
+              <para>
+                Tick the
+                <emphasis role="bold">Make it public (everyone can access)</emphasis>
+                checkbox if you want to allow all users (registered or unregistered) to access the page.
+              </para>
+            </listitem>
+          </itemizedlist-->
+          <!--para><emphasis role="bold">Edit Permission Settings</emphasis></para>
+            <mediaobject>
+              <imageobject role="html">
+                <imagedata fileref="images/Edit_permission_page.png" format="PNG" align="center" scale="110"/>
+              </imageobject>
+              <imageobject role="fo">
+                <imagedata fileref="images/Edit_permission_page.png" format="PNG" align="center" scalefit="1"
+                           contentwidth="150mm"/>
+              </imageobject>
+            </mediaobject>
+			<itemizedlist>
+            <listitem>
+              <para>
+                This sub-tab enables you to set or change the edit permission on a page. This permission can be set for
+                one group only with one specific membership type. If you want to reassign or delete this permission to
+                another group, click <emphasis role="bold">Select Permission</emphasis> or <emphasis role="bold">Delete Permission</emphasis> respectively.
+              </para>
+			</listitem>
+			</itemizedlist>
+              <note>
+                For more details on
+                <emphasis role="bold">Access Permission Settings</emphasis>
+                and
+                <emphasis role="bold">Edit Permission
+                  Settings,
+                </emphasis>
+                the asterisk (*) indicates all membership types of the selected group.
+              </note-->
+      </step>
+      <step>
+        <para>
+          Click
+          <guibutton>Save</guibutton>,
+          then select
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/Finish_icon1.png" format="PNG" scalefit="1" width="3mm"/>
+            </imageobject>
+          </inlinemediaobject>
+          in
+          <guilabel>Page Editor</guilabel>
+          for all changes to take effect, or
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/Discard_change_icon.png" format="PNG" scalefit="1" width="4mm"/>
+            </imageobject>
+          </inlinemediaobject>
+          to abort.
+        </para>
+      </step>
+    </procedure>
+  </section>
+
+  <section id="sect-User_Guide-Manage_Pages-Delete_a_Page">
+    <title>Delete a page</title>
+    <procedure>
+      <step>
+        <para>
+          Hover your cursor over
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/sawtooth_icon.png" format="PNG" scalefit="1" width="4mm"/>
+            </imageobject>
+          </inlinemediaobject>
+          and select <menuchoice>
+          <guimenu>Portal</guimenu>
+          <guimenuitem>Pages</guimenuitem>
+          </menuchoice>
+          to open the
+          <emphasis role="bold">Pages Management</emphasis> page.
+          You will see a list of all existing pages.
+        </para>
+      </step>
+      <step>
+        <para>
+          Click
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/Delete_icon.png" format="PNG" scalefit="1" width="4mm"/>
+            </imageobject>
+          </inlinemediaobject> 
+          in the row of the page you want to delete.
+        </para>
+      </step>
+      <step>
+        <para>
+          Click
+          <guibutton>OK</guibutton>
+          in the confirmation message to accept your deletion.
+        </para>
+      </step>
+    </procedure>
+  </section>
+<xi:include href="Manage_Page_Navigation.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+</section>

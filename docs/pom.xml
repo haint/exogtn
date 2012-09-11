@@ -19,14 +19,13 @@
 
 -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
    <modelVersion>4.0.0</modelVersion>
 
    <parent>
       <groupId>org.exoplatform.portal</groupId>
       <artifactId>exo.portal.parent</artifactId>
-      <version>3.0.1-GA-SNAPSHOT</version>
+      <version>3.2.6-PLF-SNAPSHOT</version>
    </parent>
    
    <groupId>org.gatein.doc</groupId>
@@ -35,9 +34,26 @@
    <name>GateIn - Portal (docs-aggregator)</name>
 
    <modules>
-      <module>user-guide</module>
-      <module>reference-guide</module>
+     <!--
+        This is not the default modules declaration, instead we use the "normal" profile that is activated when
+        the development property is not set (to any value). This declaration does not build anything in development mode.
+       -->
    </modules>
+
+   <profiles>
+     <profile>
+       <id>doc</id>
+       <activation>
+         <property>
+           <name>!gatein.dev</name>
+         </property>
+       </activation>
+       <modules>
+         <module>user-guide</module>
+         <module>reference-guide</module>
+       </modules>
+     </profile>
+   </profiles>
 
    <build>
         <plugins>
@@ -72,27 +88,28 @@
                         <directory>src/main/css</directory>
                     </cssResource>-->
                     <formats>
-                        <format>
-                            <formatName>pdf</formatName>
-                            <stylesheetResource>classpath://xslt/org/gatein/pdf.xsl</stylesheetResource>
-                            <finalName>${pom.name}.pdf</finalName>
-                        </format>
-                        <format>
-                            <formatName>html</formatName>
-                            <stylesheetResource>classpath:/xslt/org/gatein/xhtml.xsl</stylesheetResource>
-                            <finalName>index.html</finalName>
-                        </format>
-                        <format>
-                            <formatName>html_single</formatName>
-                            <stylesheetResource>classpath:/xslt/org/gatein/xhtml-single.xsl</stylesheetResource>
-                            <finalName>index.html</finalName>
-                        </format>
-                        <format>
-                            <formatName>eclipse</formatName>
-                            <stylesheetResource>classpath:/xslt/org/gatein/eclipse.xsl</stylesheetResource>
-                            <finalName>index.html</finalName>
-                        </format>
+                      <format>
+                          <formatName>pdf</formatName>
+                          <stylesheetResource>classpath://xslt/org/gatein/pdf.xsl</stylesheetResource>
+                          <finalName>${pom.name}.pdf</finalName>
+                      </format>
+                      <format>
+                          <formatName>html</formatName>
+                          <stylesheetResource>classpath:/xslt/org/gatein/xhtml.xsl</stylesheetResource>
+                          <finalName>index.html</finalName>
+                      </format>
+                      <format>
+                          <formatName>html_single</formatName>
+                          <stylesheetResource>classpath:/xslt/org/gatein/xhtml-single.xsl</stylesheetResource>
+                          <finalName>index.html</finalName>
+                      </format>
+                      <format>
+                          <formatName>eclipse</formatName>
+                          <stylesheetResource>classpath:/xslt/org/gatein/eclipse.xsl</stylesheetResource>
+                          <finalName>index.html</finalName>
+                      </format>
                     </formats>
+                  
                     <options>
                         <xincludeSupported>true</xincludeSupported>
                         <xmlTransformerType>saxon</xmlTransformerType>
@@ -108,4 +125,5 @@
     <properties>
         <translation>en-US</translation>
     </properties>
+
 </project>

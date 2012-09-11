@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "../../User_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="sect-User_Guide-Register_New_Accounts">
+  <title>Register new account</title>
+  <para>
+    As a guest user, you can visit eXo Platform but are limited to a lot of content and applications.
+    To access more content or perform some actions in various applications, you first need to register by yourself and
+    contact the portal administrator to gain certain permissions.
+  </para>
+  <procedure>
+    <step>
+      <para>
+        Click
+        <guilabel>Register</guilabel>
+        on the top of the portal if you are in the ACME sample site.
+		</para>
+      <mediaobject>
+        <imageobject role="html">
+          <imagedata fileref="images/Register.png" format="PNG" align="center" scale="110"/>
+        </imageobject>
+        <imageobject role="fo">
+          <imagedata fileref="images/Register.png" format="PNG" align="center" width="100mm" scalefit="1"/>
+        </imageobject> 
+      </mediaobject>
+	  <para>
+	  If you are in the ACME Social intranet, click <guilabel>Register</guilabel> at the bottom of the portal.
+	  </para>
+	  <mediaobject>
+        <imageobject role="html">
+          <imagedata fileref="images/Register2.png" format="PNG" align="center" scale="110"/>
+        </imageobject>
+        <imageobject role="fo">
+          <imagedata fileref="images/Register2.png" format="PNG" align="center" width="100mm" scalefit="1"/>
+        </imageobject>
+      </mediaobject>
+      <para>
+        The
+        <guilabel>Create a New Account</guilabel>
+        form appears as below:
+      </para>
+      <mediaobject>
+        <imageobject role="html">
+          <imagedata fileref="images/AccountSetting.png" format="PNG" align="center" scale="110"/>
+        </imageobject>
+        <imageobject role="fo">
+          <imagedata fileref="images/AccountSetting.png" format="PNG" align="center" width="100mm" scalefit="1"/>
+        </imageobject>
+      </mediaobject>
+
+      <para xml:id="Create_New_Account_form_details">
+        <emphasis role="bold">Details:</emphasis>
+      </para>
+  <table>
+        <tgroup cols="2">
+          <thead>
+            <row>
+              <entry>
+                Field
+              </entry>
+              <entry>
+                Description
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <guilabel>Asterisk (*)</guilabel>
+              </entry>
+              <entry>
+                This mark next to each field indicates that it is required to input values in this field.
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <guilabel>Username</guilabel>
+              </entry>
+              <entry>
+                The name used to log in. The username must be:
+                  <itemizedlist>
+                      <listitem>
+                          <para>Lowercase (a - z), digit (0 - 9), underscore (_), and dot (.) characters, but consecutive underscore (_) and dot (.) are not allowed. </para>
+                      </listitem>
+                      <listitem>
+                          <para>From 3 to 30 characters in length.</para>
+                      </listitem>
+                      <listitem>
+                          <para>Lowercase for its first character.</para>
+                      </listitem>
+                      <listitem>
+                          <para>Lowercase or digit for its last character.</para>
+                      </listitem>
+                  </itemizedlist>
+              </entry> 
+            </row>
+            <row>
+              <entry>
+                <guilabel>Password</guilabel>
+              </entry>
+              <entry>
+			The authentication string which must be between 6 and 30 characters, including spaces.
+              </entry>
+            </row>
+              <row>
+              <entry>
+                <guilabel>Confirm Password</guilabel>
+              </entry>
+              <entry> Retype the password above. Values in both
+              <guilabel>Password</guilabel>
+              and
+              <guilabel>Confirm Password</guilabel>
+              fields must be the same.
+              </entry>
+            </row>
+			<row>
+			<entry>
+			<guilabel>First Name</guilabel>
+			</entry>
+			<entry> The user's first name which must start with a character. Its length must be between 1 and 45 characters.
+			</entry>
+			</row>
+			<row>
+			<entry>
+			<guilabel>Last Name</guilabel>
+			</entry>
+			<entry>The user's last name which must start with a character. Its length must be between 1 and 45 characters.
+			</entry>
+			</row>
+			<row>
+			<entry>
+			<guilabel>Email Address</guilabel>
+			</entry>
+			<entry>
+			<para>The user's email address that must be in the correct form, such as <replaceable>username@abc.com.</replaceable> </para>
+            <para>There are two parts in the email address, called local part and domain (for example, local_part@domain): </para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Local part: Only lowercase (a - z), digit (0 - 9), underscore (_), dash (-) and dot (.) characters are allowed,
+                        and the first and last characters of this part must be lowercase or digit ones.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>
+                            Domain: Only lowercase (a - z), digit (0 - 9), dash (-) and dot (.) characters are allowed, and
+                        the first and last characters of this part must be lowercase or digit ones. Note that the dot (.) character is required.
+                        </para>
+                    </listitem>
+                </itemizedlist>
+			</entry>
+			</row>
+			<row>
+			 <entry>
+			 <guilabel>Text Validation</guilabel>
+			 </entry>
+			 <entry>
+			  The text to verify your registration.
+			 </entry>
+			</row>
+          </tbody>
+        </tgroup>
+      </table>
+    </step>
+    <step>
+      <para>
+        Fill values into fields.
+      </para>
+    </step>
+    <step>
+      <para>
+        Click
+        <guibutton>Subscribe</guibutton>
+        to accept your new account, or
+        <guibutton>Reset</guibutton>
+        to clear all your entered values. If your registration is not successful, there will be warning messages which indicate invalid fields.
+      </para>
+    </step>
+  </procedure>
+  <itemizedlist>
+  <listitem>
+  <para>
+    After adding a new account, you should contact your administrator to get appropriate permissions for your account.
+  </para>
+  </listitem>
+  <listitem>
+	<para>
+	Click 
+		<inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/Glass_icon.png" format="PNG" scalefit="1" width="4mm"/>
+            </imageobject>
+          </inlinemediaobject> to check if your entered username already exists or not.
+	</para>
+  </listitem>
+  </itemizedlist>
+    <note>
+          <para>
+            Be sure you enter your email address carefully. Should you forget your username or password, you can recover
+            it from this email address.
+          </para>
+    </note>
+</section>

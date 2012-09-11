@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "../Reference_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<chapter id="chap-Reference_Guide-Gadget_development">
+	<title>Gadget development</title>
+  <abstract>
+    <para>This chapter provides you all the basic knowledge about gadget developments through two following topics:</para>
+    <itemizedlist>
+        <listitem>
+            <para><link linkend="sect-Reference_Guide-Gadgets">Gadgets</link></para>
+        </listitem>
+        <listitem>
+            <para><link linkend="sect-Reference_Guide-Setup_a_Gadget_Server">Set up a Gadget Server</link></para>
+        </listitem>
+    </itemizedlist>
+   <para>With the knowledge you have gained, you will know how to deploy a gadget in &PRODUCT;.</para>
+  </abstract>
+	<xi:include href="GadgetDevelopment/Gadgets.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+	<xi:include href="GadgetDevelopment/SetupGadgetServer.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+</chapter>

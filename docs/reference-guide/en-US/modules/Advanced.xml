@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "../Reference_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<chapter id="chap-Reference_Guide-Advanced">
+	<title>Advanced Development</title>
+  <abstract>
+   <para>This chapter helps you further understand about the <link linkend="sect-Reference_Guide-Foundations">foundations</link> of a portal system via the following topics:</para>
+   <itemizedlist>
+        <listitem>
+            <para><link linkend="sect-Reference_Guide-Foundations-Kernel">GateIn Kernel</link></para>
+        </listitem>
+		<listitem>
+            <para><link linkend="sect-Reference_Guide-Foundations-Configuring_services">Configure services</link></para>
+        </listitem>
+		<listitem>
+            <para><link linkend="sect-Reference_Guide-Foundations-Configuration_syntax">Configuration syntax</link></para>
+        </listitem>
+		<listitem>
+            <para><link linkend="sect-Reference_Guide-Foundations-Init_params">InitParams configuration object</link></para>
+        </listitem>
+		<listitem>
+            <para><link linkend="sect-Reference_Guide-Foundations-Configuring_portal">Configure a portal container</link></para>
+        </listitem>
+		<listitem>
+            <para><link linkend="sect-Reference_Guide-Foundations-Extension_mechanism">GateIn Extension Mechanism and Portal Extensions</link></para>
+        </listitem>
+		<listitem>
+            <para><link linkend="sect-Reference_Guide-Foundations-Multiple_portals">Run Multiple Portals</link></para>
+        </listitem>
+    </itemizedlist>
+   </abstract>
+	<xi:include href="Advanced/Foundations.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+</chapter>
+

@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+        <!ENTITY % BOOK_ENTITIES SYSTEM "../../User_Guide.ent">
+        %BOOK_ENTITIES;
+        ]>
+<section id="sect-User_Guide-Dashboard_Portlet">
+  <title>Dashboard portlet</title>
+  <para>
+    This portlet is to host mini-applications known as gadgets. The dashboard uses a variety of
+    graphical effects for displaying, opening and using gadgets.
+  </para>
+  <para>In the Dashboard portlet, you can do some specific actions as follows:</para>
+  <itemizedlist>
+  <listitem>
+  <para>
+   <link linkend='sect-User_Guide-Dashboard_Portlet-Using_the_Dashboard_Workspace'>Use the Dashboard workspace</link>
+  </para>
+  </listitem>
+  <listitem>
+  <para>
+   <link linkend='sect-User_Guide-Dashboard_Portlet-Change_gadget_preferences'>Change gadget preferences</link>
+  </para>
+  </listitem>
+  <listitem>
+  <para>
+   <link linkend='sect-User_Guide-Dashboard_Portlet-Add_Gadgets'>Add more external gadgets from Dashboard</link>
+  </para>
+  </listitem>
+  </itemizedlist>
+  <note>
+  <para>
+    You can open many gadgets with different settings at once.
+  </para>
+  </note>
+
+  <section id="sect-User_Guide-Dashboard_Portlet-Using_the_Dashboard_Workspace">
+    <title>Use the Dashboard workspace</title>
+    <procedure>
+      <step>
+        <para>
+          Click
+          <guilabel>Dashboard</guilabel>
+          on the <guilabel>Administration</guilabel> bar to access the <guilabel>Dashboard</guilabel> portlet.
+        </para>
+      </step>
+      <step>
+        <para>
+          Click
+          <guilabel>Add Gadgets</guilabel>
+          to open the
+          <guilabel>Dashboard Workspace</guilabel>
+          window which lists all available gadgets.
+        </para>
+        <mediaobject>
+          <imageobject role="html">
+            <imagedata fileref="images/All_gadgets_workspace.png" format="PNG" align="center" scale="110"/>
+          </imageobject>
+          <imageobject role="fo">
+            <imagedata fileref="images/All_gadgets_workspace.png" format="PNG" align="center" scalefit="1"
+                       width="50mm"/>
+          </imageobject>
+        </mediaobject>
+      </step>
+      <step>
+        <para>
+          Select a gadget in the
+          <guilabel>Dashboard Workspace</guilabel>
+          window.
+        </para>
+      </step>
+      <step>
+        <para>
+          Drag and drop the selected gadget into the workspace.
+        </para>
+      </step>
+      <para>
+        In addition, eXo Platform is compatible with most gadgets which can be found
+        <ulink type="http" url="http://www.google.com/ig/directory?synd=open">here.</ulink>
+      </para>
+      <mediaobject>
+        <imageobject role="html">
+          <imagedata fileref="images/GoogleGadgets.png" format="PNG" align="center" scale="110"/>
+        </imageobject>
+        <imageobject role="fo">
+          <imagedata fileref="images/GoogleGadgets.png" format="PNG" align="center" scalefit="1"
+                     width="100mm"/>
+        </imageobject>
+      </mediaobject>
+    </procedure>
+  </section>
+
+  <section id="sect-User_Guide-Dashboard_Portlet-Change_gadget_preferences">
+    <title>Change gadget preferences</title>
+    <para>The edit icon on gadgets only displays when the gadget has some gadget preferences. This icon enables users to
+      display the edit form and change preferences of a gadget.
+    </para>
+    <mediaobject>
+      <imageobject role="html">
+        <imagedata fileref="images/ChangGadget.png" format="PNG" align="center" scale="50" contentwidth="50"/>
+      </imageobject>
+      <imageobject role="fo">
+        <imagedata fileref="images/ChangGadget.png" format="PNG" align="center" scalefit="1"
+                   width="150mm"/>
+      </imageobject>
+    </mediaobject>
+	<citetitle>
+    <para><emphasis role="bold">Change preferences of a gadget</emphasis></para>
+	</citetitle>
+    <para>The following is an example of changing preferences of the <guilabel>RSS Reader</guilabel> gadget.</para>
+    <procedure>
+      <step>
+        <para>Click <inlinemediaobject>
+          <imageobject>
+            <imagedata fileref="images/edit_gadget.png" format="PNG" scalefit="1" width="4mm"/>
+          </imageobject>
+        </inlinemediaobject> to open the edit form of the RSS gadget.</para>
+        <mediaobject>
+          <imageobject role="html">
+            <imagedata fileref="images/RSSGatein.png" format="PNG" align="center" scale="110"/>
+          </imageobject>
+          <imageobject role="fo">
+            <imagedata fileref="images/RSSGatein.png" format="PNG" align="center" scalefit="1"
+                       width="100mm"/>
+          </imageobject>
+        </mediaobject>
+      </step>
+      <step>
+        <para>Enter your preferred RSS into the
+          <guilabel>FEED URL</guilabel>
+          field and one numeric character (from 1 to 100) in the
+          <guilabel>Items</guilabel>
+          field. The numeric character you entered is the number of items displayed in the RSS gadget.
+        </para>
+      </step>
+      <step>
+        <para>Click
+          <guibutton>Save</guibutton>
+          to accept your changes.
+        </para>
+      </step>
+    </procedure>
+  </section>
+
+  <section id="sect-User_Guide-Dashboard_Portlet-Add_Gadgets">
+    <title>Add more external gadgets from Dashboard</title>
+    <procedure>
+      <step>
+        <para>
+          Obtain the URL (.xml or .rss) of the gadget you want to add from the gadgets source. For example,
+          <emphasis>http://bejeweledg.googlecode.com/svn/trunk/bejeweled.xml.</emphasis>
+        </para>
+		<para> </para>
+        <note>
+          <para>
+            Remote gadgets can be only created using an .xml link or RSS URL. However, if you use a link that generates
+            an RSS feed (for example, <ulink type="http" url="http://feeds.feedburner.com/gatein">
+            http://feeds.feedburner.com/gatein</ulink>), a new RSS reader gadget will be created automatically even if
+            the URL does not end with <emphasis>.rss</emphasis>.
+          </para>
+        </note>
+      </step>
+      <step>
+        <para>
+          Return to your portal and click
+          <guilabel>Dashboard</guilabel>
+          in the <guilabel>Administration</guilabel> bar.
+        </para>
+      </step>
+      <step>
+        <para>
+          Click
+          <guilabel>Add Gadgets</guilabel>
+          in the Dashboard to open the
+          <guilabel>Dashboard Workspace</guilabel>
+          window.
+        </para>
+      </step>
+      <step>
+        <para>Paste the URL in Step 1 into the textbox.</para>
+        <mediaobject>
+          <imageobject role="html">
+            <imagedata fileref="images/Dashboard1.png" format="PNG" align="center" scale="110"/>
+          </imageobject>
+          <imageobject role="fo">
+            <imagedata fileref="images/Dashboard1.png" format="PNG" align="center" scalefit="1" width="70mm"/>
+          </imageobject>
+        </mediaobject>
+      </step>
+      <step>
+        <para>
+          Click 
+          <inlinemediaobject>
+            <imageobject>
+              <imagedata fileref="images/plus_icon.png" format="PNG" scalefit="1" width="4mm"/>
+            </imageobject>
+          </inlinemediaobject> 
+         to add the new gadget to the page.
+        </para>
+      </step>
+    </procedure>
+  </section>
+</section>

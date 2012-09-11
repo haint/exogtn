@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+        <!ENTITY % BOOK_ENTITIES SYSTEM "../../User_Guide.ent">
+        %BOOK_ENTITIES;
+        ]>
+<section xml:id="sect-User_Guide-User_management">
+    <abstract>
+ <para>This section covers the following topics: </para>
+    <itemizedlist>
+      <listitem>
+        <para>
+          <emphasis role="bold">
+            <link linkend="sect-User_Guide-User_Management-Add_a_user">Add a user</link>
+          </emphasis> </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="bold">
+            <link linkend="sect-User_Guide-User_Management-Manage_users">Manage users</link>
+          </emphasis> </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="bold">
+            <link linkend="sect-User_Guide-User_Management-Manage_groups">Manage groups</link>
+          </emphasis> </para>
+      </listitem>
+      <listitem>
+        <para>
+          <emphasis role="bold">
+            <link linkend="sect-User_Guide-User_Management-Manage_memberships">Manage memberships</link>
+          </emphasis> </para>
+      </listitem>
+    </itemizedlist>
+	</abstract>
+	
+  <para>To perform these actions, you first need to hover your cursor over <inlinemediaobject>
+      <imageobject>
+        <imagedata fileref="images/sawtooth_icon.png" format="PNG" scalefit="1" width="4mm"/>
+      </imageobject>
+    </inlinemediaobject>
+    at the top right of the site, then select
+    <emphasis role="bold">User.</emphasis>
+  </para>
+
+    <mediaobject>
+      <imageobject role="html">
+        <imagedata fileref="images/Manage_users.png" format="PNG" align="center" scalefit="0" width="100mm"/>
+      </imageobject>
+      <imageobject role="fo">
+        <imagedata fileref="images/Manage_users.png" format="PNG" align="center" scalefit="1" width="70mm"/>
+      </imageobject>
+    </mediaobject>
+
+    <xi:include href="Add_user.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+	<xi:include href="Manage_users.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+ 	<xi:include href="Manage_groups.xml" xmlns:xi="http://www.w3.org/2001/XInclude" /> 
+	<xi:include href="Manage_memberships.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+
+</section>

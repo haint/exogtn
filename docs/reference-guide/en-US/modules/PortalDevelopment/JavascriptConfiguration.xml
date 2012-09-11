@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- This document was created with Syntext Serna Free. --><!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "../../Reference_Guide.ent">
+%BOOK_ENTITIES;
+]>
+<section id="sect-Reference_Guide-Javascript_Configuration">
+  <title>JavaScript Configuration</title>
+  <para>
+  Managing JavaScript in an application like &PRODUCT; is a critical part of the configuration work.
+      Configuring the scripts correctly will result in the faster response time from the portal.
+ </para>
+  <para>
+  Every portlet can have its own JavaScript code but in many cases, it is more convenient to reuse some existing
+      shared libraries. For that reason, &PRODUCT; has a mechanism to easily register the libraries that will be loaded
+      when every page is rendered.
+ </para>
+  <para>
+  To do so, every WAR deployed in &PRODUCT; can register the <emphasis>.js</emphasis> files with the <emphasis>gatein-resources.xml</emphasis> configuration file.</para>
+  <para>
+  The example code snippet below is found in the <emphasis>gatein-resources.xml</emphasis> in the <emphasis>eXoResources.war </emphasis>file.</para>
+  <programlisting language="xml">&lt;javascript&gt;
+  &lt;param&gt;
+    &lt;js-module&gt;eXo&lt;/js-module&gt;
+    &lt;js-path&gt;/javascript/eXo.js&lt;/js-path&gt;
+    &lt;js-priority&gt;0&lt;/js-priority&gt;
+  &lt;/param&gt;
+&lt;/javascript&gt;
+
+&lt;!-- CORE Javascripts --&gt;
+&lt;javascript&gt;
+  &lt;param&gt;
+    &lt;js-module&gt;eXo.core.Utils&lt;/js-module&gt;
+    &lt;js-path&gt;/javascript/eXo/core/Util.js&lt;/js-path&gt;
+    &lt;js-priority&gt;1&lt;/js-priority&gt;
+  &lt;/param&gt;
+  &lt;param&gt;
+    &lt;js-module&gt;eXo.core.DOMUtil&lt;/js-module&gt;
+    &lt;js-path&gt;/javascript/eXo/core/DOMUtil.js&lt;/js-path&gt;
+    &lt;js-priority&gt;1&lt;/js-priority&gt;
+  &lt;/param&gt;
+  &lt;param&gt;
+    &lt;js-module&gt;eXo.core.Browser&lt;/js-module&gt;
+    &lt;js-path&gt;/javascript/eXo/core/Browser.js&lt;/js-path&gt;
+    &lt;js-priority&gt;2&lt;/js-priority&gt;
+  &lt;/param&gt;
+  &lt;param&gt;
+    &lt;js-module&gt;eXo.core.MouseEventManager&lt;/js-module&gt;
+    &lt;js-path&gt;/javascript/eXo/core/MouseEventManager.js&lt;/js-path&gt;
+  &lt;/param&gt;
+  &lt;param&gt;
+    &lt;js-module&gt;eXo.core.UIMaskLayer&lt;/js-module&gt;
+    &lt;js-path&gt;/javascript/eXo/core/UIMaskLayer.js&lt;/js-path&gt;
+  &lt;/param&gt;
+  &lt;param&gt;
+    &lt;js-module&gt;eXo.core.Skin&lt;/js-module&gt;
+    &lt;js-path&gt;/javascript/eXo/core/Skin.js&lt;/js-path&gt;
+  &lt;/param&gt;
+  &lt;param&gt;
+    &lt;js-module&gt;eXo.core.DragDrop&lt;/js-module&gt;
+    &lt;js-path&gt;/javascript/eXo/core/DragDrop.js&lt;/js-path&gt;
+  &lt;/param&gt;
+  &lt;param&gt;
+    &lt;js-module&gt;eXo.core.DragDrop2&lt;/js-module&gt;
+    &lt;js-path&gt;/javascript/eXo/core/DragDrop2.js&lt;/js-path&gt;
+  &lt;/param&gt;
+&lt;/javascript&gt;
+</programlisting>
+  <para>
+  Note that registered JavaScript files will be merged into a single <emphasis>merged.js</emphasis> file when the server loads. This reduces the number of HTTP calls as shown in the homepage source code:
+ </para>
+  <programlisting language="xml">&lt;script type=&quot;text/javascript&quot; src=&quot;/portal/javascript/merged.js&quot;&gt;&lt;/script&gt;
+</programlisting>
+  <para>
+  Although this optimization is useful for a production environment, it may be easier to deactivate this optimization while debugging JavaScript problems.
+ </para>
+  <para>
+  To do this, set the Java system property <emphasis>exo.product.developing</emphasis> to <emphasis>true</emphasis>.
+ GateIn provides two startup scripts that define this property in gatein-dev.sh (for Linux, Mac) and gatein-dev.bat (for Windows).</para>
+  <para>
+  To generate the <emphasis>merged.js</emphasis> file, set this property to <emphasis>false</emphasis>.
+ If the property is not set, the default value is false. </para>
+  <para>
+  The property can be passed as a JVM parameter with the <emphasis>-D</emphasis> option in your <emphasis>GateIn.sh</emphasis> or <emphasis>GateIn.bat</emphasis> startup script.
+ </para>
+  <para>
+  Every JavaScript file is associated with a module name which acts as a namespace.
+
+      </para>
+  <para>
+      Inside the associated JavaScript files, the eXo JavaScript objects are exposed as global variables named after the module.</para>
+  <para> For example:</para>
+  <programlisting language="javascript">
+eXo.core.DragDrop = new DragDrop();
+   </programlisting>
+  <para>
+  It is also possible to use the <emphasis>eXo.require()</emphasis>method to lazy load and evaluate some JavaScript codes.
+      This is quite useful for the portlet or gadget applications that will use this JavaScript only once. Otherwise,
+      if the library is reusable in several places, it is better to define it in the <emphasis>gatein-resources.xml</emphasis> file.
+ </para>
+</section>
